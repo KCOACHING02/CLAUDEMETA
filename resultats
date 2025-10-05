@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votre Transformation en 49 Jours | La Méthode K</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --primary-green: #a8c9a3;
+      --secondary-beige: #e8d5c4;
+      --accent-green: #7fa876;
+      --text-dark: #2d3436;
+      --text-medium: #636e72;
+      --bg-light: #f8f9f4;
+      --white: #ffffff;
+      --success-green: #6fc276;
+      --warning-orange: #ff9f68;
+      --shadow: rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-light) 0%, #f0f4e8 100%);
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+      color: white;
+      text-align: center;
+      padding: 50px 30px;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 40px var(--shadow);
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      font-weight: 800;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      opacity: 0.95;
+      font-weight: 300;
+    }
+
+    /* Results Grid */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    .result-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 25px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .result-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    }
+
+    .result-card .icon {
+      font-size: 2.5em;
+      color: var(--accent-green);
+      margin-bottom: 15px;
+    }
+
+    .result-card h3 {
+      font-size: 1em;
+      color: var(--text-medium);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .result-card .value {
+      font-size: 3em;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .result-card .unit {
+      font-size: 0.9em;
+      color: var(--text-medium);
+    }
+
+    .result-card .badge {
+      display: inline-block;
+      background: var(--primary-green);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Perte Estimée Highlight */
+    .highlight-card {
+      background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-green) 100%);
+      color: white;
+      grid-column: 1 / -1;
+      padding: 40px;
+    }
+
+    .highlight-card .icon {
+      color: white;
+    }
+
+    .highlight-card h3,
+    .highlight-card .unit {
+      color: white;
+      opacity: 0.95;
+    }
+
+    .highlight-card .value {
+      color: white;
+      font-size: 4em;
+    }
+
+    .highlight-card .subtitle {
+      font-size: 1.1em;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    /* Offer Section */
+    .offer-section {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 50px 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 40px var(--shadow);
+      text-align: center;
+    }
+
+    .offer-section h2 {
+      font-size: 2.2em;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .offer-section .subtitle {
+      font-size: 1.2em;
+      color: var(--text-medium);
+      margin-bottom: 40px;
+    }
+
+    /* Program Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .feature-item .icon {
+      font-size: 1.8em;
+      color: var(--accent-green);
+      flex-shrink: 0;
+    }
+
+    .feature-item .content h4 {
+      font-size: 1.1em;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .feature-item .content p {
+      font-size: 0.95em;
+      color: var(--text-medium);
+    }
+
+    /* Price Section */
+    .price-section {
+      background: linear-gradient(135deg, var(--secondary-beige) 0%, #f5e8d8 100%);
+      padding: 35px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .price-section .old-price {
+      font-size: 1.5em;
+      text-decoration: line-through;
+      color: var(--text-medium);
+      opacity: 0.6;
+    }
+
+    .price-section .new-price {
+      font-size: 4em;
+      font-weight: 800;
+      color: var(--accent-green);
+      line-height: 1;
+      margin: 15px 0;
+    }
+
+    .price-section .daily-cost {
+      font-size: 1.1em;
+      color: var(--text-medium);
+      margin-bottom: 10px;
+    }
+
+    .price-section .guarantee {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.9em;
+      color: var(--text-dark);
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-green) 100%);
+      color: white;
+      font-size: 1.4em;
+      font-weight: 700;
+      padding: 22px 60px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(111, 194, 118, 0.4);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(111, 194, 118, 0.5);
+    }
+
+    .cta-button i {
+      margin-left: 10px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 50px 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 40px var(--shadow);
+    }
+
+    .testimonials h2 {
+      text-align: center;
+      font-size: 2em;
+      color: var(--text-dark);
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-light);
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-green);
+    }
+
+    .testimonial-card .stars {
+      color: #ffd700;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card .text {
+      font-size: 0.95em;
+      font-style: italic;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+    }
+
+    .testimonial-card .author {
+      font-weight: 600;
+      color: var(--accent-green);
+    }
+
+    .testimonial-card .result {
+      font-size: 0.9em;
+      color: var(--text-medium);
+      margin-top: 5px;
+    }
+
+    /* FAQ */
+    .faq-section {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 50px 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 40px var(--shadow);
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2em;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--bg-light);
+      padding: 20px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h4 {
+      font-size: 1.1em;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .faq-item p {
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .final-cta h2 {
+      font-size: 2.5em;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .final-cta p {
+      font-size: 1.2em;
+      color: var(--text-medium);
+      margin-bottom: 35px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8em;
+      }
+      
+      .result-card .value {
+        font-size: 2.5em;
+      }
+      
+      .highlight-card .value {
+        font-size: 3em;
+      }
+      
+      .offer-section h2 {
+        font-size: 1.8em;
+      }
+      
+      .price-section .new-price {
+        font-size: 3em;
+      }
+      
+      .cta-button {
+        font-size: 1.2em;
+        padding: 18px 40px;
+      }
+    }
+
+    /* Animation d'entrée */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .result-card,
+    .offer-section,
+    .testimonials,
+    .faq-section {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>🎉 Vos Résultats Personnalisés</h1>
+      <p>Découvrez votre potentiel de transformation avec La Méthode K</p>
+    </div>
+
+    <!-- Results Grid -->
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="icon"><i class="fas fa-fire"></i></div>
+        <h3>Métabolisme de Base</h3>
+        <div class="value" id="bmr-result">0</div>
+        <div class="unit">kcal/jour</div>
+      </div>
+
+      <div class="result-card">
+        <div class="icon"><i class="fas fa-balance-scale"></i></div>
+        <h3>Maintien du Poids</h3>
+        <div class="value" id="tdee-result">0</div>
+        <div class="unit">kcal/jour</div>
+      </div>
+
+      <div class="result-card">
+        <div class="icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Indice de Masse Corporelle</h3>
+        <div class="value" id="imc-result">0.0</div>
+        <div class="unit">kg/m²</div>
+        <div class="badge" id="imc-category">Normal</div>
+      </div>
+
+      <div class="result-card highlight-card">
+        <div class="icon"><i class="fas fa-trophy"></i></div>
+        <h3>Perte Estimée avec La Méthode K</h3>
+        <div class="value" id="estimated-loss">0</div>
+        <div class="unit">kg en 49 jours</div>
+        <div class="subtitle">Basé sur votre métabolisme et le programme personnalisé</div>
+      </div>
+    </div>
+
+    <!-- Offer Section -->
+    <div class="offer-section">
+      <h2>✨ La Méthode K : Votre Solution Clé en Main</h2>
+      <p class="subtitle">Un programme complet de rééquilibrage alimentaire pour transformer votre corps en 49 jours</p>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="content">
+            <h4>49 Jours de Menus</h4>
+            <p>Chaque jour planifié pour vous, aucune réflexion nécessaire</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon"><i class="fas fa-utensils"></i></div>
+          <div class="content">
+            <h4>82 Recettes Incluses</h4>
+            <p>49 recettes complètes + 33 petits-déjeuners protéinés</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon"><i class="fas fa-balance-scale-right"></i></div>
+          <div class="content">
+            <h4>Équilibre Parfait</h4>
+            <p>Tous vos macronutriments calculés pour des résultats optimaux</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="content">
+            <h4>Conseils Nutrition</h4>
+            <p>Apprenez à manger sainement pour des résultats durables</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon"><i class="fas fa-running"></i></div>
+          <div class="content">
+            <h4>Sans Sport Obligatoire</h4>
+            <p>Perdez du poids simplement en rééquilibrant votre alimentation</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="content">
+            <h4>Accès Immédiat</h4>
+            <p>Commencez dès aujourd'hui, recevez tout instantanément</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="price-section">
+        <div class="old-price">49,99€</div>
+        <div class="new-price">29,99€</div>
+        <div class="daily-cost">Soit moins de 0,61€ par jour de transformation</div>
+        <div class="guarantee">
+          <i class="fas fa-shield-alt"></i>
+          Programme complet • Résultats prouvés
+        </div>
+      </div>
+
+      <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
+        Je Commence Ma Transformation <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+      <h2>💚 Ils Ont Transformé Leur Corps</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="text">"Je ne me suis jamais sentie aussi bien ! Les menus sont simples à suivre et délicieux. Plus besoin de réfléchir à quoi manger."</div>
+          <div class="author">Sarah M.</div>
+          <div class="result">-6,2 kg en 49 jours</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="text">"Enfin un programme qui fonctionne sans me priver ! J'ai appris à manger équilibré et les résultats sont au rendez-vous."</div>
+          <div class="author">Léa P.</div>
+          <div class="result">-5,8 kg en 49 jours</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="text">"Le meilleur investissement que j'ai fait pour ma santé. Tout est clair, facile à suivre, et ça marche vraiment !"</div>
+          <div class="author">Claire D.</div>
+          <div class="result">-7,1 kg en 49 jours</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>❓ Questions Fréquentes</h2>
+      
+      <div class="faq-item">
+        <h4>Comment fonctionne La Méthode K ?</h4>
+        <p>Vous recevez 49 jours de menus complets avec toutes les recettes détaillées. Il vous suffit de suivre le programme jour après jour. Chaque menu est équilibré en macronutriments pour optimiser votre perte de poids tout en préservant votre santé.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Dois-je faire du sport ?</h4>
+        <p>Non, le sport n'est pas obligatoire ! La Méthode K se concentre sur le rééquilibrage alimentaire. Bien sûr, l'activité physique est bénéfique pour la santé, mais vous pouvez obtenir d'excellents résultats uniquement avec le programme nutritionnel.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Les recettes sont-elles compliquées ?</h4>
+        <p>Absolument pas ! Toutes les recettes sont simples, rapides à préparer et utilisent des ingrédients facilement accessibles. Même si vous n'êtes pas un(e) expert(e) en cuisine, vous pourrez suivre le programme sans difficulté.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Que se passe-t-il après mon achat ?</h4>
+        <p>Vous recevez immédiatement un accès à l'intégralité du programme : les 49 menus, les 82 recettes détaillées, et tous les conseils nutrition. Vous pouvez commencer dès aujourd'hui !</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Puis-je adapter les menus selon mes goûts ?</h4>
+        <p>Oui ! Le programme vous enseigne les principes du rééquilibrage alimentaire. Une fois que vous comprenez la logique, vous pouvez adapter certains repas selon vos préférences tout en respectant l'équilibre nutritionnel.</p>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="final-cta">
+      <h2>🚀 Prêt(e) à Transformer Votre Corps ?</h2>
+      <p>Rejoignez les centaines de personnes qui ont déjà changé leur vie avec La Méthode K</p>
+      <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
+        Je Commence Maintenant pour 29,99€ <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Récupération des paramètres URL
+    const params = new URLSearchParams(window.location.search);
+    const bmr = parseInt(params.get('bmr'));
+    const tdee = parseInt(params.get('tdee'));
+    const weight = parseFloat(params.get('weight'));
+    const height = parseFloat(params.get('height'));
+
+    // Redirection si paramètres manquants
+    if (isNaN(bmr) || isNaN(tdee) || isNaN(weight) || isNaN(height)) {
+      window.location.href = 'index.html';
+    }
+
+    // Affichage des résultats
+    document.getElementById('bmr-result').textContent = bmr;
+    document.getElementById('tdee-result').textContent = tdee;
+
+    // Calcul IMC
+    const imc = weight / Math.pow(height / 100, 2);
+    document.getElementById('imc-result').textContent = imc.toFixed(1);
+
+    // Catégorie IMC
+    function getIMCCategory(imc) {
+      if (imc < 18.5) return 'Maigreur';
+      if (imc < 25) return 'Normal';
+      if (imc < 30) return 'Surpoids';
+      return 'Obésité';
+    }
+    document.getElementById('imc-category').textContent = getIMCCategory(imc);
+
+    // Calcul de la perte estimée avec La Méthode K
+    // Semaine 1 (7j) : 1300 cal
+    // Jours 8-21 (14j) : 1400 cal
+    // Jours 22-49 (28j) : 1500 cal
+    function calculateWeightLoss(tdee) {
+      const week1Deficit = (tdee - 1300) * 7;  // 7 jours à 1300 cal
+      const week2_3Deficit = (tdee - 1400) * 14; // 14 jours à 1400 cal
+      const week4_7Deficit = (tdee - 1500) * 28; // 28 jours à 1500 cal
+      
+      const totalDeficit = week1Deficit + week2_3Deficit + week4_7Deficit;
+      
+      // 1 kg de graisse = environ 7700 calories
+      const estimatedLoss = totalDeficit / 7700;
+      
+      // On arrondit et on s'assure d'avoir un résultat positif
+      return Math.max(0, estimatedLoss).toFixed(1);
+    }
+
+    const weightLoss = calculateWeightLoss(tdee);
+    document.getElementById('estimated-loss').textContent = weightLoss;
+  </script>
+</body>
+</html>
