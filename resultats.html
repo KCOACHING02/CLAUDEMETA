@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -39,33 +39,14 @@
       padding: 20px;
     }
     
-    /* Promo Banner */
-    .promo-banner {
-      background: linear-gradient(135deg, var(--orange) 0%, #ff8c42 100%);
-      color: white;
-      text-align: center;
-      padding: 12px 15px;
+    /* Simple Header */
+    .simple-header {
+      background: white;
+      border-bottom: 2px solid var(--primary-green);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      font-size: 0.95em;
-    }
-    .promo-banner .code {
-      font-size: 1.4em;
-      font-weight: 800;
-      margin: 5px 0;
-      letter-spacing: 2px;
-      background: white;
-      color: var(--orange);
-      padding: 5px 15px;
-      border-radius: 8px;
-      display: inline-block;
-    }
-    .promo-banner .savings {
-      font-size: 1em;
-      font-weight: 600;
-      margin-top: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     
     /* Hero Section */
@@ -844,40 +825,16 @@
       margin-bottom: 15px;
       font-size: 1.05em;
     }
-    .price-section .old-price {
-      font-size: 1.6em;
-      text-decoration: line-through;
-      opacity: 0.7;
-    }
     .price-section .new-price {
       font-size: 4em;
       font-weight: 800;
       line-height: 1;
       margin: 12px 0;
-          }
+    }
     .price-section .daily-cost {
       font-size: 1.1em;
       margin-bottom: 10px;
       opacity: 0.95;
-    }
-    .price-section .promo-code-box {
-      background: white;
-      color: var(--success-green);
-      padding: 15px 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-      display: inline-block;
-    }
-    .price-section .promo-code-box .label {
-      font-size: 0.9em;
-      color: var(--text-medium);
-      margin-bottom: 5px;
-    }
-    .price-section .promo-code-box .code {
-      font-size: 1.5em;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: var(--success-green);
     }
     
     /* FAQ */
@@ -902,7 +859,7 @@
     .faq-item:last-child {
       border-bottom: none;
     }
-    .faq-item h4 {
+        .faq-item h4 {
       font-size: 1.05em;
       color: var(--text-dark);
       margin-bottom: 8px;
@@ -1021,6 +978,158 @@
       margin-top: 2px;
     }
     
+    /* Exit Intent Popup */
+    .exit-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .exit-popup-overlay.active {
+      display: flex;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .exit-popup {
+      background: white;
+      border-radius: 20px;
+      max-width: 550px;
+      width: 90%;
+      padding: 40px 35px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: slideUp 0.4s ease;
+      text-align: center;
+    }
+    
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .exit-popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.8em;
+      color: var(--text-medium);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .exit-popup-close:hover {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      transform: rotate(90deg);
+    }
+    
+    .exit-popup-icon {
+      font-size: 4em;
+      margin-bottom: 15px;
+    }
+    
+    .exit-popup h2 {
+      font-size: 2em;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .exit-popup .subtitle {
+      font-size: 1.15em;
+      color: var(--text-medium);
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    
+    .exit-popup-promo {
+      background: linear-gradient(135deg, var(--orange) 0%, #ff8c42 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .exit-popup-promo .label {
+      font-size: 1em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+    
+    .exit-popup-promo .code {
+      font-size: 2.5em;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin: 10px 0;
+      background: white;
+      color: var(--orange);
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .exit-popup-promo .code:hover {
+      transform: scale(1.05);
+    }
+    
+    .exit-popup-promo .savings {
+      font-size: 1.3em;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    
+    .exit-popup-benefit {
+      background: var(--bg-light);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 1.05em;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    .exit-popup .cta-button {
+      width: 100%;
+      font-size: 1.15em;
+      margin-top: 10px;
+    }
+    
+    .exit-popup .disclaimer {
+      font-size: 0.85em;
+      color: var(--text-medium);
+      margin-top: 15px;
+      font-style: italic;
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 {
@@ -1106,14 +1215,18 @@
         padding: 30px 15px;
       }
       
-      .promo-banner {
-        font-size: 0.85em;
-        padding: 10px 12px;
+      .exit-popup {
+        padding: 30px 25px;
+        width: 95%;
       }
       
-      .promo-banner .code {
-        font-size: 1.2em;
-        padding: 4px 12px;
+      .exit-popup h2 {
+        font-size: 1.6em;
+      }
+      
+      .exit-popup-promo .code {
+        font-size: 2em;
+        padding: 8px 15px;
       }
     }
     
@@ -1137,11 +1250,13 @@
   </style>
 </head>
 <body>
-  <!-- Promo Banner -->
-  <div class="promo-banner">
-    <div style="font-size: 0.95em;">🎁 CODE PROMO EXCLUSIF</div>
-    <div class="code">METHODE5</div>
-    <div class="savings">-5€ de réduction immédiate !</div>
+  <!-- Simple Header -->
+  <div class="simple-header">
+    <div class="container" style="text-align: center; padding: 15px;">
+      <h3 style="color: var(--accent-green); font-size: 1.2em; margin: 0;">
+        🌿 La Méthode K - Transformation en 49 Jours
+      </h3>
+    </div>
   </div>
 
   <div class="container">
@@ -1152,7 +1267,7 @@
       <p style="font-size: 1.05em; margin: 15px 0;">🎯 Programme 100% Personnalisé à Votre Métabolisme</p>
       
       <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button animated">
-        Je veux perdre 5-8kg pour 32€ avec METHODE5 <i class="fas fa-arrow-right"></i>
+        Je veux perdre 5-8kg pour 37€ <i class="fas fa-arrow-right"></i>
       </a>
       <p style="margin-top: 12px; font-size: 0.9em; opacity: 0.9;">🔒 Paiement sécurisé • ✅ Garantie 14 jours</p>
     </div>
@@ -1395,8 +1510,8 @@
         <div class="objection-item">
           <div class="emoji">❌</div>
           <div>
-            <h4>"32€ c'est trop cher pour moi"</h4>
-            <p>C'est 65 centimes par jour. Moins cher qu'un café. Et vous économisez sur les achats impulsifs, la malbouffe et les tentatives de régimes qui ne marchent pas.</p>
+            <h4>"37€ c'est trop cher pour moi"</h4>
+            <p>C'est 75 centimes par jour. Moins cher qu'un café. Et vous économisez sur les achats impulsifs, la malbouffe et les tentatives de régimes qui ne marchent pas.</p>
           </div>
         </div>
 
@@ -1441,7 +1556,7 @@
         <div class="comparison-item selected">
           <div class="label">La Méthode K - Programme Complet (49 jours)</div>
           <div class="price">
-            <span>32€ avec METHODE5</span>
+            <span>37€</span>
             <i class="fas fa-check-circle icon check"></i>
           </div>
         </div>
@@ -1468,7 +1583,7 @@
             <td>300-500€</td>
             <td>99€/an</td>
             <td>Variable</td>
-            <td class="highlight">32€ à vie</td>
+            <td class="highlight">37€ à vie</td>
           </tr>
           <tr>
             <td><strong>Menus personnalisés</strong></td>
@@ -1507,16 +1622,9 @@
           </tr>
           <tr>
             <td><strong>Accès immédiat</strong></td>
-            <td>❌</td>
+                        <td>❌</td>
             <td>✅</td>
             <td>✅</td>
-            <td class="highlight">✅</td>
-          </tr>
-          <tr>
-            <td><strong>Adapté vie active</strong></td>
-            <td>⚠️ Variable</td>
-            <td>⚠️ Variable</td>
-            <td>❌</td>
             <td class="highlight">✅</td>
           </tr>
         </tbody>
@@ -1525,56 +1633,72 @@
 
     <!-- Offer Section -->
     <div class="offer-section">
-      <h2>✨ La Méthode K : Votre Solution Clé en Main</h2>
-      <p class="subtitle">Un programme complet de rééquilibrage alimentaire pour transformer votre corps en 49 jours</p>
+      <h2>🎁 Ce Que Vous Recevez Aujourd'hui</h2>
+      <p class="subtitle">Programme complet pour transformer votre corps en 49 jours</p>
 
       <div class="features-grid">
         <div class="feature-item">
-          <div class="icon"><i class="fas fa-calendar-check"></i></div>
-          <div class="content">
-            <h4>49 Jours de Menus</h4>
-            <p>Chaque jour planifié pour vous, aucune réflexion nécessaire</p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="icon"><i class="fas fa-utensils"></i></div>
+          <div class="icon">📋</div>
           <div class="content">
             <h4>49 Menus Quotidiens Complets</h4>
-            <p>Petit-déjeuner, déjeuner et dîner planifiés chaque jour</p>
+            <p>Petit-déjeuner, déjeuner et dîner détaillés avec calories et macros</p>
           </div>
         </div>
 
         <div class="feature-item">
-          <div class="icon"><i class="fas fa-balance-scale-right"></i></div>
+          <div class="icon">🥞</div>
           <div class="content">
-            <h4>Équilibre Parfait</h4>
-            <p>Tous vos macronutriments calculés pour des résultats optimaux</p>
+            <h4>33 Options de Petits-Déjeuners</h4>
+            <p>Variété garantie pour ne jamais vous lasser</p>
           </div>
         </div>
 
         <div class="feature-item">
-          <div class="icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="icon">📊</div>
           <div class="content">
-            <h4>Conseils Nutrition</h4>
-            <p>Apprenez à manger sainement pour des résultats durables</p>
+            <h4>Calculs Nutritionnels Détaillés</h4>
+            <p>Protéines, glucides, lipides pour chaque repas</p>
           </div>
         </div>
 
         <div class="feature-item">
-          <div class="icon"><i class="fas fa-running"></i></div>
+          <div class="icon">🛒</div>
           <div class="content">
-            <h4>Sans Sport Obligatoire</h4>
-            <p>Perdez du poids simplement en rééquilibrant votre alimentation</p>
+            <h4>Listes de Courses Pré-remplies</h4>
+            <p>Gagnez du temps avec vos courses organisées</p>
           </div>
         </div>
 
         <div class="feature-item">
-          <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="icon">⏱️</div>
           <div class="content">
-            <h4>Accès Immédiat</h4>
-            <p>Commencez dès aujourd'hui, recevez tout instantanément</p>
-                      </div>
+            <h4>Recettes Rapides (15-20 min)</h4>
+            <p>Parfait pour les emplois du temps chargés</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon">💡</div>
+          <div class="content">
+            <h4>Conseils Nutrition d'Expert</h4>
+            <p>Comprenez POURQUOI vous perdez du poids</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon">📱</div>
+          <div class="content">
+            <h4>Accès Immédiat et à Vie</h4>
+            <p>Disponible sur tous vos appareils</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon">🔄</div>
+          <div class="content">
+            <h4>Programme Réutilisable</h4>
+            <p>Répétez-le autant de fois que nécessaire</p>
+          </div>
         </div>
       </div>
 
@@ -1628,15 +1752,9 @@
 
       <!-- Price -->
       <div class="price-section">
-        <div class="promo-label">🎁 OFFRE SPÉCIALE ACTIVE</div>
-        <div class="old-price">37€</div>
-        <div class="new-price">32€</div>
-        <div class="daily-cost">Soit 65 centimes par jour</div>
-        
-        <div class="promo-code-box">
-          <div class="label">Utilisez le code promo :</div>
-          <div class="code">METHODE5</div>
-        </div>
+        <div class="promo-label">🎯 OFFRE COMPLÈTE</div>
+        <div class="new-price">37€</div>
+        <div class="daily-cost">Soit 75 centimes par jour</div>
         
         <p style="margin-top: 15px; font-size: 1em; opacity: 0.95;">
           💳 Paiement en 1 fois • Accès immédiat et à vie
@@ -1644,12 +1762,8 @@
       </div>
 
       <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
-        Je Commence Ma Transformation pour 32€ <i class="fas fa-arrow-right"></i>
+        Je Commence Ma Transformation pour 37€ <i class="fas fa-arrow-right"></i>
       </a>
-      
-      <p style="margin-top: 15px; font-size: 0.9em; color: var(--text-medium);">
-        N'oubliez pas d'utiliser le code <strong>METHODE5</strong> à la caisse pour bénéficier de votre réduction de 5€
-      </p>
     </div>
 
     <!-- FAQ -->
@@ -1722,8 +1836,8 @@
       </div>
 
       <div class="faq-item">
-        <h4>Comment utiliser le code promo METHODE5 ?</h4>
-        <p>Après avoir cliqué sur le bouton d'achat, vous arriverez sur la page de paiement. Entrez le code <strong>METHODE5</strong> dans le champ prévu à cet effet pour bénéficier de votre réduction immédiate de 5€.</p>
+        <h4>Y a-t-il des promotions ou codes promo disponibles ?</h4>
+        <p>Nous proposons régulièrement des codes promotionnels exclusifs. Si vous en avez reçu un, vous pourrez l'appliquer directement sur la page de paiement pour bénéficier de votre réduction.</p>
       </div>
     </div>
 
@@ -1732,10 +1846,10 @@
       <h2>🚀 Prêt(e) à Transformer Votre Corps ?</h2>
       <p>Rejoignez les centaines de personnes qui ont déjà changé leur vie avec La Méthode K</p>
       <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
-        Je Commence Maintenant pour 32€ <i class="fas fa-arrow-right"></i>
+        Je Commence Maintenant pour 37€ <i class="fas fa-arrow-right"></i>
       </a>
       <p style="margin-top: 15px; font-size: 0.95em; color: var(--text-medium);">
-        Code promo : <strong>METHODE5</strong> • Garantie 14 jours • Accès immédiat
+        Garantie 14 jours • Accès immédiat
       </p>
     </div>
   </div>
@@ -1744,7 +1858,7 @@
   <div class="floating-cta" id="floating-cta">
     <div class="container-inner">
       <div class="text">
-        <h4>⚡ Offre spéciale : 32€ avec METHODE5</h4>
+        <h4>⚡ Programme complet : 37€</h4>
         <p>Garantie satisfait ou remboursé 14 jours</p>
       </div>
       <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
@@ -1762,6 +1876,39 @@
         <div class="action">vient d'acheter La Méthode K</div>
         <div class="time" id="notification-time">Il y a 3 min</div>
       </div>
+    </div>
+  </div>
+
+  <!-- Exit Intent Popup -->
+  <div class="exit-popup-overlay" id="exit-popup">
+    <div class="exit-popup">
+      <button class="exit-popup-close" id="close-popup">×</button>
+      
+      <div class="exit-popup-icon">⏰</div>
+      
+      <h2>ATTENDEZ !</h2>
+      <p class="subtitle">Avant de partir, profitez de cette offre exclusive</p>
+      
+      <div class="exit-popup-promo">
+        <div class="label">🎁 CODE PROMO EXCLUSIF</div>
+        <div class="code" id="popup-code">METHODE5</div>
+        <div class="savings">-5€ de réduction immédiate</div>
+      </div>
+      
+      <div class="exit-popup-benefit">
+        <strong>Avec ce code, vous obtenez :</strong><br>
+        ✅ Le programme complet pour <strong style="color: var(--success-green);">32€ au lieu de 37€</strong><br>
+        ✅ Accès immédiat à tous les menus<br>
+        ✅ Garantie satisfait ou remboursé 14 jours
+      </div>
+      
+      <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
+        J'utilise mon code promo maintenant <i class="fas fa-arrow-right"></i>
+      </a>
+      
+      <p class="disclaimer">
+        ⚠️ Ce code n'apparaîtra qu'une seule fois
+      </p>
     </div>
   </div>
 
@@ -1817,11 +1964,10 @@
     const liveBuyersElement = document.getElementById('live-buyers');
 
     function updateBuyerCount() {
-      if (Math.random() > 0.7) { // 30% de chance d'augmenter
+      if (Math.random() > 0.7) {
         buyerCount++;
         liveBuyersElement.textContent = buyerCount;
         
-        // Animation flash
         liveBuyersElement.style.transform = 'scale(1.2)';
         liveBuyersElement.style.color = '#ffd700';
         setTimeout(() => {
@@ -1830,7 +1976,7 @@
         }, 300);
       }
     }
-    setInterval(updateBuyerCount, 45000); // Toutes les 45 secondes
+    setInterval(updateBuyerCount, 45000);
 
     // Social Proof Notifications
     const names = ['Sophie', 'Marie', 'Claire', 'Julie', 'Emma', 'Laura', 'Camille', 'Léa', 'Sarah', 'Charlotte', 'Anaïs', 'Manon', 'Chloé', 'Lucie'];
@@ -1854,8 +2000,8 @@
       notificationIndex++;
     }
 
-    setTimeout(showSocialNotification, 10000); // Première notification après 10 secondes
-    setInterval(showSocialNotification, 45000); // Puis toutes les 45 secondes
+    setTimeout(showSocialNotification, 10000);
+    setInterval(showSocialNotification, 45000);
 
     // Floating CTA
     const floatingCta = document.getElementById('floating-cta');
@@ -1876,44 +2022,107 @@
       button.addEventListener('click', function() {
         console.log('CTA clicked - Conversion tracking point');
         
-        // Google Analytics tracking (si installé)
         if (typeof gtag !== 'undefined') {
           gtag('event', 'click', {
             'event_category': 'CTA',
             'event_label': 'Purchase Button',
-            'value': 32
+            'value': 37
           });
         }
         
-        // Facebook Pixel tracking (si installé)
         if (typeof fbq !== 'undefined') {
           fbq('track', 'InitiateCheckout', {
-            value: 32.00,
+            value: 37.00,
             currency: 'EUR'
           });
         }
       });
     });
 
-    // Copy promo code on click
-    document.querySelectorAll('.code').forEach(codeElement => {
-      codeElement.style.cursor = 'pointer';
-      codeElement.title = 'Cliquer pour copier';
+    // Exit Intent Detection
+    let exitIntentShown = false;
+    const exitPopup = document.getElementById('exit-popup');
+    const closePopupBtn = document.getElementById('close-popup');
+    const popupCode = document.getElementById('popup-code');
+
+    // Détecter quand la souris sort de la fenêtre (desktop)
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0 && !exitIntentShown) {
+        showExitPopup();
+      }
+    });
+
+    // Détecter le scroll back sur mobile
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       
-      codeElement.addEventListener('click', function() {
-        const code = this.textContent;
-        navigator.clipboard.writeText(code).then(() => {
-          // Feedback visuel
-          const originalText = this.textContent;
-          this.textContent = '✓ Copié !';
-          this.style.color = '#6fc276';
-          
-          setTimeout(() => {
-            this.textContent = originalText;
-            this.style.color = '';
-          }, 2000);
+      if (scrollTop < lastScrollTop && scrollTop < 100 && !exitIntentShown && window.scrollY > 500) {
+        showExitPopup();
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+
+    function showExitPopup() {
+      exitIntentShown = true;
+      exitPopup.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      localStorage.setItem('exitPopupShown', 'true');
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'exit_intent_shown', {
+          'event_category': 'Popup',
+          'event_label': 'Exit Intent'
         });
+      }
+    }
+
+    // Fermer le popup
+    closePopupBtn.addEventListener('click', function() {
+      exitPopup.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Fermer en cliquant sur l'overlay
+    exitPopup.addEventListener('click', function(e) {
+      if (e.target === exitPopup) {
+        exitPopup.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Copier le code promo au clic
+    popupCode.addEventListener('click', function() {
+      const code = this.textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = this.textContent;
+        const originalBg = this.style.background;
+        
+        this.textContent = '✓ CODE COPIÉ !';
+        this.style.background = 'var(--success-green)';
+        
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.style.background = originalBg;
+        }, 2000);
       });
+    });
+
+    // Empêcher l'affichage si déjà montré (optionnel - commenté pour tester)
+    // if (localStorage.getItem('exitPopupShown') === 'true') {
+    //   exitIntentShown = true;
+    // }
+
+    // Tracking des clics sur le CTA du popup
+    exitPopup.querySelector('.cta-button').addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'exit_popup_cta_click', {
+          'event_category': 'Conversion',
+          'event_label': 'Promo Code Used'
+        });
+      }
     });
 
     // Smooth scroll pour les ancres
