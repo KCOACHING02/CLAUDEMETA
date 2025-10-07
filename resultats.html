@@ -1,9 +1,9 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perdez 5-8kg en 49 Jours | La Méthode K</title>
+  <title>Vos Résultats - La Méthode K | Programme Personnalisé</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
@@ -49,6 +49,356 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     
+    /* Results Hero Section - NOUVELLE SECTION PRINCIPALE */
+    .results-hero-section {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9f4 100%);
+      border-radius: 25px;
+      padding: 40px 30px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+      border: 3px solid var(--primary-green);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .results-hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(168,201,163,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .results-icon {
+      font-size: 4em;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .results-header h1 {
+      font-size: 2.5em;
+      color: var(--text-dark);
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .results-subtitle {
+      font-size: 1.15em;
+      color: var(--text-medium);
+      font-weight: 400;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .results-grid .result-card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .results-grid .result-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(168,201,163,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .results-grid .result-card:hover::before {
+      left: 100%;
+    }
+
+    .results-grid .result-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      border-color: var(--accent-green);
+    }
+
+    .results-grid .result-card .icon {
+      font-size: 3em;
+      color: var(--accent-green);
+      margin-bottom: 15px;
+      display: inline-block;
+      animation: pulse-icon 2s infinite;
+    }
+
+    @keyframes pulse-icon {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .results-grid .result-card h3 {
+      font-size: 1em;
+      color: var(--text-medium);
+      margin-bottom: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .results-grid .result-card .value {
+      font-size: 3.5em;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--accent-green) 0%, var(--primary-green) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .results-grid .result-card .unit {
+      font-size: 1em;
+      color: var(--text-medium);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .results-grid .result-card .explanation {
+      font-size: 0.88em;
+      color: var(--text-medium);
+      font-style: italic;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
+
+    .results-grid .result-card .badge {
+      display: inline-block;
+      background: var(--primary-green);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .results-grid .highlight-card {
+      background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-green) 100%);
+      color: white;
+      grid-column: 1 / -1;
+      padding: 40px 30px;
+      border: none;
+      box-shadow: 0 12px 35px rgba(111, 194, 118, 0.4);
+    }
+
+    .results-grid .highlight-card .icon {
+      color: white;
+      font-size: 4em;
+    }
+
+    .results-grid .highlight-card h3 {
+      color: white;
+      font-size: 1.3em;
+      opacity: 1;
+    }
+
+    .results-grid .highlight-card .value {
+      color: white;
+      font-size: 4.5em;
+      -webkit-text-fill-color: white;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .results-grid .highlight-card .unit {
+      color: white;
+      font-size: 1.2em;
+      opacity: 0.95;
+    }
+
+    .results-grid .highlight-card .explanation {
+      color: white;
+      font-size: 1em;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    /* Projection Visual */
+    .projection-visual {
+      background: white;
+      border-radius: 20px;
+      padding: 35px 30px;
+      margin-bottom: 35px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .projection-visual h2 {
+      text-align: center;
+      font-size: 1.9em;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .weight-projection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .weight-box {
+      flex: 1;
+      min-width: 180px;
+      max-width: 250px;
+      text-align: center;
+      padding: 30px 25px;
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .weight-box:hover {
+      transform: scale(1.05);
+    }
+
+    .weight-box .label {
+      font-size: 0.9em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      opacity: 0.8;
+      text-transform: uppercase;
+    }
+
+    .weight-box .weight {
+      font-size: 4em;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .weight-box .unit {
+      font-size: 1.2em;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .weight-box.current {
+      background: linear-gradient(135deg, #e8d5c4 0%, #f5e8d8 100%);
+      color: var(--text-dark);
+    }
+
+    .weight-box.target {
+      background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-green) 100%);
+      color: white;
+      box-shadow: 0 10px 30px rgba(111, 194, 118, 0.4);
+    }
+
+    .arrow-container {
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .arrow-container .arrow-icon {
+      font-size: 3em;
+      color: var(--accent-green);
+      margin-bottom: 10px;
+      animation: slide-arrow 1.5s infinite;
+    }
+
+    @keyframes slide-arrow {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+    }
+
+    .arrow-container .days-label {
+      background: var(--orange);
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    /* Results CTA */
+    .results-cta {
+      text-align: center;
+      padding: 40px 25px;
+      background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+      border-radius: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .results-cta h2 {
+      font-size: 2em;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .results-cta p {
+      font-size: 1.15em;
+      color: var(--text-medium);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .results-cta .cta-button {
+      font-size: 1.25em;
+      padding: 20px 45px;
+      box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+    }
+
+    .results-cta .guarantee-text {
+      font-size: 0.95em;
+      color: var(--text-medium);
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    .pulse-animation {
+      animation: pulse-cta 2s infinite;
+    }
+
+    @keyframes pulse-cta {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
@@ -58,7 +408,6 @@
       border-radius: 20px;
       margin-bottom: 30px;
       box-shadow: 0 10px 40px var(--shadow);
-      margin-top: 20px;
     }
     .hero h1 {
       font-size: 2em;
@@ -134,145 +483,8 @@
     .cta-button i {
       margin-left: 10px;
     }
-    @keyframes pulse-cta {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
     .cta-button.animated {
       animation: pulse-cta 2s infinite;
-    }
-    
-    /* Results Grid */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .result-card {
-      background: var(--white);
-      padding: 25px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 8px 25px var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .result-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-    }
-    .result-card .icon {
-      font-size: 2.5em;
-      color: var(--accent-green);
-      margin-bottom: 15px;
-    }
-    .result-card h3 {
-      font-size: 0.95em;
-      color: var(--text-medium);
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    .result-card .value {
-      font-size: 2.8em;
-      font-weight: 800;
-      color: var(--text-dark);
-      line-height: 1;
-      margin-bottom: 5px;
-    }
-    .result-card .unit {
-      font-size: 0.9em;
-      color: var(--text-medium);
-    }
-    .result-card .badge {
-      display: inline-block;
-      background: var(--primary-green);
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.85em;
-      margin-top: 10px;
-      font-weight: 600;
-    }
-    
-    /* Highlight Card */
-    .highlight-card {
-      background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-green) 100%);
-      color: white;
-      grid-column: 1 / -1;
-      padding: 35px;
-    }
-    .highlight-card .icon {
-      color: white;
-    }
-    .highlight-card h3,
-    .highlight-card .unit {
-      color: white;
-      opacity: 0.95;
-    }
-    .highlight-card .value {
-      color: white;
-      font-size: 3.5em;
-    }
-    .highlight-card .subtitle {
-      font-size: 1.05em;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-    
-    /* Projection Section */
-    .projection-section {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 35px;
-      margin-bottom: 35px;
-      box-shadow: 0 10px 40px var(--shadow);
-    }
-    .projection-section h2 {
-      text-align: center;
-      font-size: 1.8em;
-      color: var(--text-dark);
-      margin-bottom: 25px;
-      font-weight: 700;
-    }
-    .weight-projection {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-    .weight-box {
-      flex: 1;
-      min-width: 180px;
-      text-align: center;
-      padding: 25px;
-      border-radius: 16px;
-    }
-    .weight-box.current {
-      background: linear-gradient(135deg, #e8d5c4 0%, #f5e8d8 100%);
-    }
-    .weight-box.target {
-      background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-green) 100%);
-      color: white;
-    }
-    .weight-box h3 {
-      font-size: 1.1em;
-      margin-bottom: 12px;
-      opacity: 0.9;
-    }
-    .weight-box .weight {
-      font-size: 3em;
-      font-weight: 800;
-      line-height: 1;
-    }
-    .weight-box.target h3,
-    .weight-box.target .weight {
-      color: white;
-    }
-    .arrow-icon {
-      font-size: 2.5em;
-      color: var(--accent-green);
-      flex-shrink: 0;
     }
     
     /* PAS Section */
@@ -672,6 +884,9 @@
       font-weight: 700;
       color: var(--success-green);
     }
+    .comparison-table td strong {
+      font-weight: 700;
+    }
     
     /* Offer Section */
     .offer-section {
@@ -680,164 +895,173 @@
       padding: 40px 30px;
       margin-bottom: 35px;
       box-shadow: 0 10px 40px var(--shadow);
-      text-align: center;
     }
     .offer-section h2 {
+      text-align: center;
       font-size: 1.9em;
       color: var(--text-dark);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       font-weight: 700;
     }
     .offer-section .subtitle {
+      text-align: center;
       font-size: 1.1em;
       color: var(--text-medium);
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
-    
-    /* Features Grid */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-bottom: 35px;
-      text-align: left;
     }
     .feature-item {
       display: flex;
-      align-items: flex-start;
-      gap: 12px;
+      gap: 15px;
+      padding: 20px;
+      background: var(--bg-light);
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .feature-item:hover {
+      transform: translateY(-5px);
     }
     .feature-item .icon {
-      font-size: 1.6em;
-      color: var(--accent-green);
+      font-size: 2.5em;
       flex-shrink: 0;
     }
     .feature-item .content h4 {
       font-size: 1.05em;
       color: var(--text-dark);
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       font-weight: 600;
     }
     .feature-item .content p {
       font-size: 0.9em;
       color: var(--text-medium);
+      line-height: 1.5;
     }
     
     /* Value Stack */
     .value-stack {
-      background: linear-gradient(135deg, var(--secondary-beige) 0%, #f5e8d8 100%);
+      background: var(--bg-light);
       padding: 30px;
-      border-radius: 16px;
-      margin-bottom: 25px;
+      border-radius: 15px;
+      margin-bottom: 35px;
     }
     .value-stack h3 {
       text-align: center;
-      font-size: 1.6em;
+      font-size: 1.5em;
       color: var(--text-dark);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       font-weight: 700;
     }
     .value-item {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 12px;
-      margin-bottom: 8px;
-      background: white;
-      border-radius: 8px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .value-item:last-child {
+      border-bottom: none;
     }
     .value-item .item-name {
-      font-weight: 600;
+      font-size: 1em;
       color: var(--text-dark);
-      font-size: 0.95em;
     }
     .value-item .item-price {
+      font-size: 1em;
       font-weight: 700;
-      color: var(--accent-green);
+      color: var(--text-medium);
+      text-decoration: line-through;
     }
     .value-total {
-      border-top: 3px solid var(--accent-green);
-      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
       margin-top: 15px;
-      text-align: center;
+      border-top: 3px solid var(--accent-green);
     }
     .value-total .total-label {
-      font-size: 1.1em;
-      color: var(--text-medium);
-      margin-bottom: 8px;
+      font-size: 1.3em;
+      font-weight: 700;
+      color: var(--text-dark);
     }
     .value-total .total-price {
-      font-size: 2.2em;
+      font-size: 1.5em;
       font-weight: 800;
-      color: var(--text-dark);
+      color: var(--red);
       text-decoration: line-through;
-      opacity: 0.6;
     }
     
-    /* Guarantee Badge */
+    /* Guarantee Section */
     .guarantee-section {
-      background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
-      border: 3px solid #ffd700;
-      border-radius: 16px;
+      background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
       padding: 30px;
-      margin-bottom: 25px;
+      border-radius: 15px;
       text-align: center;
+      margin-bottom: 35px;
+      border: 2px solid var(--success-green);
     }
     .guarantee-section .badge-icon {
-      font-size: 3.5em;
-      margin-bottom: 12px;
+      font-size: 4em;
+      margin-bottom: 15px;
     }
     .guarantee-section h3 {
       font-size: 1.6em;
       color: var(--text-dark);
-      font-weight: 700;
       margin-bottom: 15px;
+      font-weight: 800;
     }
     .guarantee-section p {
       font-size: 1.05em;
       color: var(--text-dark);
-      line-height: 1.8;
+      line-height: 1.7;
       margin-bottom: 12px;
     }
     .guarantee-section .highlight {
-      font-size: 1.25em;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 1.15em;
       font-weight: 700;
       color: var(--success-green);
-      margin-top: 15px;
+      margin: 20px 0;
+      display: inline-block;
     }
     
     /* Price Section */
     .price-section {
-      background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-green) 100%);
-      padding: 35px;
-      border-radius: 16px;
-      margin-bottom: 25px;
       text-align: center;
-      color: white;
+      padding: 35px 25px;
+      background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+      border-radius: 15px;
+      margin-bottom: 25px;
     }
     .price-section .promo-label {
+      display: inline-block;
       background: var(--orange);
       color: white;
-      display: inline-block;
       padding: 8px 20px;
       border-radius: 25px;
+      font-size: 0.95em;
       font-weight: 700;
       margin-bottom: 15px;
-      font-size: 1.05em;
     }
     .price-section .new-price {
       font-size: 4em;
       font-weight: 800;
+      color: var(--success-green);
       line-height: 1;
-      margin: 12px 0;
+      margin-bottom: 10px;
     }
     .price-section .daily-cost {
       font-size: 1.1em;
-      margin-bottom: 10px;
-      opacity: 0.95;
+      color: var(--text-medium);
+      font-style: italic;
     }
     
-    /* FAQ */
+    /* FAQ Section */
     .faq-section {
       background: var(--white);
       border-radius: 20px;
@@ -847,19 +1071,18 @@
     }
     .faq-section h2 {
       text-align: center;
-      font-size: 1.8em;
+      font-size: 1.9em;
       color: var(--text-dark);
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       font-weight: 700;
     }
     .faq-item {
-      border-bottom: 1px solid var(--bg-light);
-      padding: 18px 0;
+      padding: 20px;
+      background: var(--bg-light);
+      border-radius: 12px;
+      margin-bottom: 15px;
     }
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-        .faq-item h4 {
+    .faq-item h4 {
       font-size: 1.05em;
       color: var(--text-dark);
       margin-bottom: 8px;
@@ -1132,6 +1355,62 @@
     
     /* Responsive */
     @media (max-width: 768px) {
+      .results-hero-section {
+        padding: 30px 20px;
+      }
+      
+      .results-header h1 {
+        font-size: 1.8em;
+      }
+      
+      .results-icon {
+        font-size: 3em;
+      }
+      
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .results-grid .result-card .value {
+        font-size: 2.8em;
+      }
+      
+      .results-grid .highlight-card .value {
+        font-size: 3.5em;
+      }
+      
+      .weight-projection {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .arrow-container .arrow-icon {
+        transform: rotate(90deg);
+        animation: slide-arrow-vertical 1.5s infinite;
+      }
+      
+      @keyframes slide-arrow-vertical {
+        0%, 100% { transform: rotate(90deg) translateX(0); }
+        50% { transform: rotate(90deg) translateX(10px); }
+      }
+      
+      .weight-box {
+        max-width: 100%;
+      }
+      
+      .weight-box .weight {
+        font-size: 3.5em;
+      }
+      
+      .results-cta h2 {
+        font-size: 1.6em;
+      }
+      
+      .results-cta .cta-button {
+        font-size: 1.1em;
+        padding: 18px 35px;
+      }
+      
       .hero h1 {
         font-size: 1.6em;
       }
@@ -1140,18 +1419,9 @@
         font-size: 1em;
       }
       
-      .result-card .value {
-        font-size: 2.3em;
-      }
-      
-      .highlight-card .value {
-        font-size: 2.8em;
-      }
-      
       .offer-section h2,
       .testimonials h2,
       .faq-section h2,
-      .projection-section h2,
       .pas-section h2,
       .about-section h2 {
         font-size: 1.5em;
@@ -1180,14 +1450,6 @@
         width: 100%;
         font-size: 0.95em;
         padding: 12px 25px;
-      }
-      
-      .weight-projection {
-        flex-direction: column;
-      }
-      
-      .arrow-icon {
-        transform: rotate(90deg);
       }
       
       .social-notification {
@@ -1260,6 +1522,83 @@
   </div>
 
   <div class="container">
+    <!-- 🆕 SECTION RÉSULTATS EN PREMIER -->
+    <div class="results-hero-section">
+      <div class="results-header">
+        <div class="results-icon">📊</div>
+        <h1>Vos Résultats Personnalisés</h1>
+        <p class="results-subtitle">Basés sur votre profil métabolique unique</p>
+      </div>
+
+      <!-- Results Grid -->
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="icon"><i class="fas fa-fire"></i></div>
+          <h3>Métabolisme de Base</h3>
+          <div class="value" id="bmr-result">0</div>
+          <div class="unit">kcal/jour</div>
+          <p class="explanation">Calories brûlées au repos</p>
+        </div>
+
+        <div class="result-card">
+          <div class="icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>Maintien du Poids</h3>
+          <div class="value" id="tdee-result">0</div>
+          <div class="unit">kcal/jour</div>
+          <p class="explanation">Calories pour stabiliser votre poids</p>
+        </div>
+
+        <div class="result-card">
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Indice de Masse Corporelle</h3>
+          <div class="value" id="imc-result">0.0</div>
+          <div class="unit">kg/m²</div>
+          <div class="badge" id="imc-category">Normal</div>
+        </div>
+
+        <div class="result-card highlight-card">
+          <div class="icon"><i class="fas fa-trophy"></i></div>
+          <h3>🎯 Votre Objectif Réalisable</h3>
+          <div class="value" id="estimated-loss">0</div>
+          <div class="unit">kg en 49 jours</div>
+          <p class="explanation">Perte de poids saine et durable</p>
+        </div>
+      </div>
+
+      <!-- Projection Visual -->
+      <div class="projection-visual">
+        <h2>📈 Votre Transformation Projetée</h2>
+        <div class="weight-projection">
+          <div class="weight-box current">
+            <div class="label">AUJOURD'HUI</div>
+            <div class="weight" id="current-weight">75</div>
+            <div class="unit">kg</div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="days-label">49 jours</div>
+          </div>
+          <div class="weight-box target">
+            <div class="label">VOTRE OBJECTIF</div>
+            <div class="weight" id="target-weight">68</div>
+            <div class="unit">kg</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Principal -->
+      <div class="results-cta">
+        <h2>🚀 Prêt(e) à Atteindre Cet Objectif ?</h2>
+        <p>Découvrez le programme personnalisé qui vous permettra d'y arriver</p>
+        <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button pulse-animation">
+          Je Veux Mon Programme Personnalisé pour 37€ <i class="fas fa-arrow-right"></i>
+        </a>
+        <p class="guarantee-text">✅ Garantie 14 jours • 🔒 Paiement sécurisé • ⚡ Accès immédiat</p>
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <div class="hero">
       <h1>Perdez 5 à 8kg en 49 Jours<br>SANS Régime Restrictif</h1>
@@ -1293,59 +1632,6 @@
         <div class="icon">✅</div>
         <div class="number">14 jours</div>
         <div class="label">Garantie satisfait</div>
-      </div>
-    </div>
-
-    <!-- Results Grid -->
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="icon"><i class="fas fa-fire"></i></div>
-        <h3>Métabolisme de Base</h3>
-        <div class="value" id="bmr-result">0</div>
-        <div class="unit">kcal/jour</div>
-      </div>
-
-      <div class="result-card">
-        <div class="icon"><i class="fas fa-balance-scale"></i></div>
-        <h3>Maintien du Poids</h3>
-        <div class="value" id="tdee-result">0</div>
-        <div class="unit">kcal/jour</div>
-      </div>
-
-      <div class="result-card">
-        <div class="icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Indice de Masse Corporelle</h3>
-        <div class="value" id="imc-result">0.0</div>
-        <div class="unit">kg/m²</div>
-        <div class="badge" id="imc-category">Normal</div>
-      </div>
-
-      <div class="result-card highlight-card">
-        <div class="icon"><i class="fas fa-trophy"></i></div>
-        <h3>Perte Estimée avec La Méthode K</h3>
-        <div class="value" id="estimated-loss">0</div>
-        <div class="unit">kg en 49 jours</div>
-        <div class="subtitle">Basé sur votre métabolisme et le programme personnalisé</div>
-      </div>
-    </div>
-
-    <!-- Projection Visual -->
-    <div class="projection-section">
-      <h2>📊 Votre Transformation Projetée</h2>
-      <div class="weight-projection">
-        <div class="weight-box current">
-          <h3>Aujourd'hui</h3>
-          <div class="weight" id="current-weight">75</div>
-          <div class="unit">kg</div>
-        </div>
-        <div class="arrow-icon">
-          <i class="fas fa-arrow-right"></i>
-        </div>
-        <div class="weight-box target">
-          <h3>Dans 49 Jours</h3>
-          <div class="weight" id="target-weight">68</div>
-          <div class="unit">kg</div>
-        </div>
       </div>
     </div>
 
@@ -1426,100 +1712,104 @@
 
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="text">"Le meilleur investissement que j'ai fait pour ma santé. Tout est clair, facile à suivre, et ça marche vraiment !"</div>
-          <div class="author">Claire D.</div>
-          <div class="result">-7,1 kg en 49 jours</div>
+          <div class="text">"Les recettes sont rapides et parfaites pour mon emploi du temps chargé. J'ai perdu 7,5kg sans frustration !"</div>
+          <div class="author">Marie L.</div>
+          <div class="result">-7,5 kg en 49 jours</div>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="text">"J'ai essayé tellement de régimes avant... Celui-ci est différent. Pas de frustration, juste des résultats !"</div>
-          <div class="author">Julie T.</div>
-          <div class="result">-6,5 kg en 49 jours</div>
+          <div class="text">"J'ai essayé tellement de régimes avant... La Méthode K est différente. C'est un vrai rééquilibrage alimentaire qui marche."</div>
+          <div class="author">Julie D.</div>
+          <div class="result">-6,9 kg en 49 jours</div>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="text">"Même avec mon emploi du temps chargé, j'ai réussi à suivre le programme. Les menus sont rapides à préparer."</div>
+          <div class="text">"Le meilleur investissement que j'ai fait pour ma santé. Les résultats sont là et je me sens tellement mieux dans ma peau."</div>
           <div class="author">Emma R.</div>
           <div class="result">-5,3 kg en 49 jours</div>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="text">"Pour 37€, c'est une vraie aubaine ! J'ai dépensé bien plus chez des nutritionnistes pour moins de résultats."</div>
-          <div class="author">Camille L.</div>
-          <div class="result">-7,4 kg en 49 jours</div>
+          <div class="text">"Programme clair, facile à suivre et efficace. J'ai atteint mon objectif et je continue à utiliser les menus pour maintenir mon poids."</div>
+          <div class="author">Camille T.</div>
+          <div class="result">-8,1 kg en 49 jours</div>
         </div>
       </div>
     </div>
 
     <!-- About Section -->
     <div class="about-section">
-      <h2>👋 Qui suis-je et pourquoi me faire confiance ?</h2>
-      
+      <h2>👋 Qui Suis-Je ?</h2>
       <div class="about-content">
-        <p>Je suis coach en nutrition depuis <strong>5 ans</strong>.</p>
+        <p>Je m'appelle <strong>K</strong>, coach nutrition certifiée et j'ai aidé plus de <strong>500 femmes</strong> à perdre du poids durablement.</p>
         
-        <p>J'ai aidé plus de <strong>500 femmes</strong> à perdre du poids durablement, sans régimes restrictifs ni privations.</p>
+        <p>Pendant des années, j'ai vu des femmes se battre avec des régimes restrictifs qui ne fonctionnent pas sur le long terme. Elles perdaient du poids... pour le reprendre aussitôt.</p>
         
-        <p>J'ai créé La Méthode K après avoir constaté que <strong>90% des régimes échouent</strong> parce qu'ils ne sont pas adaptés au métabolisme unique de chaque personne.</p>
+        <p><strong>Pourquoi ?</strong> Parce que ces régimes ignorent une chose essentielle : <strong>votre métabolisme unique</strong>.</p>
         
-        <p>Chaque corps est différent. Chaque métabolisme fonctionne à son propre rythme. C'est pourquoi les régimes "universels" ne marchent jamais sur le long terme.</p>
-        
-        <p>Aujourd'hui, je veux rendre cette méthode accessible à <strong>TOUTES les femmes</strong> qui veulent se sentir bien dans leur corps, sans se ruiner chez un nutritionniste.</p>
+        <p>C'est pourquoi j'ai créé <strong>La Méthode K</strong> : un programme basé sur la science nutritionnelle qui s'adapte à VOUS, pas l'inverse.</p>
         
         <div class="credentials">
-          ✅ Coach en nutrition depuis 5 ans<br>
-          ✅ Plus de 500 clientes accompagnées avec succès<br>
-          ✅ Spécialiste du rééquilibrage alimentaire personnalisé<br>
-          ✅ Méthode basée sur le métabolisme individuel
+          ✅ Coach nutrition certifiée<br>
+          ✅ +500 clientes accompagnées<br>
+          ✅ Spécialisée en rééquilibrage alimentaire<br>
+          ✅ Approche scientifique et bienveillante
         </div>
       </div>
     </div>
 
     <!-- Objections Section -->
     <div class="objections-section">
-      <h2>❓ "Oui mais..."</h2>
-      
+      <h2>🤔 Vos Questions, Mes Réponses</h2>
       <div class="objections-grid">
         <div class="objection-item">
-          <div class="emoji">❌</div>
+          <div class="emoji">😰</div>
           <div>
-            <h4>"Je n'ai pas le temps de cuisiner"</h4>
-            <p>Tous les menus sont prêts en 15-20 minutes maximum. Même en rentrant tard du travail, vous pouvez suivre le programme sans stress.</p>
+            <h4>"Je n'ai pas le temps de cuisiner..."</h4>
+            <p>Chaque recette prend 15-20 minutes maximum. C'est moins de temps que de commander à emporter !</p>
           </div>
         </div>
 
         <div class="objection-item">
-          <div class="emoji">❌</div>
+          <div class="emoji">💰</div>
           <div>
-            <h4>"Je vais avoir faim toute la journée"</h4>
-            <p>Vous mangez 3 repas complets par jour + des collations si besoin. Vous ne vous privez de rien, vous rééquilibrez intelligemment.</p>
+            <h4>"C'est trop cher pour moi..."</h4>
+            <p>37€ pour 49 jours = 75 centimes par jour. Moins cher qu'un café au bar. Et vous économisez sur les fast-foods et plats préparés !</p>
           </div>
         </div>
 
         <div class="objection-item">
-          <div class="emoji">❌</div>
+          <div class="emoji">🥗</div>
           <div>
-            <h4>"Je ne sais pas cuisiner"</h4>
-            <p>Chaque menu est expliqué simplement, avec des ingrédients basiques. Si vous savez faire cuire des pâtes, vous pouvez suivre ce programme.</p>
+            <h4>"Je n'aime pas les légumes..."</h4>
+            <p>Les menus sont variés et équilibrés. Vous trouverez forcément des options qui vous plaisent parmi les 33 petits-déjeuners et dizaines de repas proposés.</p>
           </div>
         </div>
 
         <div class="objection-item">
-          <div class="emoji">❌</div>
+          <div class="emoji">👨‍👩‍👧</div>
           <div>
-            <h4>"37€ c'est trop cher pour moi"</h4>
-            <p>C'est 75 centimes par jour. Moins cher qu'un café. Et vous économisez sur les achats impulsifs, la malbouffe et les tentatives de régimes qui ne marchent pas.</p>
+            <h4>"Ma famille ne va pas aimer..."</h4>
+            <p>Ce sont des repas normaux et équilibrés ! Toute la famille peut manger la même chose. Fini les doubles préparations.</p>
+          </div>
+        </div>
+
+        <div class="objection-item">
+          <div class="emoji">❓</div>
+          <div>
+            <h4>"Et si ça ne marche pas pour moi ?"</h4>
+            <p>Garantie satisfait ou remboursé 14 jours + garantie perte de poids minimum 2kg en 30 jours. Vous ne prenez AUCUN risque.</p>
           </div>
         </div>
 
         <div class="objection-item positive">
           <div class="emoji">✅</div>
           <div>
-            <h4>"D'accord, je veux essayer SANS RISQUE"</h4>
-            <p>Testez pendant 14 jours. Si vous n'êtes pas satisfait(e), un simple email suffit pour être remboursé(e) intégralement. Aucune question posée.</p>
+            <h4>La Vraie Question C'est :</h4>
+            <p>"Combien de temps encore vais-je attendre avant de prendre soin de moi ?"</p>
           </div>
         </div>
       </div>
@@ -1527,105 +1817,123 @@
 
     <!-- Price Contrast -->
     <div class="price-contrast">
-      <h2>💰 Comparez les Options</h2>
+      <h2>💰 Combien Coûte Vraiment Votre Transformation ?</h2>
       <div class="comparison-grid">
         <div class="comparison-item rejected">
-          <div class="label">Coach nutritionniste (3 mois)</div>
+          <div class="label">Coach personnel (3 mois)</div>
           <div class="price">
-            <span>500€</span>
-            <i class="fas fa-times-circle icon reject"></i>
+            <span>600€</span>
+            <span class="icon reject">❌</span>
           </div>
         </div>
 
         <div class="comparison-item rejected">
-          <div class="label">Repas préparés livrés (1 mois)</div>
+          <div class="label">Nutritionniste (5 consultations)</div>
           <div class="price">
             <span>350€</span>
-            <i class="fas fa-times-circle icon reject"></i>
+            <span class="icon reject">❌</span>
           </div>
         </div>
 
         <div class="comparison-item rejected">
-          <div class="label">Application premium + suivi (3 mois)</div>
+          <div class="label">Abonnement salle de sport (3 mois)</div>
           <div class="price">
-            <span>99€</span>
-            <i class="fas fa-times-circle icon reject"></i>
+            <span>180€</span>
+            <span class="icon reject">❌</span>
+          </div>
+        </div>
+
+        <div class="comparison-item rejected">
+          <div class="label">Programme minceur en pharmacie</div>
+          <div class="price">
+            <span>120€</span>
+            <span class="icon reject">❌</span>
           </div>
         </div>
 
         <div class="comparison-item selected">
-          <div class="label">La Méthode K - Programme Complet (49 jours)</div>
+          <div class="label">🌿 La Méthode K (49 jours complets)</div>
           <div class="price">
             <span>37€</span>
-            <i class="fas fa-check-circle icon check"></i>
+            <span class="icon check">✅</span>
           </div>
         </div>
       </div>
+      
+      <p style="text-align: center; font-size: 1.15em; margin-top: 25px; color: var(--text-dark);">
+        <strong>Soit 75 centimes par jour</strong> pour transformer votre corps et votre vie.
+      </p>
     </div>
 
     <!-- Comparison Table -->
     <div class="comparison-table">
-      <h2>🆚 La Méthode K vs Les Autres Solutions</h2>
-      
+      <h2>📊 La Méthode K vs Les Autres Solutions</h2>
       <table>
         <thead>
           <tr>
-            <th>Critère</th>
-            <th>Nutritionniste</th>
-            <th>App Premium</th>
-            <th>Régime Classique</th>
+            <th>Critères</th>
+            <th>Régimes Classiques</th>
+            <th>Coach Personnel</th>
+            <th>Applications Payantes</th>
             <th class="highlight">La Méthode K</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Prix</strong></td>
-            <td>300-500€</td>
-            <td>99€/an</td>
             <td>Variable</td>
-            <td class="highlight">37€ à vie</td>
-          </tr>
-          <tr>
-            <td><strong>Menus personnalisés</strong></td>
-            <td>✅</td>
-            <td>❌</td>
-            <td>❌</td>
-            <td class="highlight">✅</td>
+            <td>500€+</td>
+            <td>10-30€/mois</td>
+            <td class="highlight"><strong>37€ une fois</strong></td>
           </tr>
           <tr>
             <td><strong>Menus détaillés</strong></td>
-            <td>⚠️ Parfois</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td class="highlight">✅ 49 jours</td>
+          </tr>
+          <tr>
+            <td><strong>Calculs nutritionnels</strong></td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td class="highlight">✅</td>
+          </tr>
+          <tr>
+            <td><strong>Listes de courses</strong></td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td class="highlight">✅</td>
+          </tr>
+          <tr>
+            <td><strong>Recettes rapides</strong></td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td class="highlight">✅ 15-20 min</td>
+          </tr>
+          <tr>
+            <td><strong>Personnalisé métabolisme</strong></td>
+            <td>❌</td>
             <td>✅</td>
             <td>❌</td>
             <td class="highlight">✅</td>
           </tr>
           <tr>
-            <td><strong>Sans privation</strong></td>
-            <td>✅</td>
+            <td><strong>Accès à vie</strong></td>
+            <td>❌</td>
             <td>❌</td>
             <td>❌</td>
             <td class="highlight">✅</td>
           </tr>
           <tr>
-            <td><strong>Durée engagement</strong></td>
-            <td>3-6 mois</td>
-            <td>12 mois</td>
-            <td>Indéfini</td>
-            <td class="highlight">49 jours</td>
-          </tr>
-          <tr>
-            <td><strong>Garantie remboursement</strong></td>
+            <td><strong>Garantie résultats</strong></td>
             <td>❌</td>
             <td>❌</td>
             <td>❌</td>
             <td class="highlight">✅ 14 jours</td>
-          </tr>
-          <tr>
-            <td><strong>Accès immédiat</strong></td>
-                        <td>❌</td>
-            <td>✅</td>
-            <td>✅</td>
-            <td class="highlight">✅</td>
           </tr>
         </tbody>
       </table>
@@ -1979,150 +2287,83 @@
     setInterval(updateBuyerCount, 45000);
 
     // Social Proof Notifications
-    const names = ['Sophie', 'Marie', 'Claire', 'Julie', 'Emma', 'Laura', 'Camille', 'Léa', 'Sarah', 'Charlotte', 'Anaïs', 'Manon', 'Chloé', 'Lucie'];
-    let notificationIndex = 0;
+    const names = ['Sophie', 'Marie', 'Claire', 'Julie', 'Emma', 'Laura', 'Camille', 'Léa', 'Sarah', 'Charlotte', 'Anaïs', 'Manon', 'Chloé','Lisa', 'Pauline', 'Mathilde'];
+    const notification = document.getElementById('social-notification');
+    const notificationName = document.getElementById('notification-name');
+    const notificationTime = document.getElementById('notification-time');
 
-    function showSocialNotification() {
-      const notification = document.getElementById('social-notification');
-      const nameElement = document.getElementById('notification-name');
-      const timeElement = document.getElementById('notification-time');
+    function showNotification() {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      const randomMinutes = Math.floor(Math.random() * 15) + 1;
       
-      nameElement.textContent = names[notificationIndex % names.length];
-      const minutes = Math.floor(Math.random() * 15) + 1;
-      timeElement.textContent = `Il y a ${minutes} min`;
+      notificationName.textContent = randomName;
+      notificationTime.textContent = `Il y a ${randomMinutes} min`;
       
       notification.style.display = 'block';
       
       setTimeout(() => {
         notification.style.display = 'none';
       }, 5000);
-      
-      notificationIndex++;
     }
 
-    setTimeout(showSocialNotification, 10000);
-    setInterval(showSocialNotification, 45000);
+    // Afficher la première notification après 5 secondes
+    setTimeout(showNotification, 5000);
+    // Puis toutes les 30 secondes
+    setInterval(showNotification, 30000);
 
-    // Floating CTA
-    const floatingCta = document.getElementById('floating-cta');
-    let hasShownFloatingCta = false;
+    // Floating CTA - Apparaît après scroll
+    const floatingCTA = document.getElementById('floating-cta');
+    let hasScrolled = false;
 
-    window.addEventListener('scroll', function() {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      
-      if (scrollPosition > windowHeight * 0.5 && !hasShownFloatingCta) {
-        floatingCta.classList.add('visible');
-        hasShownFloatingCta = true;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 800 && !hasScrolled) {
+        floatingCTA.classList.add('visible');
+        hasScrolled = true;
       }
     });
 
-    // Track CTA clicks
-    document.querySelectorAll('.cta-button').forEach(button => {
-      button.addEventListener('click', function() {
-        console.log('CTA clicked - Conversion tracking point');
-        
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'click', {
-            'event_category': 'CTA',
-            'event_label': 'Purchase Button',
-            'value': 37
-          });
-        }
-        
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'InitiateCheckout', {
-            value: 37.00,
-            currency: 'EUR'
-          });
-        }
-      });
-    });
-
-    // Exit Intent Detection
-    let exitIntentShown = false;
+    // Exit Intent Popup
     const exitPopup = document.getElementById('exit-popup');
-    const closePopupBtn = document.getElementById('close-popup');
-    const popupCode = document.getElementById('popup-code');
+    const closePopup = document.getElementById('close-popup');
+    let exitIntentShown = false;
 
-    // Détecter quand la souris sort de la fenêtre (desktop)
-    document.addEventListener('mouseleave', function(e) {
-      if (e.clientY <= 0 && !exitIntentShown) {
-        showExitPopup();
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY <= 0 && !exitIntentShown && window.scrollY > 500) {
+        exitPopup.classList.add('active');
+        exitIntentShown = true;
+        
+        // Stocker dans localStorage pour ne pas réafficher
+        localStorage.setItem('exitIntentShown', 'true');
       }
     });
 
-    // Détecter le scroll back sur mobile
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (scrollTop < lastScrollTop && scrollTop < 100 && !exitIntentShown && window.scrollY > 500) {
-        showExitPopup();
-      }
-      
-      lastScrollTop = scrollTop;
-    });
-
-    function showExitPopup() {
+    // Vérifier si déjà affiché
+    if (localStorage.getItem('exitIntentShown')) {
       exitIntentShown = true;
-      exitPopup.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      
-      localStorage.setItem('exitPopupShown', 'true');
-      
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'exit_intent_shown', {
-          'event_category': 'Popup',
-          'event_label': 'Exit Intent'
-        });
-      }
     }
 
     // Fermer le popup
-    closePopupBtn.addEventListener('click', function() {
+    closePopup.addEventListener('click', () => {
       exitPopup.classList.remove('active');
-      document.body.style.overflow = '';
     });
 
     // Fermer en cliquant sur l'overlay
-    exitPopup.addEventListener('click', function(e) {
+    exitPopup.addEventListener('click', (e) => {
       if (e.target === exitPopup) {
         exitPopup.classList.remove('active');
-        document.body.style.overflow = '';
       }
     });
 
     // Copier le code promo au clic
-    popupCode.addEventListener('click', function() {
-      const code = this.textContent;
-      navigator.clipboard.writeText(code).then(() => {
-        const originalText = this.textContent;
-        const originalBg = this.style.background;
-        
-        this.textContent = '✓ CODE COPIÉ !';
-        this.style.background = 'var(--success-green)';
-        
+    const promoCode = document.getElementById('popup-code');
+    promoCode.addEventListener('click', () => {
+      navigator.clipboard.writeText('METHODE5').then(() => {
+        const originalText = promoCode.textContent;
+        promoCode.textContent = '✅ COPIÉ !';
         setTimeout(() => {
-          this.textContent = originalText;
-          this.style.background = originalBg;
+          promoCode.textContent = originalText;
         }, 2000);
       });
-    });
-
-    // Empêcher l'affichage si déjà montré (optionnel - commenté pour tester)
-    // if (localStorage.getItem('exitPopupShown') === 'true') {
-    //   exitIntentShown = true;
-    // }
-
-    // Tracking des clics sur le CTA du popup
-    exitPopup.querySelector('.cta-button').addEventListener('click', function() {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'exit_popup_cta_click', {
-          'event_category': 'Conversion',
-          'event_label': 'Promo Code Used'
-        });
-      }
     });
 
     // Smooth scroll pour les ancres
@@ -2139,7 +2380,7 @@
       });
     });
 
-    // Animation au scroll
+    // Animation au scroll pour les éléments
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -2154,13 +2395,257 @@
       });
     }, observerOptions);
 
-    // Appliquer l'animation aux sections
+    // Observer tous les éléments avec animation
     document.querySelectorAll('.result-card, .testimonial-card, .feature-item, .faq-item').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
+
+    // Tracking des clics sur les CTA
+    document.querySelectorAll('.cta-button').forEach(button => {
+      button.addEventListener('click', () => {
+        // Analytics tracking (à configurer avec votre outil)
+        console.log('CTA clicked:', button.textContent);
+      });
+    });
+
+    // Countdown timer (optionnel - pour créer de l'urgence)
+    function startCountdown() {
+      const countdownElement = document.createElement('div');
+      countdownElement.style.cssText = `
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        z-index: 98;
+        font-weight: 700;
+        font-size: 0.95em;
+        text-align: center;
+      `;
+      
+      let timeLeft = 15 * 60; // 15 minutes en secondes
+      
+      function updateCountdown() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        countdownElement.innerHTML = `
+          ⏰ Offre expire dans<br>
+          <span style="font-size: 1.3em;">${minutes}:${seconds.toString().padStart(2, '0')}</span>
+        `;
+        
+        if (timeLeft > 0) {
+          timeLeft--;
+        } else {
+          countdownElement.innerHTML = '⏰ Offre expirée';
+        }
+      }
+      
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      
+      document.body.appendChild(countdownElement);
+      
+      // Masquer sur mobile
+      if (window.innerWidth < 768) {
+        countdownElement.style.display = 'none';
+      }
+    }
+
+    // Démarrer le countdown après 3 secondes
+    setTimeout(startCountdown, 3000);
+
+    // Prévenir la fermeture accidentelle de la page
+    window.addEventListener('beforeunload', (e) => {
+      if (!exitIntentShown) {
+        e.preventDefault();
+        e.returnValue = '';
+        return '';
+      }
+    });
+
+    // Mobile menu toggle (si nécessaire)
+    const mobileMenuToggle = document.createElement('button');
+    mobileMenuToggle.innerHTML = '☰';
+    mobileMenuToggle.style.cssText = `
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: var(--primary-green);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 1.5em;
+      cursor: pointer;
+      z-index: 101;
+    `;
+
+    if (window.innerWidth < 768) {
+      mobileMenuToggle.style.display = 'block';
+    }
+
+    document.body.appendChild(mobileMenuToggle);
+
+    // Ajustement responsive du countdown
+    window.addEventListener('resize', () => {
+      const countdown = document.querySelector('[style*="position: fixed"][style*="top: 60px"]');
+      if (countdown) {
+        if (window.innerWidth < 768) {
+          countdown.style.display = 'none';
+        } else {
+          countdown.style.display = 'block';
+        }
+      }
+    });
+
+    // Lazy loading pour les images (si vous en ajoutez)
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+
+    // Gestion du focus pour l'accessibilité
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (exitPopup.classList.contains('active')) {
+          exitPopup.classList.remove('active');
+        }
+      }
+    });
+
+    // Afficher un message de bienvenue personnalisé
+    setTimeout(() => {
+      console.log(`
+        🌿 La Méthode K - Résultats Calculés
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        ✅ Métabolisme de base: ${bmr} kcal/jour
+        ✅ Maintien du poids: ${tdee} kcal/jour
+        ✅ IMC: ${imc.toFixed(1)} kg/m²
+        ✅ Perte estimée: ${weightLoss} kg en 49 jours
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        🎯 Prêt(e) à commencer votre transformation ?
+      `);
+    }, 1000);
+
+    // Performance monitoring
+    window.addEventListener('load', () => {
+      const loadTime = performance.now();
+      console.log(`⚡ Page chargée en ${(loadTime / 1000).toFixed(2)}s`);
+    });
+
+    // Détecter si l'utilisateur est sur mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // Optimisations mobiles
+      document.body.classList.add('mobile-device');
+      
+      // Désactiver les animations trop lourdes sur mobile
+      document.querySelectorAll('.results-hero-section::before').forEach(el => {
+        if (el) el.style.animation = 'none';
+      });
+    }
+
+    // Sauvegarder les résultats dans le localStorage pour référence future
+    const resultsData = {
+      bmr: bmr,
+      tdee: tdee,
+      weight: weight,
+      height: height,
+      imc: imc.toFixed(1),
+      weightLoss: weightLoss,
+      targetWeight: targetWeight.toFixed(1),
+      date: new Date().toISOString()
+    };
+    
+    localStorage.setItem('methodek_results', JSON.stringify(resultsData));
+
+    // Fonction pour partager les résultats (optionnel)
+    function shareResults() {
+      const shareText = `🌿 J'ai calculé mes résultats avec La Méthode K!\n\n📊 Perte estimée: ${weightLoss}kg en 49 jours\n💪 Objectif: ${targetWeight.toFixed(1)}kg\n\n✨ Rejoins-moi dans cette transformation!`;
+      
+      if (navigator.share) {
+        navigator.share({
+          title: 'La Méthode K - Mes Résultats',
+          text: shareText,
+          url: window.location.href
+        }).catch(err => console.log('Erreur de partage:', err));
+      } else {
+        // Fallback: copier dans le presse-papier
+        navigator.clipboard.writeText(shareText + '\n\n' + window.location.href);
+        alert('✅ Résultats copiés dans le presse-papier!');
+      }
+    }
+
+    // Ajouter un bouton de partage (optionnel)
+    const shareButton = document.createElement('button');
+    shareButton.innerHTML = '📤 Partager mes résultats';
+    shareButton.style.cssText = `
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: var(--success-green);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 97;
+      transition: all 0.3s ease;
+    `;
+    
+    shareButton.addEventListener('click', shareResults);
+    shareButton.addEventListener('mouseenter', () => {
+      shareButton.style.transform = 'scale(1.05)';
+    });
+    shareButton.addEventListener('mouseleave', () => {
+      shareButton.style.transform = 'scale(1)';
+    });
+    
+    // Afficher après 10 secondes
+    setTimeout(() => {
+      document.body.appendChild(shareButton);
+      
+      // Masquer sur mobile si floating CTA visible
+      if (window.innerWidth < 768) {
+        shareButton.style.bottom = '140px';
+        shareButton.style.right = '10px';
+        shareButton.style.fontSize = '0.85em';
+        shareButton.style.padding = '10px 15px';
+      }
+    }, 10000);
+
+    // Empêcher le clic droit (optionnel - protection du contenu)
+    // document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    // Désactiver la sélection de texte sur certains éléments (optionnel)
+    // document.querySelectorAll('.cta-button, .price-section').forEach(el => {
+    //   el.style.userSelect = 'none';
+    // });
+
+    console.log('✅ Page des résultats chargée avec succès');
+    console.log('🎯 Tous les scripts sont opérationnels');
   </script>
 </body>
 </html>
