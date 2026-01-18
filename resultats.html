@@ -11,6 +11,7 @@
             --accent-green: #4a7c44;
             --success-green: #28a745;
             --orange: #ff6b35;
+            --red-alert: #e74c3c;
             --text-dark: #2c3e50;
             --text-medium: #546e7a;
             --bg-light: #f8fafc;
@@ -31,7 +32,20 @@
         .result-card .value { font-size: 2.5em; font-weight: 800; color: var(--primary-green); }
         .result-card.highlight-card .value { color: var(--orange); }
 
-        /* Program Details Section */
+        /* Animation Clignotante IMC */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        .blink-alert {
+            color: var(--red-alert) !important;
+            animation: blink 1s infinite;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* Program Details */
         .program-details-section { padding: 40px 0; background: #fff; }
         .methodology-box { background: var(--bg-light); border-radius: 20px; padding: 30px; margin-bottom: 30px; border: 1px solid #e0e0e0; }
         .paliers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 25px; }
@@ -49,10 +63,9 @@
         .objections-section { background: var(--bg-light); padding: 50px 20px; border-radius: 30px; margin: 40px 0; }
         .objections-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .objection-item { display: flex; gap: 15px; background: white; padding: 20px; border-radius: 15px; }
-        .objection-item h4 { margin: 0 0 10px 0; color: var(--primary-green); }
 
         /* Notification */
-        .social-notification { position: fixed; bottom: 20px; left: 20px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: none; z-index: 100; border-left: 4px solid var(--success-green); font-size: 0.9em; }
+        .social-notification { position: fixed; bottom: 20px; left: 20px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: none; z-index: 100; border-left: 4px solid var(--success-green); }
 
         @media (max-width: 768px) {
             .results-grid, .paliers-grid, .objections-grid { grid-template-columns: 1fr; }
@@ -67,8 +80,8 @@
     <div class="results-hero-section">
         <div class="results-header">
             <div style="font-size: 3em;">📊</div>
-            <h1>Analyse de Profil Terminée</h1>
-            <p>Voici vos indicateurs clés et votre projection de transformation</p>
+            <h1>Résultats de votre Analyse</h1>
+            <p>Données calculées selon votre profil métabolique actuel</p>
         </div>
 
         <div class="results-grid">
@@ -78,112 +91,111 @@
                 <div class="unit">kcal/jour</div>
             </div>
             <div class="result-card">
-                <h3>IMC Actuel</h3>
-                <div class="value" id="imc-result">0.0</div>
-                <div id="imc-category" style="font-weight:bold; color: var(--accent-green);">...</div>
+                <h3>Statut IMC</h3>
+                <div class="value" id="imc-result" style="font-size: 2em; margin-bottom: 5px;">0.0</div>
+                <div id="imc-category" style="font-weight:bold;">Analyse...</div>
             </div>
             <div class="result-card highlight-card">
-                <h3>🎯 Votre Nouvelle Silhouette</h3>
+                <h3>🎯 Transformation Projetée</h3>
                 <div class="value" id="estimated-loss">0</div>
                 <div class="unit" style="font-weight: bold; color: var(--orange);">
-                    kg d'ici <span id="target-date" style="text-decoration: underline;">...</span>
+                    kg d'ici <span id="target-date">...</span>
                 </div>
             </div>
         </div>
         
-        <a href="#program" class="cta-button">Découvrir la méthode <i class="fas fa-arrow-down"></i></a>
+        <a href="#program" class="cta-button">Découvrir comment y arriver <i class="fas fa-arrow-down"></i></a>
     </div>
 
     <div id="program" class="program-details-section">
         <h2 style="text-align: center; color: var(--text-dark); margin-bottom: 30px;">
-            Comment allons-nous perdre ces <span style="color: var(--orange);" id="loss-preview">...</span> kg ensemble ?
+            Atteindre ces -<span style="color: var(--orange);" id="loss-preview">...</span> kg sans frustration
         </h2>
         
         <div class="methodology-box">
-            <h3>🔄 Le Système des 3 Paliers Métaboliques</h3>
-            <p>La Méthode K est basée sur un <strong>rééquilibrage progressif</strong>. On ne s'affame pas, on réapprend à son corps à brûler les graisses efficacement :</p>
+            <h3>🔄 Votre Parcours en 3 Paliers</h3>
+            <p>Le secret pour ne pas reprendre est la remontée calorique progressive. Votre métabolisme se renforce semaine après semaine :</p>
             
             <div class="paliers-grid">
                 <div class="palier">
                     <div class="week-tag">Étape 1</div>
-                    <h4>Activation</h4>
-                    <p><strong>1300 kcal :</strong> On déstocke les graisses anciennes et on relance la machine.</p>
+                    <h4>Le Déclic</h4>
+                    <p><strong>1300 kcal :</strong> On réveille le déstockage des graisses profondes.</p>
                 </div>
                 <div class="palier">
                     <div class="week-tag">Étape 2</div>
-                    <h4>Croisière</h4>
-                    <p><strong>1400 kcal :</strong> On stabilise la perte. Votre énergie remonte en flèche.</p>
+                    <h4>Équilibre</h4>
+                    <p><strong>1400 kcal :</strong> La perte continue tout en stabilisant votre énergie.</p>
                 </div>
                 <div class="palier">
                     <div class="week-tag">Étape 3</div>
-                    <h4>Pérennisation</h4>
-                    <p><strong>1500 kcal :</strong> On fixe les bonnes habitudes pour ne JAMAIS reprendre.</p>
+                    <h4>Durabilité</h4>
+                    <p><strong>1500 kcal :</strong> On installe les habitudes pour une silhouette mince à vie.</p>
                 </div>
             </div>
         </div>
 
         <div class="content-breakdown">
-            <h3>📦 Ce que contient votre programme complet :</h3>
+            <h3>📦 Votre programme complet contient :</h3>
             <ul class="check-list">
-                <li>✅ <strong>49 jours de menus clé-en-main :</strong> Finie la charge mentale de "qu'est-ce qu'on mange ?"</li>
-                <li>✅ <strong>33 options de petits-déjeuners :</strong> Sucrés ou salés selon vos envies du matin.</li>
-                <li>✅ <strong>Recettes Rapides (15-20 min) :</strong> Idéal pour les femmes actives et les familles.</li>
-                <li>✅ <strong>Listes de courses :</strong> Organisées pour vous simplifier la vie en magasin.</li>
-                <li>✅ <strong>Accès Illimité :</strong> Vous gardez le programme à vie sur votre téléphone ou PC.</li>
+                <li>✅ <strong>49 jours de menus :</strong> Du matin au soir, tout est déjà prêt pour vous.</li>
+                <li>✅ <strong>33 options de petits-déjeuners :</strong> Pour varier selon vos envies (sucré/salé).</li>
+                <li>✅ <strong>Recettes Familiales :</strong> Des plats savoureux prêts en 15-20 minutes.</li>
+                <li>✅ <strong>Listes de courses :</strong> Pour optimiser vos sorties au supermarché.</li>
+                <li>✅ <strong>Accès Illimité :</strong> Vos menus accessibles partout, tout le temps.</li>
             </ul>
         </div>
 
         <div class="habit-focus">
-            💡 <strong>Le saviez-vous ?</strong> Ce n'est pas un régime, c'est une éducation alimentaire. À la fin, vous saurez exactement comment manger pour rester mince, sans frustration.
+            💡 <strong>Note importante :</strong> Ce n'est pas un régime privatif. C'est un guide pour apprendre à manger de tout sans culpabilité, tout en maintenant votre déficit.
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
             <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
-                Je Commence Ma Transformation pour 37€ <i class="fas fa-arrow-right"></i>
+                Commencer ma Transformation pour 37€ <i class="fas fa-arrow-right"></i>
             </a>
-            <p style="font-size: 0.9em; color: var(--text-medium);">💳 Paiement unique • Aucun abonnement caché • Garantie 14 jours</p>
+            <p style="font-size: 0.9em; color: var(--text-medium);">Sécurisé • Accès Immédiat • Garantie 14 jours</p>
         </div>
     </div>
 
     <div class="objections-section">
-        <h2 style="text-align: center; margin-bottom: 40px;">Rassurez-vous, c'est possible pour vous aussi :</h2>
+        <h2 style="text-align: center; margin-bottom: 40px;">Pourquoi ça va marcher cette fois ?</h2>
         <div class="objections-grid">
             <div class="objection-item">
                 <div style="font-size: 1.5em;">📉</div>
                 <div>
-                    <h4>Adieu l'effet Yoyo</h4>
-                    <p>En augmentant les calories par paliers, votre métabolisme reste actif. Vous ne reprenez pas tout au premier écart.</p>
-                </div>
-            </div>
-            <div class="objection-item">
-                <div style="font-size: 1.5em;">👨‍👩‍👧</div>
-                <div>
-                    <h4>Compatible vie de famille</h4>
-                    <p>Les recettes plaisent à tout le monde. Pas besoin de cuisiner deux plats différents le soir.</p>
+                    <h4>Relance Métabolique</h4>
+                    <p>En augmentant les calories, vous évitez le mode "famine" responsable de l'effet yoyo.</p>
                 </div>
             </div>
             <div class="objection-item">
                 <div style="font-size: 1.5em;">🍕</div>
                 <div>
-                    <h4>Aucun aliment interdit</h4>
-                    <p>Vous apprenez à tout manger dans les bonnes proportions. La clé du succès durable, c'est le plaisir.</p>
+                    <h4>Zéro Interdit</h4>
+                    <p>Le plaisir est au cœur du programme. Pas de craquage car aucune privation totale.</p>
                 </div>
             </div>
-            <div class="objection-item positive" style="border: 2px solid var(--success-green);">
+            <div class="objection-item">
                 <div style="font-size: 1.5em;">🛡️</div>
                 <div>
-                    <h4>Garantie Résultats</h4>
-                    <p>Si vous ne perdez pas au moins 2kg en 30 jours, je vous rembourse. Vous n'avez aucun risque financier.</p>
+                    <h4>Résultats Garantis</h4>
+                    <p>Si après 30 jours vous n'avez pas perdu au moins 2kg, je vous rembourse intégralement.</p>
+                </div>
+            </div>
+            <div class="objection-item">
+                <div style="font-size: 1.5em;">⏰</div>
+                <div>
+                    <h4>Gain de temps</h4>
+                    <p>Menus et courses optimisés pour les emplois du temps chargés.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div style="text-align: center; padding: 60px 20px; background: var(--bg-light); border-radius: 30px; margin-bottom: 50px;">
-        <h2>Prête à vous sentir mieux dans votre corps ?</h2>
-        <p>Prenez la décision aujourd'hui pour voir les résultats d'ici <span class="final-target-date" style="font-weight: bold;">...</span></p>
+        <h2>Prête à voir ce changement d'ici <span class="final-target-date" style="font-weight: bold; color: var(--primary-green);">...</span> ?</h2>
         <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button">
-            Accéder à mes menus maintenant <i class="fas fa-rocket"></i>
+            Je veux mes menus maintenant <i class="fas fa-rocket"></i>
         </a>
     </div>
 </div>
@@ -193,85 +205,75 @@
 </div>
 
 <script>
-    // 1. RÉCUPÉRATION DES PARAMÈTRES URL
+    // 1. RÉCUPÉRATION DES PARAMÈTRES
     const params = new URLSearchParams(window.location.search);
-    const bmr = parseInt(params.get('bmr')) || 1450;
-    const tdee = parseInt(params.get('tdee')) || 1850;
-    const weight = parseFloat(params.get('weight')) || 75;
+    const bmr = parseInt(params.get('bmr')) || 1400;
+    const tdee = parseInt(params.get('tdee')) || 1800;
+    const weight = parseFloat(params.get('weight')) || 70;
     const height = parseFloat(params.get('height')) || 165;
 
-    // 2. CALCUL PROJETÉ SUR 3 MOIS (90 JOURS)
-    function calculateLoss() {
-        const week1 = (tdee - 1300) * 7;
-        const week2_3 = (tdee - 1400) * 14;
-        const remaining = (tdee - 1500) * 69;
-        const totalDeficit = week1 + week2_3 + remaining;
-        return Math.max(3.5, totalDeficit / 7700).toFixed(1);
+    // 2. CALCULS SUR 3 MOIS (90 JOURS)
+    function calculateFullLoss() {
+        const d1 = (tdee - 1300) * 7;
+        const d2 = (tdee - 1400) * 14;
+        const d3 = (tdee - 1500) * 69;
+        return Math.max(3, (d1 + d2 + d3) / 7700).toFixed(1);
     }
 
-    const loss = calculateLoss();
+    const loss = calculateFullLoss();
     const imc = weight / Math.pow(height / 100, 2);
 
-    // 3. AFFICHAGE DES CHIFFRES
+    // 3. AFFICHAGE DES RÉSULTATS
     document.getElementById('bmr-result').textContent = bmr;
     document.getElementById('imc-result').textContent = imc.toFixed(1);
     document.getElementById('estimated-loss').textContent = "-" + loss;
     document.getElementById('loss-preview').textContent = loss;
 
-    function setIMCText(imc) {
-        if (imc < 18.5) return 'Légèreté';
-        if (imc < 25) return 'Poids Forme';
-        if (imc < 30) return 'Surpoids';
-        return 'Obésité';
-    }
-    document.getElementById('imc-category').textContent = setIMCText(imc);
+    // 4. FONCTION IMC DYNAMIQUE (ROUGE CLIGNOTANT)
+    function setIMCCategory(imcValue) {
+        const cat = document.getElementById('imc-category');
+        let text = '';
+        let isDanger = false;
 
-    // 4. PSYCHOLOGIE DU FUTUR SOI (DATE DANS 3 MOIS)
-    function setTargetDate() {
-        const options = { month: 'long', year: 'numeric' };
+        if (imcValue < 18.5) { text = 'Maigreur'; isDanger = true; }
+        else if (imcValue < 25) { text = 'Poids Forme'; isDanger = false; }
+        else if (imcValue < 30) { text = 'Surpoids'; isDanger = true; }
+        else { text = 'Obésité'; isDanger = true; }
+
+        cat.textContent = text;
+        if (isDanger) {
+            cat.classList.add('blink-alert');
+        } else {
+            cat.style.color = 'var(--success-green)';
+            cat.classList.remove('blink-alert');
+        }
+    }
+    setIMCCategory(imc);
+
+    // 5. DATE DANS 3 MOIS (FUTUR SOI)
+    function setFutureDate() {
         const date = new Date();
         date.setMonth(date.getMonth() + 3);
-        const formatted = date.toLocaleDateString('fr-FR', options);
+        const formatted = date.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
         const capitalized = formatted.charAt(0).toUpperCase() + formatted.slice(1);
         
         document.getElementById('target-date').textContent = capitalized;
         document.querySelectorAll('.final-target-date').forEach(el => el.textContent = capitalized);
     }
-    setTargetDate();
+    setFutureDate();
 
-    // 5. NOTIFICATIONS SOCIALES
-    const names = ['Karine', 'Nathalie', 'Julie', 'Élodie', 'Sandrine', 'Amandine', 'Sonia'];
-    function showNotif() {
+    // 6. NOTIFS ET ANIMATIONS
+    const names = ['Camille', 'Léa', 'Stéphanie', 'Isabelle', 'Chloé', 'Amélie'];
+    function showSocial() {
         const name = names[Math.floor(Math.random() * names.length)];
-        const notif = document.getElementById('social-notification');
-        document.getElementById('notification-text').textContent = `⚡ ${name} vient de télécharger la méthode`;
-        notif.style.display = 'block';
-        setTimeout(() => notif.style.display = 'none', 4000);
+        const el = document.getElementById('social-notification');
+        document.getElementById('notification-text').textContent = `✅ ${name} a commencé son programme`;
+        el.style.display = 'block';
+        setTimeout(() => el.style.display = 'none', 4000);
     }
-    setTimeout(showNotif, 4000);
-    setInterval(showNotif, 25000);
-
-    // 6. ANIMATIONS
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    });
-
-    document.querySelectorAll('.result-card, .palier, .objection-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.5s ease-out';
-        observer.observe(el);
-    });
+    setTimeout(showSocial, 3000);
+    setInterval(showSocial, 20000);
 </script>
 
-</body>
-</html>
-    console.log('🎯 Tous les scripts sont opérationnels');
-  </script>
 </body>
 </html>
