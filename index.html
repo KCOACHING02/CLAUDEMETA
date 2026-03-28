@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculez Votre Potentiel de Transformation | La Méthode K</title>
+    <meta name="description" content="Calculez votre potentiel de transformation avec La Méthode K. Découvrez combien vous pouvez perdre en 49 jours grâce à notre calculateur personnalisé.">
+    <meta property="og:title" content="Calculez Votre Potentiel de Transformation | La Méthode K">
+    <meta property="og:description" content="Découvrez combien vous pouvez perdre en 49 jours avec La Méthode K.">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -78,7 +82,6 @@
         }
 
         h1 {
-            font-family: var(--font-primary);
             font-weight: 800;
             letter-spacing: -0.02em;
             color: var(--text-dark);
@@ -133,7 +136,10 @@
         }
 
         input[type="radio"] {
-            display: none;
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
         }
 
         .gender-label {
@@ -365,7 +371,7 @@
                 <select id="activity">
                     <option value="1.2">Sédentaire (moins de 5000 pas/jour) 🛋️</option>
                     <option value="1.375">Faiblement actif(ve) (5000-7499 pas/jour) 🚶</option>
-                    <option value="1.55">Modérément actif(ve) (10000-12499 pas/jour) 🏃‍♀️</option>
+                    <option value="1.55">Modérément actif(ve) (7500-12499 pas/jour) 🏃‍♀️</option>
                     <option value="1.725">Actif(ve) (plus de 12500 pas/jour) 🏋️‍♂️</option>
                     <option value="1.9">Très actif(ve) (Travail physique intense) 🤸</option>
                 </select>
