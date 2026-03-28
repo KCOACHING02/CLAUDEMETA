@@ -142,6 +142,14 @@
         .loading-step { display: flex; align-items: center; gap: 10px; color: var(--text-medium); font-size: 0.9em; opacity: 0; animation: fadeInUp 0.4s ease forwards; }
         .loading-step i { color: var(--success-green); }
 
+        /* Motivational messages */
+        .step-motivation {
+            background: var(--bg-light); padding: 12px 16px; border-radius: 12px;
+            font-size: 0.85em; color: var(--accent-green); font-weight: 600;
+            margin-top: 16px; display: flex; align-items: center; gap: 8px;
+            border: 1px solid #e0e8d8;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .quiz-container { padding: 30px 22px; margin: 0 15px 40px; }
@@ -161,14 +169,14 @@
 
     <div class="progress-container">
         <div class="progress-bar">
-            <div class="progress-fill" id="progressFill" style="width: 20%"></div>
+            <div class="progress-fill" id="progressFill" style="width: 14.3%"></div>
         </div>
     </div>
 
     <div class="quiz-container">
         <!-- Step 1: Gender -->
         <div class="step active" data-step="1">
-            <div class="step-label">Etape 1 sur 5</div>
+            <div class="step-label">Étape 1 sur 7</div>
             <h2>Quel est votre sexe ?</h2>
             <p class="hint">Cela nous permet d'adapter les calculs a votre metabolisme.</p>
             <div class="gender-group">
@@ -192,7 +200,7 @@
 
         <!-- Step 2: Age -->
         <div class="step" data-step="2">
-            <div class="step-label">Etape 2 sur 5</div>
+            <div class="step-label">Étape 2 sur 7</div>
             <h2>Quel age avez-vous ?</h2>
             <p class="hint">Votre metabolisme evolue avec l'age, c'est important pour le calcul.</p>
             <div class="input-group">
@@ -202,11 +210,12 @@
             <div class="error-msg" id="age-error">Veuillez entrer un age entre 15 et 100 ans.</div>
             <button class="btn-next" onclick="validateAndNext('age', 3)">Continuer <i class="fas fa-arrow-right"></i></button>
             <button class="btn-back" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Retour</button>
+            <div class="step-motivation"><i class="fas fa-chart-line"></i> Votre métabolisme est unique, ces données sont essentielles.</div>
         </div>
 
         <!-- Step 3: Weight -->
         <div class="step" data-step="3">
-            <div class="step-label">Etape 3 sur 5</div>
+            <div class="step-label">Étape 3 sur 7</div>
             <h2>Quel est votre poids actuel ?</h2>
             <p class="hint">Votre poids de depart est essentiel pour estimer vos resultats.</p>
             <div class="input-group">
@@ -216,11 +225,12 @@
             <div class="error-msg" id="weight-error">Veuillez entrer un poids entre 30 et 300 kg.</div>
             <button class="btn-next" onclick="validateAndNext('weight', 4)">Continuer <i class="fas fa-arrow-right"></i></button>
             <button class="btn-back" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Retour</button>
+            <div class="step-motivation"><i class="fas fa-lock"></i> Vos données restent 100% confidentielles.</div>
         </div>
 
         <!-- Step 4: Height -->
         <div class="step" data-step="4">
-            <div class="step-label">Etape 4 sur 5</div>
+            <div class="step-label">Étape 4 sur 7</div>
             <h2>Quelle est votre taille ?</h2>
             <p class="hint">Combinee a votre poids, elle permet de calculer votre IMC.</p>
             <div class="input-group">
@@ -230,11 +240,12 @@
             <div class="error-msg" id="height-error">Veuillez entrer une taille entre 120 et 250 cm.</div>
             <button class="btn-next" onclick="validateAndNext('height', 5)">Continuer <i class="fas fa-arrow-right"></i></button>
             <button class="btn-back" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Retour</button>
+            <div class="step-motivation"><i class="fas fa-bullseye"></i> Plus que quelques étapes pour votre programme personnalisé !</div>
         </div>
 
         <!-- Step 5: Activity -->
         <div class="step" data-step="5">
-            <div class="step-label">Etape 5 sur 5</div>
+            <div class="step-label">Étape 5 sur 7</div>
             <h2>Quel est votre niveau d'activite ?</h2>
             <p class="hint">Selectionnez ce qui correspond le mieux a votre quotidien.</p>
             <div class="activity-options">
@@ -279,8 +290,86 @@
                     </div>
                 </label>
             </div>
-            <button class="btn-submit" onclick="submitQuiz()"><i class="fas fa-bolt"></i> Voir mes resultats</button>
+            <button class="btn-next" onclick="nextStep(6)">Continuer <i class="fas fa-arrow-right"></i></button>
             <button class="btn-back" onclick="prevStep(4)"><i class="fas fa-arrow-left"></i> Retour</button>
+        </div>
+
+        <!-- Step 6: Objective -->
+        <div class="step" data-step="6">
+            <div class="step-label">Étape 6 sur 7</div>
+            <h2>Quel est votre objectif principal ?</h2>
+            <p class="hint">Cela nous aide à personnaliser votre programme.</p>
+            <div class="activity-options">
+                <label class="activity-option selected" onclick="selectObjective(this, 'health')">
+                    <input type="radio" class="activity-radio" name="objective" value="health" checked>
+                    <div class="activity-icon">💪</div>
+                    <div>
+                        <div class="activity-text">Me sentir mieux dans mon corps</div>
+                        <div class="activity-desc">Santé, énergie, bien-être au quotidien</div>
+                    </div>
+                </label>
+                <label class="activity-option" onclick="selectObjective(this, 'event')">
+                    <input type="radio" class="activity-radio" name="objective" value="event">
+                    <div class="activity-icon">👗</div>
+                    <div>
+                        <div class="activity-text">Un événement approche</div>
+                        <div class="activity-desc">Mariage, vacances, occasion spéciale</div>
+                    </div>
+                </label>
+                <label class="activity-option" onclick="selectObjective(this, 'confidence')">
+                    <input type="radio" class="activity-radio" name="objective" value="confidence">
+                    <div class="activity-icon">🪞</div>
+                    <div>
+                        <div class="activity-text">Retrouver confiance en moi</div>
+                        <div class="activity-desc">Me sentir bien dans mes vêtements</div>
+                    </div>
+                </label>
+                <label class="activity-option" onclick="selectObjective(this, 'longterm')">
+                    <input type="radio" class="activity-radio" name="objective" value="longterm">
+                    <div class="activity-icon">🎯</div>
+                    <div>
+                        <div class="activity-text">Perdre du poids durablement</div>
+                        <div class="activity-desc">En finir avec l'effet yoyo</div>
+                    </div>
+                </label>
+            </div>
+            <button class="btn-next" onclick="nextStep(7)">Continuer <i class="fas fa-arrow-right"></i></button>
+            <button class="btn-back" onclick="prevStep(5)"><i class="fas fa-arrow-left"></i> Retour</button>
+        </div>
+
+        <!-- Step 7: Timeline -->
+        <div class="step" data-step="7">
+            <div class="step-label">Étape 7 sur 7</div>
+            <h2>Quand voulez-vous voir des résultats ?</h2>
+            <p class="hint">La Méthode K s'adapte à votre rythme.</p>
+            <div class="activity-options">
+                <label class="activity-option selected" onclick="selectTimeline(this, 'asap')">
+                    <input type="radio" class="activity-radio" name="timeline" value="asap" checked>
+                    <div class="activity-icon">⚡</div>
+                    <div>
+                        <div class="activity-text">Le plus vite possible</div>
+                        <div class="activity-desc">Je suis motivé(e) à 100%</div>
+                    </div>
+                </label>
+                <label class="activity-option" onclick="selectTimeline(this, '1month')">
+                    <input type="radio" class="activity-radio" name="timeline" value="1month">
+                    <div class="activity-icon">📅</div>
+                    <div>
+                        <div class="activity-text">D'ici 1 mois</div>
+                        <div class="activity-desc">J'ai un objectif précis en tête</div>
+                    </div>
+                </label>
+                <label class="activity-option" onclick="selectTimeline(this, '3months')">
+                    <input type="radio" class="activity-radio" name="timeline" value="3months">
+                    <div class="activity-icon">🗓️</div>
+                    <div>
+                        <div class="activity-text">D'ici 3 mois</div>
+                        <div class="activity-desc">Je préfère un rythme progressif</div>
+                    </div>
+                </label>
+            </div>
+            <button class="btn-submit" onclick="submitQuiz()"><i class="fas fa-bolt"></i> Voir mes résultats personnalisés</button>
+            <button class="btn-back" onclick="prevStep(6)"><i class="fas fa-arrow-left"></i> Retour</button>
         </div>
     </div>
 
@@ -297,7 +386,7 @@
 
     <script>
         let currentStep = 1;
-        const totalSteps = 5;
+        const totalSteps = 7;
 
         function updateProgress(step) {
             document.getElementById('progressFill').style.width = (step / totalSteps * 100) + '%';
@@ -336,7 +425,19 @@
         }
 
         function selectActivity(el, value) {
-            document.querySelectorAll('.activity-option').forEach(o => o.classList.remove('selected'));
+            document.querySelectorAll('[data-step="5"] .activity-option').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            el.querySelector('input').checked = true;
+        }
+
+        function selectObjective(el, value) {
+            document.querySelectorAll('[data-step="6"] .activity-option').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            el.querySelector('input').checked = true;
+        }
+
+        function selectTimeline(el, value) {
+            document.querySelectorAll('[data-step="7"] .activity-option').forEach(o => o.classList.remove('selected'));
             el.classList.add('selected');
             el.querySelector('input').checked = true;
         }

@@ -58,7 +58,7 @@
 
         /* ===== HERO ===== */
         .hero {
-            padding: 140px 24px 80px; text-align: center;
+            padding: 180px 24px 80px; text-align: center;
             background: linear-gradient(180deg, var(--bg-green) 0%, var(--white) 100%);
         }
         .hero-inner { max-width: 800px; margin: 0 auto; }
@@ -258,6 +258,56 @@
             .section-title { font-size: 1.7em; }
         }
 
+        /* ===== PROMO BANNER ===== */
+        .promo-banner {
+            background: linear-gradient(90deg, var(--orange), #ff8c42);
+            color: white; text-align: center; padding: 10px 24px;
+            font-size: 0.85em; font-weight: 600; position: relative; z-index: 101;
+        }
+        .promo-inner { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .promo-link { color: white; text-decoration: underline; font-weight: 800; }
+
+        /* ===== TOAST NOTIFICATION ===== */
+        .social-toast {
+            position: fixed; bottom: 24px; left: 24px; background: white;
+            padding: 14px 20px; border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            display: flex; align-items: center; gap: 12px; z-index: 200;
+            transform: translateX(-120%); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 340px; border-left: 4px solid var(--success-green);
+        }
+        .social-toast.show { transform: translateX(0); }
+        .social-toast-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-green); display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0; }
+        .social-toast-text { font-size: 0.82em; color: var(--text-dark); line-height: 1.4; }
+        .social-toast-text strong { color: var(--primary-green); }
+        .social-toast-time { font-size: 0.75em; color: var(--text-light); }
+
+        /* ===== EXIT POPUP ===== */
+        .exit-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 300; display: none;
+            justify-content: center; align-items: center; padding: 24px;
+        }
+        .exit-overlay.show { display: flex; }
+        .exit-popup {
+            background: white; border-radius: 24px; padding: 40px 36px;
+            max-width: 480px; width: 100%; text-align: center; position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2); animation: fadeInUp 0.4s ease-out;
+        }
+        .exit-popup-close {
+            position: absolute; top: 16px; right: 20px; background: none; border: none;
+            font-size: 1.5em; color: var(--text-light); cursor: pointer;
+        }
+        .exit-popup h2 { font-size: 1.6em; font-weight: 900; color: var(--text-dark); margin-bottom: 10px; }
+        .exit-popup p { color: var(--text-medium); font-size: 0.95em; margin-bottom: 24px; line-height: 1.6; }
+        .exit-popup .exit-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: linear-gradient(135deg, var(--orange), #ff8c42); color: white;
+            padding: 18px 36px; border-radius: 50px; text-decoration: none;
+            font-weight: 800; font-size: 1.1em; transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(255,107,53,0.3);
+        }
+        .exit-popup .exit-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,107,53,0.4); }
+
         @media (prefers-reduced-motion: reduce) {
             .fade-in { opacity: 1; transform: none; transition: none; }
             html { scroll-behavior: auto; }
@@ -369,6 +419,14 @@
 </head>
 <body>
 
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" id="promoBanner">
+        <div class="promo-inner">
+            <span><i class="fas fa-fire"></i> <strong>Offre de lancement -69%</strong> — Plus que <span id="promoSpots">23</span> places à ce prix</span>
+            <a href="calculateur.html" class="promo-link">En profiter →</a>
+        </div>
+    </div>
+
     <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
@@ -389,7 +447,7 @@
                 <i class="fas fa-bolt"></i> Calculer mon potentiel gratuitement
             </a>
             <div class="hero-trust">
-                <div class="hero-trust-item"><i class="fas fa-users"></i> +500 clients</div>
+                <div class="hero-trust-item"><i class="fas fa-users"></i> +<span class="counter" data-target="537">0</span> transformations</div>
                 <div class="hero-trust-item"><i class="fas fa-star"></i> 4.8/5 de satisfaction</div>
                 <div class="hero-trust-item"><i class="fas fa-shield-halved"></i> Satisfait ou remboursé</div>
             </div>
@@ -589,7 +647,7 @@
                 <i class="fas fa-calculator"></i> Calculer mon potentiel
             </a>
             <div class="price-info">
-                Programme complet : <span class="price-old">97,00€</span> <strong>29,99€</strong> - Paiement unique
+                Programme complet : <span class="price-old">147,00€</span> <strong>29,99€</strong> — Paiement unique, accès à vie
             </div>
         </div>
     </section>
@@ -598,6 +656,27 @@
     <footer class="footer">
         <p>&copy; 2026 La Méthode K - Tous droits réservés</p>
     </footer>
+
+    <!-- SOCIAL PROOF TOAST -->
+    <div class="social-toast" id="socialToast">
+        <div class="social-toast-icon">✅</div>
+        <div>
+            <div class="social-toast-text" id="toastText"></div>
+            <div class="social-toast-time" id="toastTime"></div>
+        </div>
+    </div>
+
+    <!-- EXIT INTENT POPUP -->
+    <div class="exit-overlay" id="exitOverlay">
+        <div class="exit-popup">
+            <button class="exit-popup-close" onclick="document.getElementById('exitOverlay').classList.remove('show')">&times;</button>
+            <div style="font-size: 2.5em; margin-bottom: 16px;">⏳</div>
+            <h2>Attendez !</h2>
+            <p>Votre programme personnalisé vous attend. Découvrez gratuitement combien vous pouvez perdre en 49 jours.</p>
+            <a href="calculateur.html" class="exit-cta"><i class="fas fa-bolt"></i> Voir mon potentiel</a>
+            <p style="margin-top: 16px; font-size: 0.8em; color: var(--text-light);">Plus que <strong style="color: var(--orange);">23 places</strong> à -69%</p>
+        </div>
+    </div>
 
     <script>
         // Scroll animations
@@ -619,6 +698,60 @@
                 document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
                 if (!wasOpen) item.classList.add('open');
             });
+        });
+
+        // Counter animation
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target);
+            const duration = 2000;
+            const start = performance.now();
+            function update(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(target * eased);
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        // Social proof toast notifications
+        const toastMessages = [
+            { name: 'Sophie de Lyon', text: 'a rejoint le programme', time: 'il y a 3h' },
+            { name: 'Marc de Paris', text: 'a perdu 4 kg en 2 semaines', time: 'il y a 5h' },
+            { name: 'Laura de Bordeaux', text: 'a rejoint le programme', time: 'il y a 7h' },
+            { name: 'Julien de Marseille', text: 'a atteint son objectif', time: 'il y a 1 jour' },
+            { name: 'Camille de Toulouse', text: 'a rejoint le programme', time: 'il y a 2h' },
+        ];
+        let toastIndex = 0;
+        function showToast() {
+            const toast = document.getElementById('socialToast');
+            const msg = toastMessages[toastIndex % toastMessages.length];
+            document.getElementById('toastText').innerHTML = '<strong>' + msg.name + '</strong> ' + msg.text;
+            document.getElementById('toastTime').textContent = msg.time;
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 4000);
+            toastIndex++;
+        }
+        setTimeout(showToast, 5000);
+        setInterval(showToast, 15000);
+
+        // Exit intent popup
+        let exitShown = false;
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY < 5 && !exitShown) {
+                document.getElementById('exitOverlay').classList.add('show');
+                exitShown = true;
+            }
         });
     </script>
 
