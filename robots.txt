@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kcoaching02.github.io/CLAUDEMETA/sitemap.xml

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculez Votre Potentiel | La Méthode K</title>
     <meta name="description" content="Calculez votre potentiel de transformation avec La Méthode K. Découvrez combien vous pouvez perdre en 49 jours.">
+    <meta property="og:title" content="Calculez Votre Potentiel | La Méthode K">
+    <meta property="og:description" content="Calculez votre potentiel de transformation avec La Méthode K. Découvrez combien vous pouvez perdre en 49 jours.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kcoaching02.github.io/CLAUDEMETA/calculateur.html">
+    <meta property="og:image" content="https://kcoaching02.github.io/CLAUDEMETA/AVANTAPRES.JPG">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -360,6 +366,11 @@
             const weight = parseFloat(document.getElementById('weight').value);
             const height = parseFloat(document.getElementById('height').value);
             const activityFactor = parseFloat(document.querySelector('input[name="activity"]:checked').value);
+
+            if (isNaN(age) || isNaN(weight) || isNaN(height) || age < 15 || age > 100 || weight < 30 || weight > 300 || height < 120 || height > 250) {
+                window.location.href = '#';
+                return;
+            }
 
             let bmr;
             if (gender === 'male') {
