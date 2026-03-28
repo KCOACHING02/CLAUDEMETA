@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Méthode K - Votre Plan Personnel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Découvrez votre plan personnel de transformation avec La Méthode K. Résultats personnalisés basés sur votre profil métabolique.">
+    <meta property="og:title" content="La Méthode K - Votre Plan Personnel">
+    <meta property="og:description" content="Votre diagnostic personnalisé et votre programme de transformation en 49 jours.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         :root {
             --primary-green: #2d5a27;
@@ -17,7 +24,7 @@
             --bg-light: #f8fafc;
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text-dark); line-height: 1.6; margin: 0; background: #fff; scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text-dark); line-height: 1.6; margin: 0; background: #fff; scroll-behavior: smooth; }
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         
         /* Header & Results */
@@ -32,6 +39,7 @@
 
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
         .blink-alert { color: var(--red-alert) !important; animation: blink 1s infinite; font-weight: 900; }
+        @media (prefers-reduced-motion: reduce) { .blink-alert { animation: none; } }
 
         /* Methodology */
         .methodology-box { background: var(--bg-light); border-radius: 20px; padding: 30px; margin: 40px 0; border: 1px solid #e0e0e0; }
@@ -146,15 +154,21 @@
 
 <script>
     const params = new URLSearchParams(window.location.search);
-    const bmr = parseInt(params.get('bmr')) || 1400;
-    const tdee = parseInt(params.get('tdee')) || 1800;
-    const weight = parseFloat(params.get('weight')) || 70;
-    const height = parseFloat(params.get('height')) || 165;
+    const bmr = parseInt(params.get('bmr'));
+    const tdee = parseInt(params.get('tdee'));
+    const weight = parseFloat(params.get('weight'));
+    const height = parseFloat(params.get('height'));
+
+    if (isNaN(bmr) || isNaN(tdee) || isNaN(weight) || isNaN(height)
+        || weight < 30 || weight > 300 || height < 120 || height > 250
+        || bmr < 500 || bmr > 5000 || tdee < 500 || tdee > 10000) {
+        window.location.href = 'index.html';
+    }
 
     // Calcul Agressif (Expertise)
     function calculateLoss() {
         const boostedTdee = tdee * 1.05; 
-        const totalDeficit = ((boostedTdee - 1300) * 7) + ((boostedTdee - 1400) * 14) + ((boostedTdee - 1500) * 69);
+        const totalDeficit = ((boostedTdee - 1300) * 7) + ((boostedTdee - 1400) * 14) + ((boostedTdee - 1500) * 28);
         return Math.max(4.5, totalDeficit / 7000).toFixed(1);
     }
 
