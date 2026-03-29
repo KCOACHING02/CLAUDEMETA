@@ -6,7 +6,7 @@
     <title>Vos Résultats Personnalisés | La Méthode K</title>
     <meta name="description" content="Découvrez votre plan personnel de transformation avec La Méthode K. Résultats personnalisés basés sur votre profil métabolique.">
     <meta property="og:title" content="La Méthode K - Votre Plan Personnel">
-    <meta property="og:description" content="Votre diagnostic personnalisé et votre programme de transformation en 49 jours.">
+    <meta property="og:description" content="Votre diagnostic personnalisé et votre programme de transformation en 3 mois.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kcoaching02.github.io/CLAUDEMETA/resultats.html">
     <meta property="og:image" content="https://kcoaching02.github.io/CLAUDEMETA/AVANTAPRES.JPG">
@@ -386,7 +386,7 @@
                 </div>
                 <div class="result-card highlight">
                     <div class="card-icon orange"><i class="fas fa-bullseye"></i></div>
-                    <h3>Objectif 49 jours</h3>
+                    <h3>Objectif 3 mois</h3>
                     <div class="value count-up" id="estimated-loss">0</div>
                     <div class="unit">kg d'ici <span id="target-date" style="font-weight:700;">...</span></div>
                 </div>
@@ -401,13 +401,13 @@
     <section class="projection-section fade-in">
         <div class="projection-inner">
             <div class="section-label">Votre parcours</div>
-            <h2 class="section-title">Comment y arriver en 49 jours</h2>
+            <h2 class="section-title">Votre transformation sur 3 mois</h2>
             <div class="weight-timeline">
                 <div class="timeline-line"></div>
                 <div class="timeline-item">
                     <div class="timeline-dot green"></div>
                     <div class="timeline-content">
-                        <span class="phase-tag p1">Phase 1 - Semaine 1</span>
+                        <span class="phase-tag p1">Phase 1 - Semaines 1 à 2</span>
                         <h4>Activation</h4>
                         <p>On destocke les graisses installées en optimisant vos apports à 1300 kcal. Votre corps commence à brûler.</p>
                         <div class="timeline-weight" id="weight-phase1"></div>
@@ -416,7 +416,7 @@
                 <div class="timeline-item">
                     <div class="timeline-dot green"></div>
                     <div class="timeline-content">
-                        <span class="phase-tag p2">Phase 2 - Semaines 2 et 3</span>
+                        <span class="phase-tag p2">Phase 2 - Semaines 3 à 7</span>
                         <h4>Transition</h4>
                         <p>On stabilise la perte et on booste votre énergie à 1400 kcal. Vous sentez la différence.</p>
                         <div class="timeline-weight" id="weight-phase2"></div>
@@ -425,7 +425,7 @@
                 <div class="timeline-item">
                     <div class="timeline-dot orange"></div>
                     <div class="timeline-content">
-                        <span class="phase-tag p3">Phase 3 - Semaines 4 à 7</span>
+                        <span class="phase-tag p3">Phase 3 - Semaines 8 à 12</span>
                         <h4>Liberté</h4>
                         <p>On fixe votre nouveau poids forme à 1500 kcal. Vous gagnez votre autonomie alimentaire.</p>
                         <div class="timeline-weight" id="weight-phase3"></div>
@@ -439,7 +439,7 @@
     <section class="inaction-section fade-in">
         <div class="inaction-inner">
             <div class="section-label">La réalité</div>
-            <h2 class="section-title">Dans 49 jours, deux scénarios possibles</h2>
+            <h2 class="section-title">Dans 3 mois, deux scénarios possibles</h2>
             <div class="inaction-cards">
                 <div class="inaction-card bad">
                     <div class="card-emoji">😔</div>
@@ -451,7 +451,7 @@
                 <div class="inaction-card good">
                     <div class="card-emoji">🎉</div>
                     <h4>Avec la Méthode K</h4>
-                    <p>Votre poids dans 49 jours</p>
+                    <p>Votre poids dans 3 mois</p>
                     <div class="weight-value" id="weight-action"></div>
                     <p>Un nouveau métabolisme, une nouvelle énergie, un nouveau vous. Sans frustration.</p>
                 </div>
@@ -466,7 +466,7 @@
             <h2 class="section-title">Méthode K vs régimes classiques</h2>
             <table class="comparison-table">
                 <tr><th></th><th>❌ Régimes classiques</th><th>✅ Méthode K</th></tr>
-                <tr><td>Durée</td><td>Indéfinie</td><td>49 jours précis</td></tr>
+                <tr><td>Durée</td><td>Indéfinie</td><td>3 mois (49 jours de menus)</td></tr>
                 <tr><td>Sensation de faim</td><td>Constante</td><td>Aucune</td></tr>
                 <tr><td>Effet yoyo</td><td>Quasi systématique</td><td>Métabolisme rééduqué</td></tr>
                 <tr><td>Recettes</td><td>Fades et séparées</td><td>Gourmandes, 15 min max</td></tr>
@@ -606,10 +606,10 @@
             window.location.href = 'calculateur.html';
         }
 
-        // Calculations
+        // Calculations (3 mois = ~90 jours : 14j phase 1 + 35j phase 2 + 41j phase 3)
         function calculateLoss() {
             const boostedTdee = tdee * 1.05;
-            const totalDeficit = ((boostedTdee - 1300) * 7) + ((boostedTdee - 1400) * 14) + ((boostedTdee - 1500) * 28);
+            const totalDeficit = ((boostedTdee - 1300) * 14) + ((boostedTdee - 1400) * 35) + ((boostedTdee - 1500) * 41);
             return Math.max(4.5, totalDeficit / 7000).toFixed(1);
         }
 
@@ -655,19 +655,19 @@
         }
         checkIMC(imc);
 
-        // Weight per phase
+        // Weight per phase (14j + 35j + 41j = 90 jours)
         const boostedTdee = tdee * 1.05;
-        const lossP1 = Math.max(0, ((boostedTdee - 1300) * 7) / 7000);
-        const lossP2 = Math.max(0, ((boostedTdee - 1400) * 14) / 7000);
-        const lossP3 = Math.max(0, ((boostedTdee - 1500) * 28) / 7000);
+        const lossP1 = Math.max(0, ((boostedTdee - 1300) * 14) / 7000);
+        const lossP2 = Math.max(0, ((boostedTdee - 1400) * 35) / 7000);
+        const lossP3 = Math.max(0, ((boostedTdee - 1500) * 41) / 7000);
 
         document.getElementById('weight-phase1').textContent = (weight - lossP1).toFixed(1) + ' kg';
         document.getElementById('weight-phase2').textContent = (weight - lossP1 - lossP2).toFixed(1) + ' kg';
         document.getElementById('weight-phase3').textContent = (weight - lossP1 - lossP2 - lossP3).toFixed(1) + ' kg';
 
-        // Target date
+        // Target date (3 mois)
         const date = new Date();
-        date.setDate(date.getDate() + 49);
+        date.setMonth(date.getMonth() + 3);
         const fmt = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
         document.getElementById('target-date').textContent = fmt.charAt(0).toUpperCase() + fmt.slice(1);
 
