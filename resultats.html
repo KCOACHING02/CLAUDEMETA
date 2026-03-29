@@ -249,6 +249,23 @@
         .inaction-card.bad .weight-value { color: #e74c3c; }
         .inaction-card.good .weight-value { color: var(--success-green); }
 
+        /* REAL MESSAGES */
+        .messages-compact { padding: 50px 24px; background: var(--bg-light); }
+        .messages-compact-inner { max-width: 650px; margin: 0 auto; }
+        .msg-scroll { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+        .msg-mini {
+            background: white; padding: 16px 18px; border-radius: 16px;
+            border: 1px solid #eef2ea; font-size: 0.85em; line-height: 1.5;
+            color: var(--text-dark); position: relative;
+        }
+        .msg-mini::before {
+            content: '"'; position: absolute; top: 8px; left: 12px;
+            font-size: 2em; color: var(--light-green); font-weight: 900; line-height: 1;
+        }
+        .msg-mini p { padding-left: 20px; margin: 0; }
+        .msg-mini-date { font-size: 0.75em; color: var(--text-medium); margin-top: 8px; padding-left: 20px; }
+        .msg-mini-verified { color: var(--success-green); font-size: 0.75em; font-weight: 600; display: flex; align-items: center; gap: 4px; margin-top: 6px; padding-left: 20px; }
+
         /* SOCIAL TOAST */
         .social-toast {
             position: fixed; bottom: 24px; left: 24px; background: white;
@@ -318,6 +335,7 @@
             .comparison-table th, .comparison-table td { padding: 10px 12px; }
             .countdown-bar { font-size: 0.8em; padding: 10px 16px; }
             .social-toast { bottom: 80px; left: 12px; right: 12px; max-width: none; }
+            .msg-scroll { grid-template-columns: 1fr; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -456,6 +474,36 @@
                 <tr><td>Prix</td><td>50-200€/mois</td><td>29,99€ une seule fois</td></tr>
                 <tr><td>Résultat moyen</td><td>Reprise du poids</td><td>-4 à -12 kg durables</td></tr>
             </table>
+        </div>
+    </section>
+
+    <!-- REAL CLIENT MESSAGES -->
+    <section class="messages-compact fade-in">
+        <div class="messages-compact-inner" style="text-align: center;">
+            <div class="section-label">Preuves sociales</div>
+            <h2 class="section-title">Elles l'ont fait, pourquoi pas vous ?</h2>
+            <div class="msg-scroll">
+                <div class="msg-mini">
+                    <p>Ça fait 10 jours que je n'ai pas touché au placard à gâteaux. Tes menus calent vraiment bien, plus de rages de sucre. C'est magique ! 🙏</p>
+                    <div class="msg-mini-date">31 mars</div>
+                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
+                </div>
+                <div class="msg-mini">
+                    <p>Le bowl au saumon, une vraie tuerie. 😍 C'est tellement bon et rapide, même mon conjoint me pique mes assiettes !</p>
+                    <div class="msg-mini-date">27 mars</div>
+                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
+                </div>
+                <div class="msg-mini">
+                    <p>Je viens de rentrer dans mon jean d'avant grossesse sans forcer ! 😭 C'est la première fois qu'un programme me correspond autant.</p>
+                    <div class="msg-mini-date">15 mars</div>
+                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
+                </div>
+                <div class="msg-mini">
+                    <p>Mon corps change de fou. Je me sens dégonflée, j'ai une énergie de dingue et je dors enfin bien !! ✨</p>
+                    <div class="msg-mini-date">22 mars</div>
+                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
+                </div>
+            </div>
         </div>
     </section>
 
