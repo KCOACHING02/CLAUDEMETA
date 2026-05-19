@@ -1,746 +1,477 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vos Résultats Personnalisés | La Méthode K</title>
-    <meta name="description" content="Découvrez votre plan personnel de transformation avec La Méthode K. Résultats personnalisés basés sur votre profil métabolique.">
-    <meta property="og:title" content="La Méthode K - Votre Plan Personnel">
-    <meta property="og:description" content="Votre diagnostic personnalisé et votre programme de transformation en 3 mois.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kcoaching02.github.io/CLAUDEMETA/resultats.html">
-    <meta property="og:image" content="https://kcoaching02.github.io/CLAUDEMETA/AVANTAPRES.JPG">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ton bilan — La Méthode K</title>
+<meta name="description" content="Ton bilan métabolique personnalisé. Découvre ton programme sur 7 semaines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#F4EFE5;--cream:#FAF7F0;--clay:#B87B52;--clay-dk:#8F5C35;--terra:#C04F2A;--ink:#1A1410;--i60:rgba(26,20,16,.6);--i30:rgba(26,20,16,.3);--i10:rgba(26,20,16,.08);--s:'Cormorant Garamond',Georgia,serif;--b:'Figtree',system-ui,sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--b);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:960px;margin:0 auto;padding:0 24px}
+.wsm{max-width:640px;margin:0 auto;padding:0 24px}
 
-    <style>
-        :root {
-            --primary-green: #2d5a27;
-            --accent-green: #4a7c44;
-            --light-green: #a8c9a3;
-            --bg-green: #f1f8f1;
-            --success-green: #28a745;
-            --orange: #ff6b35;
-            --orange-light: #fff8f4;
-            --red-alert: #e74c3c;
-            --text-dark: #1a2e1a;
-            --text-medium: #546e7a;
-            --white: #ffffff;
-            --bg-light: #fafcf8;
-        }
+/* NAV */
+nav{position:sticky;top:0;z-index:80;background:rgba(250,247,240,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--i10)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto}
+.logo{font-family:var(--s);font-size:1.2rem;font-weight:300}
+.logo i{font-style:italic;color:var(--clay)}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--i60);transition:color .2s}
+.nav-back:hover{color:var(--clay)}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); line-height: 1.7; background: var(--white); }
+/* HERO */
+.hero{background:var(--bone);padding:56px 24px 64px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);margin-bottom:20px;border:1px solid rgba(184,123,82,.3);padding:7px 16px}
+.hero h1{font-family:var(--s);font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:10px}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero-sub{font-size:.92rem;font-weight:300;color:var(--i60);margin-bottom:44px;line-height:1.7}
 
-        /* NAV */
-        .nav {
-            position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px); z-index: 100; padding: 16px 0;
-            box-shadow: 0 1px 20px rgba(0,0,0,0.04);
-        }
-        .nav-inner {
-            max-width: 1100px; margin: 0 auto; padding: 0 24px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .nav-logo { font-weight: 900; font-size: 1.4em; color: var(--primary-green); text-decoration: none; }
-        .nav-logo span { color: var(--accent-green); }
-        .nav-back { color: var(--text-medium); text-decoration: none; font-size: 0.9em; font-weight: 500; display: flex; align-items: center; gap: 6px; }
-        .nav-back:hover { color: var(--primary-green); }
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--i10);border:1px solid var(--i10);max-width:680px;margin:0 auto}
+.stat-cell{background:var(--bone);padding:28px 20px;text-align:center}
+.stat-cell.highlight{background:var(--ink)}
+.stat-num{font-family:var(--s);font-size:2.6rem;font-weight:300;line-height:1;color:var(--clay)}
+.stat-cell.highlight .stat-num{color:var(--bone)}
+.stat-lbl{font-size:.68rem;color:var(--i60);margin-top:5px;line-height:1.4;letter-spacing:.02em}
+.stat-cell.highlight .stat-lbl{color:rgba(244,239,229,.5)}
+.stat-note{font-size:.62rem;color:var(--clay);margin-top:4px;font-weight:500}
 
-        /* HERO RESULTS */
-        .results-hero {
-            padding: 140px 24px 60px;
-            background: linear-gradient(180deg, var(--bg-green) 0%, var(--white) 100%);
-            text-align: center;
-        }
-        .results-hero-inner { max-width: 900px; margin: 0 auto; }
-        .results-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: white; border: 1px solid #d4e8cf; padding: 8px 20px;
-            border-radius: 50px; font-size: 0.85em; font-weight: 600;
-            color: var(--success-green); margin-bottom: 20px;
-        }
-        .results-hero h1 { font-size: 2.5em; font-weight: 900; color: var(--text-dark); margin-bottom: 10px; }
-        .results-hero p.subtitle { font-size: 1.1em; color: var(--text-medium); margin-bottom: 40px; }
+/* SECTIONS */
+.sec{padding:80px 0}
+.kicker{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.kicker::before{content:'';width:16px;height:1px;background:var(--clay)}
+h2{font-family:var(--s);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.15;color:var(--ink)}
+h2 em{font-style:italic;color:var(--clay)}
 
-        /* RESULTS CARDS */
-        .results-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-            max-width: 900px; margin: 0 auto;
-        }
-        .result-card {
-            background: white; padding: 30px 24px; border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.05); border: 1px solid #eef2ea;
-            text-align: center; transition: all 0.3s; position: relative; overflow: hidden;
-        }
-        .result-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.08); }
-        .result-card .card-icon {
-            width: 50px; height: 50px; border-radius: 14px; margin: 0 auto 14px;
-            display: flex; align-items: center; justify-content: center; font-size: 1.3em;
-        }
-        .result-card .card-icon.green { background: var(--bg-green); color: var(--accent-green); }
-        .result-card .card-icon.blue { background: #eef4fc; color: #4a90d9; }
-        .result-card .card-icon.orange { background: var(--orange-light); color: var(--orange); }
-        .result-card h3 { font-size: 0.85em; font-weight: 600; color: var(--text-medium); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
-        .result-card .value { font-size: 2.8em; font-weight: 900; color: var(--primary-green); line-height: 1.1; }
-        .result-card .unit { font-size: 0.85em; color: var(--text-medium); margin-top: 4px; }
-        .result-card.highlight {
-            border: 2px solid var(--orange); background: var(--orange-light);
-        }
-        .result-card.highlight .value { color: var(--orange); }
-        .imc-status { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 0.8em; font-weight: 700; margin-top: 8px; }
-        .imc-normal { background: #e8f5e9; color: var(--success-green); }
-        .imc-warning { background: #fef3e2; color: #e67e22; }
-        .imc-danger { background: #fde8e8; color: var(--red-alert); }
+/* PHASES */
+.phases{margin-top:44px;border:1px solid var(--i10)}
+.phrow{display:grid;grid-template-columns:88px 1fr;border-bottom:1px solid var(--i10)}
+.phrow:last-child{border-bottom:none}
+.phn{display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--i10);padding:24px 12px;text-align:center;gap:3px}
+.phn-wk{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--i30)}
+.phn-kcal{font-family:var(--s);font-size:1.3rem;font-weight:300;color:var(--clay);line-height:1}
+.phn-kcal span{font-size:.7rem}
+.phn-proj{font-size:.65rem;color:var(--i60);margin-top:4px}
+.phn-proj b{color:var(--ink);font-weight:500}
+.phb{padding:24px 32px}
+.phl{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--i30);margin-bottom:4px}
+.pht{font-family:var(--s);font-size:1.25rem;font-weight:300;margin-bottom:6px}
+.phd{font-size:.8rem;font-weight:300;color:var(--i60);line-height:1.68;max-width:480px}
 
-        /* IMC GAUGE */
-        .imc-gauge { margin-top: 12px; }
-        .gauge-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #3498db 0%, #2ecc71 24%, #f1c40f 50%, #e67e22 74%, #e74c3c 100%); position: relative; }
-        .gauge-marker {
-            width: 16px; height: 16px; border-radius: 50%; background: white;
-            border: 3px solid var(--text-dark); position: absolute; top: -4px;
-            transform: translateX(-50%); transition: left 0.8s ease;
-        }
+/* FREIN PERSO */
+.perso-box{margin-top:40px;padding:24px 28px;background:var(--bone);border-left:3px solid var(--clay)}
+.perso-box .pk{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);margin-bottom:8px}
+.perso-box p{font-family:var(--s);font-size:1.1rem;font-weight:300;font-style:italic;line-height:1.65;color:var(--ink)}
+.perso-box p em{color:var(--clay);font-style:normal}
 
-        /* WEIGHT PROJECTION */
-        .projection-section {
-            padding: 60px 24px; background: var(--white);
-        }
-        .projection-inner { max-width: 700px; margin: 0 auto; }
-        .section-label {
-            font-size: 0.85em; font-weight: 700; color: var(--accent-green);
-            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; text-align: center;
-        }
-        .section-title { font-size: 2em; font-weight: 900; margin-bottom: 30px; color: var(--text-dark); text-align: center; }
+/* INACTION */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+.scenario{padding:32px 28px;border:1px solid var(--i10)}
+.scenario.bad{background:var(--cream)}
+.scenario.good{background:var(--ink)}
+.scenario-icon{font-size:1.4rem;margin-bottom:14px}
+.scenario h3{font-family:var(--s);font-size:1.1rem;font-weight:300;margin-bottom:6px}
+.scenario.good h3{color:var(--bone)}
+.scenario-weight{font-family:var(--s);font-size:2.8rem;font-weight:300;line-height:1;margin:10px 0}
+.scenario.bad .scenario-weight{color:var(--terra)}
+.scenario.good .scenario-weight{color:var(--clay)}
+.scenario p{font-size:.78rem;font-weight:300;color:var(--i60);line-height:1.6}
+.scenario.good p{color:rgba(244,239,229,.5)}
 
-        .weight-timeline { position: relative; padding: 0 20px; }
-        .timeline-line { position: absolute; left: 30px; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--accent-green), var(--orange)); border-radius: 2px; }
-        .timeline-item { display: flex; align-items: flex-start; gap: 24px; margin-bottom: 28px; position: relative; }
-        .timeline-dot {
-            width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
-            z-index: 1; margin-top: 4px;
-        }
-        .timeline-dot.green { background: var(--accent-green); box-shadow: 0 0 0 4px rgba(74,124,68,0.2); }
-        .timeline-dot.orange { background: var(--orange); box-shadow: 0 0 0 4px rgba(255,107,53,0.2); }
-        .timeline-content {
-            background: white; padding: 20px 24px; border-radius: 16px; flex: 1;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #eef2ea;
-        }
-        .timeline-content h4 { font-weight: 800; font-size: 1em; margin-bottom: 4px; color: var(--text-dark); }
-        .timeline-content .phase-tag {
-            display: inline-block; font-size: 0.75em; font-weight: 700; padding: 3px 10px;
-            border-radius: 12px; margin-bottom: 8px;
-        }
-        .phase-tag.p1 { background: #e8f5e9; color: var(--accent-green); }
-        .phase-tag.p2 { background: #fff3e0; color: #e67e22; }
-        .phase-tag.p3 { background: var(--orange-light); color: var(--orange); }
-        .timeline-content p { font-size: 0.9em; color: var(--text-medium); }
-        .timeline-weight { font-size: 1.4em; font-weight: 900; color: var(--primary-green); }
+/* MESSAGES */
+.msec{background:var(--ink);padding:80px 0}
+.msec .kicker{color:var(--clay)}
+.msec .kicker::before{background:var(--clay)}
+.msec h2{color:#F4EFE5}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px}
+.mb{background:rgba(244,239,229,.05);border:1px solid rgba(244,239,229,.09);padding:20px 22px;border-radius:12px 12px 3px 12px}
+.md{font-size:.64rem;color:rgba(244,239,229,.28);margin-bottom:10px}
+.mt{font-size:.85rem;color:rgba(244,239,229,.78);line-height:1.68;font-weight:300}
+.mv{display:flex;align-items:center;gap:5px;margin-top:12px;font-size:.64rem;color:rgba(244,239,229,.22)}
+.mv::before{content:'✓';color:var(--clay)}
 
-        /* PRICING */
-        .pricing-section {
-            padding: 70px 24px;
-            background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
-        }
-        .pricing-inner { max-width: 650px; margin: 0 auto; text-align: center; }
-        .pricing-card {
-            background: white; border-radius: 24px; padding: 40px 36px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.07); border: 1px solid #eee;
-            position: relative; overflow: hidden;
-        }
-        .pricing-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-            background: linear-gradient(90deg, var(--accent-green), var(--orange));
-        }
-        .pricing-card h2 { font-size: 1.6em; font-weight: 900; margin-bottom: 24px; }
-        .includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 30px; text-align: left; }
-        .include-chip {
-            display: flex; align-items: center; gap: 10px; padding: 12px 16px;
-            background: var(--bg-green); border-radius: 12px; font-size: 0.88em; font-weight: 600; color: var(--text-dark);
-        }
-        .include-chip i { color: var(--success-green); font-size: 1.1em; }
-        .price-block { margin: 28px 0; }
-        .price-old { text-decoration: line-through; color: #aaa; font-size: 1.1em; }
-        .price-current { font-size: 3.5em; font-weight: 900; color: var(--primary-green); line-height: 1.1; }
-        .price-period { font-size: 0.95em; color: var(--text-medium); margin-top: 4px; }
-        .cta-button {
-            display: inline-flex; align-items: center; gap: 12px; width: 100%;
-            justify-content: center; background: linear-gradient(135deg, var(--orange), #ff8c42);
-            color: white; padding: 22px 40px; border-radius: 60px; text-decoration: none;
-            font-weight: 800; font-size: 1.25em; transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(255,107,53,0.3); border: none; cursor: pointer;
-        }
-        .cta-button:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 14px 40px rgba(255,107,53,0.4); }
-        .payment-row { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px; }
-        .payment-icons { font-size: 1.8em; color: #ccc; display: flex; gap: 12px; }
-        .secure-text { font-size: 0.8em; color: var(--text-medium); display: flex; align-items: center; gap: 6px; }
+/* OFFRE */
+.offre-sec{padding:80px 0;background:var(--bone)}
+.offre-card{background:var(--cream);border:1px solid var(--i10);padding:48px 44px;max-width:580px;margin:0 auto}
+.offre-kicker{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.offre-kicker::before{content:'';width:14px;height:1px;background:var(--clay)}
+.offre-title{font-family:var(--s);font-size:1.9rem;font-weight:300;line-height:1.2;margin-bottom:28px}
+.offre-title em{font-style:italic;color:var(--clay)}
+.inclus{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--i10)}
+.inclus li{display:flex;align-items:baseline;gap:10px;font-size:.82rem;font-weight:300;color:var(--i60)}
+.inclus li::before{content:'—';color:var(--clay);flex-shrink:0}
+.prix-wrap{margin-bottom:24px}
+.prix-was{font-size:.88rem;color:var(--i30);text-decoration:line-through;margin-bottom:4px}
+.prix-now{font-family:var(--s);font-size:3.8rem;font-weight:300;color:var(--ink);line-height:1}
+.prix-note{font-size:.72rem;color:var(--i30);margin-top:4px}
+.cta-perso{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--terra);color:#fff;font-family:var(--b);font-size:.78rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:18px;border:none;cursor:pointer;transition:background .25s;text-decoration:none;margin-bottom:14px}
+.cta-perso:hover{background:var(--clay-dk)}
+.guar{text-align:center;font-size:.7rem;color:var(--i30)}
+.urgence{background:var(--ink);color:var(--bone);text-align:center;padding:10px 16px;font-size:.72rem;letter-spacing:.04em;margin-bottom:24px}
+.urgence b{color:var(--clay)}
 
-        /* GUARANTEE */
-        .guarantee-section {
-            padding: 50px 24px; background: var(--white);
-        }
-        .guarantee-inner { max-width: 700px; margin: 0 auto; }
-        .guarantee-box {
-            display: flex; align-items: center; gap: 24px; padding: 30px;
-            background: var(--bg-green); border-radius: 20px; border: 1px solid #d4e8cf;
-        }
-        .guarantee-icon { font-size: 3em; flex-shrink: 0; }
-        .guarantee-box h3 { font-weight: 800; font-size: 1.1em; margin-bottom: 6px; color: var(--text-dark); }
-        .guarantee-box p { font-size: 0.9em; color: var(--text-medium); }
+/* COMPARAISON */
+.comp-sec{padding:80px 0;background:var(--cream)}
+.comp-table{width:100%;border-collapse:collapse;margin-top:44px;font-size:.82rem}
+.comp-table th{padding:14px 20px;font-weight:500;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;text-align:center;border-bottom:1px solid var(--i10)}
+.comp-table th:first-child{text-align:left;color:var(--i30)}
+.comp-table th:nth-child(2){color:var(--terra)}
+.comp-table th:nth-child(3){color:var(--clay)}
+.comp-table td{padding:14px 20px;border-bottom:1px solid var(--i10);text-align:center;font-weight:300;color:var(--i60)}
+.comp-table td:first-child{text-align:left;font-weight:400;color:var(--ink)}
+.comp-table tr:last-child td{border-bottom:none}
+.bad{color:var(--terra)}
+.good{color:var(--clay);font-weight:500}
 
-        /* STICKY CTA (mobile) */
-        .sticky-cta {
-            position: fixed; bottom: 0; left: 0; right: 0; background: white;
-            padding: 14px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-            z-index: 99; display: none; text-align: center;
-        }
-        .sticky-cta a {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            background: linear-gradient(135deg, var(--orange), #ff8c42); color: white;
-            padding: 16px 32px; border-radius: 50px; text-decoration: none;
-            font-weight: 800; font-size: 1em; width: 100%; max-width: 400px;
-            box-shadow: 0 6px 20px rgba(255,107,53,0.3);
-        }
+/* GARANTIE */
+.guar-sec{padding:60px 0;background:var(--bone)}
+.guar-box{display:flex;align-items:flex-start;gap:24px;padding:32px 36px;background:var(--cream);border:1px solid var(--i10);max-width:640px;margin:0 auto}
+.guar-icon{font-size:2rem;flex-shrink:0;line-height:1}
+.guar-box h3{font-family:var(--s);font-size:1.2rem;font-weight:300;margin-bottom:8px}
+.guar-box p{font-size:.8rem;font-weight:300;color:var(--i60);line-height:1.7}
 
-        /* FOOTER */
-        .footer { padding: 30px 24px; text-align: center; background: var(--text-dark); color: rgba(255,255,255,0.5); font-size: 0.85em; }
+footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fl{font-family:var(--s);font-size:.9rem;color:rgba(244,239,229,.3)}
+.fl i{font-style:italic;color:var(--clay)}
+.fc{font-size:.67rem;color:rgba(244,239,229,.18)}
 
-        /* ANIMATIONS */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .count-up { transition: all 0.6s ease; }
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:24px;z-index:200;background:var(--cream);border:1px solid var(--i10);border-left:3px solid var(--clay);padding:16px 20px;max-width:300px;box-shadow:0 10px 36px rgba(26,20,16,.1);transform:translateX(calc(-100% - 40px));transition:transform .45s cubic-bezier(.4,0,.2,1);display:flex;gap:12px;align-items:flex-start}
+.toast.on{transform:none}
+.toast-dot{width:7px;height:7px;border-radius:50%;background:var(--clay);margin-top:5px;flex-shrink:0}
+.toast-b{font-size:.78rem;color:var(--i60);line-height:1.45}
+.toast-b b{color:var(--ink);font-weight:500}
+.toast-t{font-size:.68rem;color:var(--i30);margin-top:2px}
 
-        /* COUNTDOWN TIMER */
-        .countdown-bar {
-            background: linear-gradient(90deg, #1a2e1a, #2d5a27); color: white;
-            text-align: center; padding: 12px 24px; font-size: 0.9em; font-weight: 600;
-        }
-        .countdown-bar span { color: var(--orange); font-weight: 800; }
+/* EXIT */
+.exit-bg{position:fixed;inset:0;background:rgba(26,20,16,.7);z-index:300;display:none;align-items:center;justify-content:center;padding:24px}
+.exit-bg.on{display:flex}
+.exit-box{background:var(--cream);max-width:400px;width:100%;padding:48px 40px;text-align:center;position:relative}
+.exit-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.1rem;color:var(--i30);cursor:pointer}
+.exit-box h2{font-family:var(--s);font-size:1.8rem;font-weight:300;margin-bottom:10px}
+.exit-box p{font-size:.84rem;font-weight:300;color:var(--i60);line-height:1.7;margin-bottom:26px}
 
-        /* COMPARISON TABLE */
-        .comparison-section { padding: 60px 24px; background: var(--bg-light); }
-        .comparison-inner { max-width: 700px; margin: 0 auto; }
-        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.05); margin-top: 30px; }
-        .comparison-table th { padding: 16px 20px; font-weight: 800; font-size: 0.9em; text-align: center; }
-        .comparison-table th:first-child { text-align: left; background: #f5f5f5; color: var(--text-medium); }
-        .comparison-table th:nth-child(2) { background: #fef3f3; color: #c0392b; }
-        .comparison-table th:nth-child(3) { background: var(--bg-green); color: var(--primary-green); }
-        .comparison-table td { padding: 14px 20px; border-bottom: 1px solid #f0f0f0; font-size: 0.88em; text-align: center; background: white; }
-        .comparison-table td:first-child { text-align: left; font-weight: 600; color: var(--text-dark); }
-        .comparison-table tr:last-child td { border-bottom: none; }
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
 
-        /* INACTION WARNING */
-        .inaction-section { padding: 60px 24px; background: var(--white); }
-        .inaction-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-        .inaction-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .inaction-card { padding: 28px 24px; border-radius: 18px; text-align: center; }
-        .inaction-card.bad { background: #fef3f3; border: 1px solid #fde8e8; }
-        .inaction-card.good { background: var(--bg-green); border: 1px solid #d4e8cf; }
-        .inaction-card .card-emoji { font-size: 2.2em; margin-bottom: 12px; }
-        .inaction-card h4 { font-weight: 800; font-size: 1em; margin-bottom: 6px; }
-        .inaction-card.bad h4 { color: #c0392b; }
-        .inaction-card.good h4 { color: var(--primary-green); }
-        .inaction-card p { font-size: 0.88em; color: var(--text-medium); line-height: 1.5; }
-        .inaction-card .weight-value { font-size: 1.8em; font-weight: 900; margin: 8px 0; }
-        .inaction-card.bad .weight-value { color: #e74c3c; }
-        .inaction-card.good .weight-value { color: var(--success-green); }
-
-        /* REAL MESSAGES */
-        .messages-compact { padding: 50px 24px; background: var(--bg-light); }
-        .messages-compact-inner { max-width: 650px; margin: 0 auto; }
-        .msg-scroll { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
-        .msg-mini {
-            background: white; padding: 16px 18px; border-radius: 16px;
-            border: 1px solid #eef2ea; font-size: 0.85em; line-height: 1.5;
-            color: var(--text-dark); position: relative;
-        }
-        .msg-mini::before {
-            content: '"'; position: absolute; top: 8px; left: 12px;
-            font-size: 2em; color: var(--light-green); font-weight: 900; line-height: 1;
-        }
-        .msg-mini p { padding-left: 20px; margin: 0; }
-        .msg-mini-date { font-size: 0.75em; color: var(--text-medium); margin-top: 8px; padding-left: 20px; }
-        .msg-mini-verified { color: var(--success-green); font-size: 0.75em; font-weight: 600; display: flex; align-items: center; gap: 4px; margin-top: 6px; padding-left: 20px; }
-
-        /* SOCIAL TOAST */
-        .social-toast {
-            position: fixed; bottom: 24px; left: 24px; background: white;
-            padding: 14px 20px; border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-            display: flex; align-items: center; gap: 12px; z-index: 200;
-            transform: translateX(-120%); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            max-width: 340px; border-left: 4px solid var(--success-green);
-        }
-        .social-toast.show { transform: translateX(0); }
-        .social-toast-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-green); display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0; }
-        .social-toast-text { font-size: 0.82em; color: var(--text-dark); line-height: 1.4; }
-        .social-toast-text strong { color: var(--primary-green); }
-        .social-toast-time { font-size: 0.75em; color: var(--text-medium); }
-
-        /* EXIT POPUP */
-        .exit-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 300; display: none;
-            justify-content: center; align-items: center; padding: 24px;
-        }
-        .exit-overlay.show { display: flex; }
-        .exit-popup {
-            background: white; border-radius: 24px; padding: 40px 36px;
-            max-width: 480px; width: 100%; text-align: center; position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-        .exit-popup-close {
-            position: absolute; top: 16px; right: 20px; background: none; border: none;
-            font-size: 1.5em; color: var(--text-medium); cursor: pointer;
-        }
-        .exit-popup h2 { font-size: 1.6em; font-weight: 900; color: var(--text-dark); margin-bottom: 10px; }
-        .exit-popup p { color: var(--text-medium); font-size: 0.95em; margin-bottom: 24px; line-height: 1.6; }
-        .exit-popup .exit-cta {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: linear-gradient(135deg, var(--orange), #ff8c42); color: white;
-            padding: 18px 36px; border-radius: 50px; text-decoration: none;
-            font-weight: 800; font-size: 1.1em; box-shadow: 0 8px 25px rgba(255,107,53,0.3);
-        }
-
-        /* MINI TESTIMONIALS */
-        .mini-testimonials { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; justify-content: center; }
-        .mini-testimonial {
-            background: var(--bg-green); padding: 10px 16px; border-radius: 12px;
-            font-size: 0.8em; color: var(--text-dark); font-weight: 600;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .mini-testimonial .mini-avatar {
-            width: 28px; height: 28px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--light-green), var(--accent-green));
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-weight: 800; font-size: 0.75em;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .results-hero h1 { font-size: 1.8em; }
-            .results-grid { grid-template-columns: 1fr; }
-            .result-card .value { font-size: 2.2em; }
-            .includes-grid { grid-template-columns: 1fr; }
-            .guarantee-box { flex-direction: column; text-align: center; }
-            .sticky-cta { display: block; }
-            .footer { padding-bottom: 80px; }
-            .pricing-section { padding-bottom: 120px; }
-            .section-title { font-size: 1.6em; }
-            .inaction-cards { grid-template-columns: 1fr; }
-            .comparison-table { font-size: 0.85em; }
-            .comparison-table th, .comparison-table td { padding: 10px 12px; }
-            .countdown-bar { font-size: 0.8em; padding: 10px 16px; }
-            .social-toast { bottom: 80px; left: 12px; right: 12px; max-width: none; }
-            .msg-scroll { grid-template-columns: 1fr; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .fade-in { opacity: 1; transform: none; transition: none; }
-            html { scroll-behavior: auto; }
-        }
-    </style>
+@media(max-width:760px){
+  .stats-row{grid-template-columns:1fr;background:none;border:none;gap:1px}
+  .stat-cell{border:1px solid var(--i10)}
+  .phrow{grid-template-columns:1fr}
+  .phn{border-right:none;border-bottom:1px solid var(--i10);flex-direction:row;justify-content:flex-start;padding:16px 20px;gap:16px}
+  .phb{padding:20px}
+  .two-col{grid-template-columns:1fr}
+  .mgrid{grid-template-columns:1fr}
+  .offre-card{padding:32px 24px}
+  .guar-box{flex-direction:column;padding:24px}
+  .comp-table{font-size:.75rem}
+  .comp-table th,.comp-table td{padding:10px 12px}
+}
+</style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">La Méthode <span>K</span></a>
-            <a href="calculateur.html" class="nav-back"><i class="fas fa-arrow-left"></i> Refaire le calcul</a>
-        </div>
-    </nav>
+<nav>
+  <div class="nav-row">
+    <div class="logo">La Méthode <i>K</i></div>
+    <a href="calculateur.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 7H3M6 4L3 7l3 3"/></svg>
+      Refaire le calcul
+    </a>
+  </div>
+</nav>
 
-    <!-- COUNTDOWN -->
-    <div class="countdown-bar" id="countdownBar">
-        🔥 Offre spéciale : <span id="countdownTimer">14:59</span> — Profitez de <span>-69%</span> avant expiration
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✓ Analyse terminée</div>
+  <h1>Ton bilan <em>métabolique</em><br>est prêt.</h1>
+  <p class="hero-sub" id="hero-sub">Voici ce que le programme peut faire pour toi, selon ton profil exact.</p>
+  <div class="stats-row">
+    <div class="stat-cell">
+      <div class="stat-num" id="val-bmr">—</div>
+      <div class="stat-lbl">Métabolisme<br>de base (kcal/j)</div>
     </div>
-
-    <!-- HERO RESULTS -->
-    <section class="results-hero">
-        <div class="results-hero-inner">
-            <div class="results-badge"><i class="fas fa-check-circle"></i> Analyse terminée</div>
-            <h1>Votre diagnostic est prêt</h1>
-            <p class="subtitle">Voici l'analyse personnalisée de votre profil métabolique</p>
-
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="card-icon green"><i class="fas fa-fire-flame-curved"></i></div>
-                    <h3>Métabolisme de base</h3>
-                    <div class="value count-up" id="bmr-result">0</div>
-                    <div class="unit">kcal/jour</div>
-                </div>
-                <div class="result-card">
-                    <div class="card-icon blue"><i class="fas fa-weight-scale"></i></div>
-                    <h3>Indice IMC</h3>
-                    <div class="value count-up" id="imc-result">0</div>
-                    <div id="imc-status"></div>
-                    <div class="imc-gauge">
-                        <div class="gauge-bar">
-                            <div class="gauge-marker" id="imc-marker" style="left: 50%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-card highlight">
-                    <div class="card-icon orange"><i class="fas fa-bullseye"></i></div>
-                    <h3>Objectif 3 mois</h3>
-                    <div class="value count-up" id="estimated-loss">0</div>
-                    <div class="unit">kg d'ici <span id="target-date" style="font-weight:700;">...</span></div>
-                </div>
-            </div>
-            <p style="font-style: italic; color: var(--text-medium); font-size: 0.85em; margin-top: 24px;">
-                *Estimation basée sur l'effet thermique des nutriments de la Méthode K
-            </p>
-        </div>
-    </section>
-
-    <!-- WEIGHT PROJECTION TIMELINE -->
-    <section class="projection-section fade-in">
-        <div class="projection-inner">
-            <div class="section-label">Votre parcours</div>
-            <h2 class="section-title">Votre transformation sur 3 mois</h2>
-            <div class="weight-timeline">
-                <div class="timeline-line"></div>
-                <div class="timeline-item">
-                    <div class="timeline-dot green"></div>
-                    <div class="timeline-content">
-                        <span class="phase-tag p1">Phase 1 - Semaines 1 à 2</span>
-                        <h4>Activation</h4>
-                        <p>On destocke les graisses installées en optimisant vos apports à 1300 kcal. Votre corps commence à brûler.</p>
-                        <div class="timeline-weight" id="weight-phase1"></div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot green"></div>
-                    <div class="timeline-content">
-                        <span class="phase-tag p2">Phase 2 - Semaines 3 à 7</span>
-                        <h4>Transition</h4>
-                        <p>On stabilise la perte et on booste votre énergie à 1400 kcal. Vous sentez la différence.</p>
-                        <div class="timeline-weight" id="weight-phase2"></div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot orange"></div>
-                    <div class="timeline-content">
-                        <span class="phase-tag p3">Phase 3 - Semaines 8 à 12</span>
-                        <h4>Liberté</h4>
-                        <p>On fixe votre nouveau poids forme à 1500 kcal. Vous gagnez votre autonomie alimentaire.</p>
-                        <div class="timeline-weight" id="weight-phase3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INACTION WARNING -->
-    <section class="inaction-section fade-in">
-        <div class="inaction-inner">
-            <div class="section-label">La réalité</div>
-            <h2 class="section-title">Dans 3 mois, deux scénarios possibles</h2>
-            <div class="inaction-cards">
-                <div class="inaction-card bad">
-                    <div class="card-emoji">😔</div>
-                    <h4>Sans action</h4>
-                    <p>Votre poids dans 1 an</p>
-                    <div class="weight-value" id="weight-inaction"></div>
-                    <p>Le métabolisme ralentit avec le temps. Chaque mois qui passe rend la perte plus difficile.</p>
-                </div>
-                <div class="inaction-card good">
-                    <div class="card-emoji">🎉</div>
-                    <h4>Avec la Méthode K</h4>
-                    <p>Votre poids dans 3 mois</p>
-                    <div class="weight-value" id="weight-action"></div>
-                    <p>Un nouveau métabolisme, une nouvelle énergie, un nouveau vous. Sans frustration.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARISON -->
-    <section class="comparison-section fade-in">
-        <div class="comparison-inner">
-            <div class="section-label">Pourquoi nous ?</div>
-            <h2 class="section-title">Méthode K vs régimes classiques</h2>
-            <table class="comparison-table">
-                <tr><th></th><th>❌ Régimes classiques</th><th>✅ Méthode K</th></tr>
-                <tr><td>Durée</td><td>Indéfinie</td><td>3 mois (49 jours de menus)</td></tr>
-                <tr><td>Sensation de faim</td><td>Constante</td><td>Aucune</td></tr>
-                <tr><td>Effet yoyo</td><td>Quasi systématique</td><td>Métabolisme rééduqué</td></tr>
-                <tr><td>Recettes</td><td>Fades et séparées</td><td>Gourmandes, 15 min max</td></tr>
-                <tr><td>Comptage calories</td><td>Oui, épuisant</td><td>Non, tout est planifié</td></tr>
-                <tr><td>Prix</td><td>50-200€/mois</td><td>29,99€ une seule fois</td></tr>
-                <tr><td>Résultat moyen</td><td>Reprise du poids</td><td>-4 à -12 kg durables</td></tr>
-            </table>
-        </div>
-    </section>
-
-    <!-- REAL CLIENT MESSAGES -->
-    <section class="messages-compact fade-in">
-        <div class="messages-compact-inner" style="text-align: center;">
-            <div class="section-label">Preuves sociales</div>
-            <h2 class="section-title">Elles l'ont fait, pourquoi pas vous ?</h2>
-            <div class="msg-scroll">
-                <div class="msg-mini">
-                    <p>Ça fait 10 jours que je n'ai pas touché au placard à gâteaux. Tes menus calent vraiment bien, plus de rages de sucre. C'est magique ! 🙏</p>
-                    <div class="msg-mini-date">31 mars</div>
-                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
-                </div>
-                <div class="msg-mini">
-                    <p>Le bowl au saumon, une vraie tuerie. 😍 C'est tellement bon et rapide, même mon conjoint me pique mes assiettes !</p>
-                    <div class="msg-mini-date">27 mars</div>
-                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
-                </div>
-                <div class="msg-mini">
-                    <p>Je viens de rentrer dans mon jean d'avant grossesse sans forcer ! 😭 C'est la première fois qu'un programme me correspond autant.</p>
-                    <div class="msg-mini-date">15 mars</div>
-                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
-                </div>
-                <div class="msg-mini">
-                    <p>Mon corps change de fou. Je me sens dégonflée, j'ai une énergie de dingue et je dors enfin bien !! ✨</p>
-                    <div class="msg-mini-date">22 mars</div>
-                    <div class="msg-mini-verified"><i class="fas fa-circle-check"></i> Vérifié</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="pricing-section fade-in">
-        <div class="pricing-inner">
-            <div class="section-label">Votre programme</div>
-            <h2 class="section-title">Passez à l'action maintenant</h2>
-            <div class="pricing-card">
-                <h2>Le programme complet Méthode K</h2>
-                <div class="includes-grid">
-                    <div class="include-chip"><i class="fas fa-check-circle"></i> 49 jours de menus</div>
-                    <div class="include-chip"><i class="fas fa-check-circle"></i> 33 petits-déjeuners</div>
-                    <div class="include-chip"><i class="fas fa-check-circle"></i> Liste de courses</div>
-                    <div class="include-chip"><i class="fas fa-check-circle"></i> Accès à vie</div>
-                </div>
-                <div class="price-block">
-                    <div class="price-old">Valeur réelle : 147,00€</div>
-                    <div class="price-current">29,99€</div>
-                    <div class="price-period">Paiement unique. Aucun abonnement.</div>
-                </div>
-                <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-button" id="main-cta">
-                    JE VEUX ATTEINDRE MON OBJECTIF <i class="fas fa-arrow-right"></i>
-                </a>
-                <div class="payment-row">
-                    <div class="payment-icons">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                        <i class="fab fa-apple-pay"></i>
-                    </div>
-                    <div class="secure-text"><i class="fas fa-lock"></i> Paiement 100% sécurisé</div>
-                </div>
-                <div class="mini-testimonials">
-                    <div class="mini-testimonial"><div class="mini-avatar">S</div> Sophie : -8 kg ⭐⭐⭐⭐⭐</div>
-                    <div class="mini-testimonial"><div class="mini-avatar">M</div> Marc : -11 kg ⭐⭐⭐⭐⭐</div>
-                    <div class="mini-testimonial"><div class="mini-avatar">L</div> Laura : -6 kg ⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GUARANTEE -->
-    <section class="guarantee-section fade-in">
-        <div class="guarantee-inner">
-            <div class="guarantee-box">
-                <div class="guarantee-icon"><i class="fas fa-shield-halved" style="color: var(--accent-green);"></i></div>
-                <div>
-                    <h3>Satisfait ou remboursé</h3>
-                    <p>Vous avez <strong>30 jours</strong> pour tester le programme. Si vous n'êtes pas satisfait(e), un simple email suffit pour être remboursé(e) intégralement. <strong>Aucune question posée, aucun risque.</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2026 La Méthode K - Tous droits réservés</p>
-    </footer>
-
-    <!-- STICKY CTA mobile -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb">
-            <i class="fas fa-bolt"></i> Commencer - 29,99€
-        </a>
+    <div class="stat-cell highlight">
+      <div class="stat-num" id="val-loss">—</div>
+      <div class="stat-lbl">Perte estimée<br>en 7 semaines (kg)</div>
+      <div class="stat-note" id="val-target"></div>
     </div>
-
-    <!-- SOCIAL PROOF TOAST -->
-    <div class="social-toast" id="socialToast">
-        <div class="social-toast-icon">✅</div>
-        <div>
-            <div class="social-toast-text" id="toastText"></div>
-            <div class="social-toast-time" id="toastTime"></div>
-        </div>
+    <div class="stat-cell">
+      <div class="stat-num" id="val-imc">—</div>
+      <div class="stat-lbl">IMC actuel</div>
+      <div class="stat-note" id="val-imc-status"></div>
     </div>
+  </div>
+</section>
 
-    <!-- EXIT INTENT POPUP -->
-    <div class="exit-overlay" id="exitOverlay">
-        <div class="exit-popup">
-            <button class="exit-popup-close" onclick="document.getElementById('exitOverlay').classList.remove('show')">&times;</button>
-            <div style="font-size: 2.5em; margin-bottom: 16px;">🎯</div>
-            <h2>Votre programme est prêt !</h2>
-            <p>Ne laissez pas passer cette opportunité. Votre plan personnalisé vous attend avec <strong style="color: var(--orange);">-69%</strong> de réduction.</p>
-            <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="exit-cta"><i class="fas fa-bolt"></i> Profiter de l'offre</a>
-            <p style="margin-top: 16px; font-size: 0.8em; color: var(--text-medium);">Garantie satisfait ou remboursé 30 jours</p>
+<!-- MÉTHODE AVEC PROJECTION -->
+<section class="sec reveal" style="background:var(--cream)">
+  <div class="w">
+    <div class="kicker">Comment ça se passe</div>
+    <h2>Tes 7 semaines,<br><em>semaine par semaine.</em></h2>
+    <div class="phases" id="phases-block">
+      <div class="phrow">
+        <div class="phn">
+          <div class="phn-wk">Semaine 1</div>
+          <div class="phn-kcal">1 300<span> kcal</span></div>
+          <div class="phn-proj">→ <b id="w1-proj">—</b></div>
         </div>
+        <div class="phb">
+          <div class="phl">Phase d'activation · Jours 1–7</div>
+          <div class="pht">Ton corps apprend à brûler</div>
+          <p class="phd">On démarre avec un apport calibré qui met ton métabolisme en mode combustion. Tu n'as pas faim — les menus sont rassasiants. La perte démarre dès les premiers jours.</p>
+        </div>
+      </div>
+      <div class="phrow">
+        <div class="phn">
+          <div class="phn-wk">Semaine 2</div>
+          <div class="phn-kcal">1 400<span> kcal</span></div>
+          <div class="phn-proj">→ <b id="w2-proj">—</b></div>
+        </div>
+        <div class="phb">
+          <div class="phl">Phase de transition · Jours 8–14</div>
+          <div class="pht">Ton énergie revient</div>
+          <p class="phd">On augmente les apports. Ton corps reçoit le signal qu'il n'est pas en danger — il continue à brûler au lieu de stocker. Tu dors mieux, tu te sens différente dans tes vêtements.</p>
+        </div>
+      </div>
+      <div class="phrow">
+        <div class="phn">
+          <div class="phn-wk">Semaines 3–7</div>
+          <div class="phn-kcal">1 500<span> kcal</span></div>
+          <div class="phn-proj">→ <b id="w7-proj">—</b></div>
+        </div>
+        <div class="phb">
+          <div class="phl">Phase de consolidation · Jours 15–49</div>
+          <div class="pht">Ton nouveau poids s'ancre</div>
+          <p class="phd">Le niveau optimal est atteint. Ton métabolisme est rééduqué — il brûle efficacement et ne veut plus revenir en arrière. Quand le programme se termine, les résultats restent.</p>
+        </div>
+      </div>
     </div>
+    <div class="perso-box" id="perso-box">
+      <div class="pk">Ton frein principal</div>
+      <p id="perso-text">—</p>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Validation params
-        const params = new URLSearchParams(window.location.search);
-        const bmr = parseInt(params.get('bmr'));
-        const tdee = parseInt(params.get('tdee'));
-        const weight = parseFloat(params.get('weight'));
-        const height = parseFloat(params.get('height'));
+<!-- DEUX SCÉNARIOS -->
+<section class="sec reveal" style="background:var(--bone)">
+  <div class="w">
+    <div class="kicker">Dans 7 semaines</div>
+    <h2>Deux chemins.<br><em>Un seul choix.</em></h2>
+    <div class="two-col">
+      <div class="scenario bad">
+        <div class="scenario-icon">😔</div>
+        <h3>Sans la Méthode K</h3>
+        <p>Ton poids dans 7 semaines</p>
+        <div class="scenario-weight" id="sc-bad">—</div>
+        <p>Le statu quo. Le métabolisme ralentit avec le temps. Chaque mois qui passe rend la perte plus difficile.</p>
+      </div>
+      <div class="scenario good">
+        <div class="scenario-icon">✨</div>
+        <h3>Avec la Méthode K</h3>
+        <p style="color:rgba(244,239,229,.4)">Ton poids dans 7 semaines</p>
+        <div class="scenario-weight" id="sc-good">—</div>
+        <p>Un nouveau métabolisme, une nouvelle énergie. Sans frustration, sans effet yoyo.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        if (isNaN(bmr) || isNaN(tdee) || isNaN(weight) || isNaN(height)
-            || weight < 30 || weight > 300 || height < 120 || height > 250
-            || bmr < 500 || bmr > 5000 || tdee < 500 || tdee > 10000) {
-            window.location.href = 'calculateur.html';
-        }
+<!-- MESSAGES -->
+<section class="msec reveal">
+  <div class="w">
+    <div class="kicker">Témoignages</div>
+    <h2>Elles ont eu les <em>mêmes doutes</em> que toi.</h2>
+    <div class="mgrid">
+      <div class="mb"><div class="md">31 mars · 15h20</div><div class="mt">Ça fait 10 jours que je n'ai pas touché au placard à gâteaux l'après-midi. Tes menus calent vraiment bien, plus de rages de sucre. C'est magique 🙏</div><div class="mv">Message vérifié</div></div>
+      <div class="mb"><div class="md">15 mars · 21h15</div><div class="mt">Je viens de rentrer dans mon jean d'avant grossesse sans forcer ! 😭 C'est la première fois qu'un programme me correspond autant. Et je n'ai jamais eu faim.</div><div class="mv">Message vérifié</div></div>
+      <div class="mb"><div class="md">27 mars · 12h05</div><div class="mt">Le bowl au saumon, une vraie tuerie 😍 Tellement bon et rapide — même mon conjoint me pique mes assiettes maintenant !</div><div class="mv">Message vérifié</div></div>
+      <div class="mb"><div class="md">22 mars · 09h30</div><div class="mt">La balance n'a pas bougé cette semaine, MAIS mon corps change de fou. Dégonflée, énergie de dingue, je dors enfin bien ✨</div><div class="mv">Message vérifié</div></div>
+    </div>
+  </div>
+</section>
 
-        // Calculations (3 mois = ~90 jours : 14j phase 1 + 35j phase 2 + 41j phase 3)
-        function calculateLoss() {
-            const boostedTdee = tdee * 1.05;
-            const totalDeficit = ((boostedTdee - 1300) * 14) + ((boostedTdee - 1400) * 35) + ((boostedTdee - 1500) * 41);
-            return Math.max(4.5, totalDeficit / 7000).toFixed(1);
-        }
+<!-- OFFRE -->
+<section class="offre-sec reveal">
+  <div class="w">
+    <div class="urgence">🔥 Offre de lancement — <b>-69%</b> — Plus que 23 places à ce prix</div>
+    <div class="offre-card">
+      <div class="offre-kicker">Ton programme</div>
+      <div class="offre-title">Le programme complet<br><em>Méthode K</em></div>
+      <ul class="inclus">
+        <li>49 jours de menus quotidiens complets (petit-déj, déjeuner, collation, dîner)</li>
+        <li>Recettes express en 15 minutes — bowlcakes, pancakes protéinés, egg muffins</li>
+        <li>Liste de courses hebdomadaire organisée par catégorie</li>
+        <li>Calculateurs nutritionnels personnalisés selon ton profil</li>
+        <li>Guide portions à la main + guide meal prep dimanche</li>
+        <li>Accès à vie · Mises à jour incluses · Aucun abonnement</li>
+      </ul>
+      <div class="prix-wrap">
+        <div class="prix-was">Valeur réelle : 147,00 €</div>
+        <div class="prix-now">29<span style="font-size:2rem;vertical-align:baseline">,99€</span></div>
+        <div class="prix-note">Paiement unique · Accès illimité à vie</div>
+      </div>
+      <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-perso" id="main-cta">
+        Je démarre mon programme
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+      </a>
+      <div class="guar">Satisfaite ou remboursée — 30 jours, sans condition</div>
+    </div>
+  </div>
+</section>
 
-        const loss = parseFloat(calculateLoss());
-        const imc = weight / Math.pow(height / 100, 2);
+<!-- COMPARAISON -->
+<section class="comp-sec reveal">
+  <div class="w">
+    <div class="kicker">Pourquoi la Méthode K</div>
+    <h2>Ce qui change,<br><em>concrètement.</em></h2>
+    <table class="comp-table">
+      <tr><th></th><th>Régimes classiques</th><th>Méthode K</th></tr>
+      <tr><td>Durée</td><td class="bad">Indéfinie</td><td class="good">7 semaines (49 jours)</td></tr>
+      <tr><td>Sensation de faim</td><td class="bad">Constante</td><td class="good">Aucune</td></tr>
+      <tr><td>Effet yoyo</td><td class="bad">Quasi systématique</td><td class="good">Métabolisme rééduqué</td></tr>
+      <tr><td>Recettes</td><td class="bad">Fades, compliquées</td><td class="good">Gourmandes, 15 min max</td></tr>
+      <tr><td>Comptage calories</td><td class="bad">Oui, épuisant</td><td class="good">Non, tout est planifié</td></tr>
+      <tr><td>Prix</td><td class="bad">50–200 € / mois</td><td class="good">29,99 € une seule fois</td></tr>
+    </table>
+  </div>
+</section>
 
-        // Count-up animation
-        function animateValue(el, start, end, suffix, duration) {
-            const startTime = performance.now();
-            const isFloat = String(end).includes('.');
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const current = start + (end - start) * eased;
-                el.textContent = suffix + (isFloat ? current.toFixed(1) : Math.round(current));
-                if (progress < 1) requestAnimationFrame(update);
-            }
-            requestAnimationFrame(update);
-        }
+<!-- GARANTIE -->
+<section class="guar-sec reveal">
+  <div class="wsm">
+    <div class="guar-box">
+      <div class="guar-icon">🛡</div>
+      <div>
+        <h3>Satisfaite ou remboursée — 30 jours</h3>
+        <p>Tu suis le programme pendant 30 jours. Si tu ne vois aucun résultat, un simple email suffit pour être remboursée intégralement. Aucune question posée, aucune condition, aucun risque.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        setTimeout(() => {
-            animateValue(document.getElementById('bmr-result'), 0, bmr, '', 1200);
-            animateValue(document.getElementById('imc-result'), 0, imc, '', 1200);
-            animateValue(document.getElementById('estimated-loss'), 0, loss, '-', 1400);
-        }, 300);
+<footer>
+  <div class="fl">La Méthode <i>K</i></div>
+  <div class="fc">© 2026 La Méthode K — Tous droits réservés</div>
+</footer>
 
-        // IMC status
-        function checkIMC(val) {
-            const el = document.getElementById('imc-status');
-            let label, cssClass;
-            if (val < 18.5) { label = 'Maigreur'; cssClass = 'imc-danger'; }
-            else if (val < 25) { label = 'Poids forme'; cssClass = 'imc-normal'; }
-            else if (val < 30) { label = 'Surpoids'; cssClass = 'imc-warning'; }
-            else { label = 'Obésité'; cssClass = 'imc-danger'; }
-            el.innerHTML = '<span class="imc-status ' + cssClass + '">' + label + '</span>';
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-dot"></div>
+  <div><div class="toast-b" id="toast-b"></div><div class="toast-t" id="toast-t"></div></div>
+</div>
 
-            // Position gauge marker (IMC 15-40 range)
-            const pct = Math.min(100, Math.max(0, ((val - 15) / 25) * 100));
-            setTimeout(() => {
-                document.getElementById('imc-marker').style.left = pct + '%';
-            }, 500);
-        }
-        checkIMC(imc);
+<!-- EXIT -->
+<div class="exit-bg" id="exit">
+  <div class="exit-box">
+    <button class="exit-close" onclick="document.getElementById('exit').classList.remove('on')">✕</button>
+    <div style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:14px">Avant de partir</div>
+    <h2>Ton programme<br>t'attend.</h2>
+    <p>Tu n'as plus à chercher. Tout est déjà planifié pour toi — 49 jours de menus, recettes, liste de courses. Il reste 23 places au tarif de lancement.</p>
+    <a href="https://shop.beacons.ai/kcoaching/5fee0cd5-b961-4699-b2c7-f73591d9bfbb" class="cta-perso">Démarrer maintenant — 29,99 €</a>
+    <div class="guar" style="margin-top:12px">Satisfaite ou remboursée 30 jours</div>
+  </div>
+</div>
 
-        // Weight per phase (14j + 35j + 41j = 90 jours)
-        const boostedTdee = tdee * 1.05;
-        const lossP1 = Math.max(0, ((boostedTdee - 1300) * 14) / 7000);
-        const lossP2 = Math.max(0, ((boostedTdee - 1400) * 35) / 7000);
-        const lossP3 = Math.max(0, ((boostedTdee - 1500) * 41) / 7000);
+<script>
+const p = new URLSearchParams(window.location.search);
+const bmr   = parseInt(p.get('bmr'))   || 0;
+const tdee  = parseInt(p.get('tdee'))  || 0;
+const weight= parseFloat(p.get('weight')) || 0;
+const loss  = parseFloat(p.get('loss'))  || 0;
+const imc   = parseFloat(p.get('imc'))   || 0;
+const frein = p.get('frein') || '';
+const objective = p.get('objective') || '';
 
-        document.getElementById('weight-phase1').textContent = (weight - lossP1).toFixed(1) + ' kg';
-        document.getElementById('weight-phase2').textContent = (weight - lossP1 - lossP2).toFixed(1) + ' kg';
-        document.getElementById('weight-phase3').textContent = (weight - lossP1 - lossP2 - lossP3).toFixed(1) + ' kg';
+// Redirect if invalid
+if (!bmr || !weight || weight < 40 || weight > 250) {
+  window.location.href = 'calculateur.html';
+}
 
-        // Target date (3 mois)
-        const date = new Date();
-        date.setMonth(date.getMonth() + 3);
-        const fmt = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-        document.getElementById('target-date').textContent = fmt.charAt(0).toUpperCase() + fmt.slice(1);
+// Populate hero stats
+document.getElementById('val-bmr').textContent = bmr.toLocaleString('fr-FR');
+document.getElementById('val-loss').textContent = '−' + loss.toFixed(1);
+document.getElementById('val-imc').textContent = imc.toFixed(1);
 
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+// IMC status
+const imcStatus = imc < 18.5 ? 'Insuffisance pondérale' : imc < 25 ? 'Poids normal' : imc < 30 ? 'Surpoids' : 'Obésité';
+document.getElementById('val-imc-status').textContent = imcStatus;
 
-        // Sticky CTA on mobile (show after scrolling past results)
-        window.addEventListener('scroll', () => {
-            if (window.innerWidth > 768) return;
-            const stickyCta = document.getElementById('stickyCta');
-            stickyCta.style.display = window.scrollY > 600 ? 'block' : 'none';
-        }, { passive: true });
+// Target weight
+const targetW = (weight - loss).toFixed(1);
+document.getElementById('val-target').textContent = '→ ' + targetW + ' kg';
 
-        // Track CTA click
-        document.getElementById('main-cta').addEventListener('click', function() {
-            if (typeof gtag === 'function') gtag('event', 'begin_checkout', { value: 29.99, currency: 'EUR' });
-            if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', { value: 29.99, currency: 'EUR' });
-        });
+// Hero subtitle personalised
+const objMsg = {
+  confidence: 'Tu veux te sentir bien dans ton corps. Voici ce que la progression calorique peut faire pour toi.',
+  yoyo: 'Tu en as assez de l\'effet yoyo. Voici pourquoi cette méthode fonctionne différemment.',
+  event: 'Tu as un événement qui approche. Voici ce qui est réaliste en 7 semaines.',
+  health: 'Tu veux changer tes habitudes durablement. Voici le plan le plus adapté à ton profil.'
+};
+if (objMsg[objective]) document.getElementById('hero-sub').textContent = objMsg[objective];
 
-        // Personalize CTA with target weight
-        const targetWeight = (weight - loss).toFixed(1);
-        document.querySelector('.cta-button').innerHTML = 'JE VEUX ATTEINDRE ' + targetWeight + ' KG <i class="fas fa-arrow-right"></i>';
+// Phase projections (7 semaines = 49 jours)
+// S1: 7j × deficit, S2: 7j, S3-7: 35j
+const lossS1 = Math.max(0, ((tdee - 1300) * 7) / 7700);
+const lossS2 = Math.max(0, ((tdee - 1400) * 7) / 7700);
+const lossS37 = Math.max(0, ((tdee - 1500) * 35) / 7700);
+document.getElementById('w1-proj').textContent = (weight - lossS1).toFixed(1) + ' kg';
+document.getElementById('w2-proj').textContent = (weight - lossS1 - lossS2).toFixed(1) + ' kg';
+document.getElementById('w7-proj').textContent = targetW + ' kg';
 
-        // Inaction / action weights
-        const inactionWeight = (weight + weight * 0.05).toFixed(1);
-        document.getElementById('weight-inaction').textContent = inactionWeight + ' kg';
-        document.getElementById('weight-action').textContent = targetWeight + ' kg';
+// Scenarios
+document.getElementById('sc-bad').textContent = weight.toFixed(1) + ' kg';
+document.getElementById('sc-good').textContent = targetW + ' kg';
 
-        // Countdown timer (15 minutes)
-        let totalSeconds = 15 * 60;
-        function updateCountdown() {
-            const m = Math.floor(totalSeconds / 60);
-            const s = totalSeconds % 60;
-            document.getElementById('countdownTimer').textContent = m + ':' + (s < 10 ? '0' : '') + s;
-            if (totalSeconds > 0) { totalSeconds--; setTimeout(updateCountdown, 1000); }
-            else { document.getElementById('countdownBar').innerHTML = '🔥 Offre expirée — <a href="#" style="color:var(--orange);font-weight:800;text-decoration:underline;" onclick="location.reload()">Recharger pour une nouvelle offre</a>'; }
-        }
-        updateCountdown();
+// CTA personnalisé
+document.getElementById('main-cta').innerHTML =
+  'Je veux atteindre ' + targetW + ' kg&nbsp;&nbsp;→';
 
-        // Social proof toasts
-        const toastMessages = [
-            { name: 'Sophie de Lyon', text: 'a rejoint le programme', time: 'il y a 3h' },
-            { name: 'Marc de Paris', text: 'a perdu 4 kg en 2 semaines', time: 'il y a 5h' },
-            { name: 'Camille de Toulouse', text: 'a rejoint le programme', time: 'il y a 2h' },
-            { name: 'Julien de Marseille', text: 'a atteint son objectif', time: 'il y a 1 jour' },
-        ];
-        let toastIdx = 0;
-        function showToast() {
-            const toast = document.getElementById('socialToast');
-            const msg = toastMessages[toastIdx % toastMessages.length];
-            document.getElementById('toastText').innerHTML = '<strong>' + msg.name + '</strong> ' + msg.text;
-            document.getElementById('toastTime').textContent = msg.time;
-            toast.classList.add('show');
-            setTimeout(() => { toast.classList.remove('show'); }, 4000);
-            toastIdx++;
-        }
-        setTimeout(showToast, 3000);
-        setInterval(showToast, 12000);
+// Frein perso message
+const freinMsg = {
+  time:   'Le manque de temps est le frein numéro 1. C\'est pour ça que chaque recette du programme est prête en <em>moins de 15 minutes</em> avec des ingrédients courants. Rien à planifier.',
+  hunger: 'La faim, c\'est ce qui fait craquer tout le monde. La Méthode K ne repose pas sur la restriction — elle repose sur la <em>qualité des aliments</em>. Tu manges à ta faim à chaque repas.',
+  info:   'Trop d\'infos contradictoires, c\'est paralysant. La Méthode K supprime toutes les décisions : les menus sont prêts, la liste de courses est faite. Tu <em>n\'as rien à décider</em>.',
+  yoyo:   'L\'effet yoyo vient du ralentissement métabolique. La progression 1300→1400→1500 kcal envoie à ton corps le signal qu\'il peut brûler <em>sans avoir peur de manquer</em>.'
+};
+if (freinMsg[frein]) {
+  document.getElementById('perso-text').innerHTML = freinMsg[frein];
+} else {
+  document.getElementById('perso-box').style.display = 'none';
+}
 
-        // Exit intent popup
-        let exitShown = false;
-        document.addEventListener('mouseout', function(e) {
-            if (e.clientY < 5 && !exitShown) {
-                document.getElementById('exitOverlay').classList.add('show');
-                exitShown = true;
-            }
-        });
-    </script>
+// Scroll reveal
+const ro = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
+// Toast
+const toasts=[
+  {n:'Sophie (Lyon)',a:'a rejoint le programme',t:'il y a 2h'},
+  {n:'Claire (Paris)',a:'a atteint son objectif',t:'il y a 4h'},
+  {n:'Amira (Bordeaux)',a:'vient de commander',t:'il y a 23 min'},
+  {n:'Julie (Toulouse)',a:'a perdu 4 kg en 2 semaines',t:'il y a 1 jour'},
+];
+let ti=0;
+function showToast(){
+  const el=document.getElementById('toast'),m=toasts[ti++%toasts.length];
+  document.getElementById('toast-b').innerHTML='<b>'+m.n+'</b> '+m.a;
+  document.getElementById('toast-t').textContent=m.t;
+  el.classList.add('on');
+  setTimeout(()=>el.classList.remove('on'),4500);
+}
+setTimeout(showToast,5000);setInterval(showToast,14000);
+
+// Exit intent
+let shown=false;
+document.addEventListener('mouseout',e=>{if(e.clientY<5&&!shown){document.getElementById('exit').classList.add('on');shown=true;}});
+document.getElementById('exit').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('on');});
+</script>
 </body>
 </html>
