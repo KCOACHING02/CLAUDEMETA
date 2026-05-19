@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Méthode K — Perdez du poids durablement en 49 jours</title>
-<meta name="description" content="Programme alimentaire 49 jours. Recettes en 15 min. Sans frustration, sans effet yoyo. 29,99€ paiement unique.">
+<title>La Méthode K — Programme nutritionnel 7 semaines</title>
+<meta name="description" content="Programme nutritionnel 7 semaines. Menus quotidiens, recettes express, progression calorique personnalisée. 29,99€ paiement unique.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -25,6 +25,8 @@ nav{position:sticky;top:0;z-index:80;background:rgba(250,247,240,.95);backdrop-f
 .logo i{font-style:italic;color:var(--clay)}
 .nbtn{background:var(--terra);color:#fff;font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:9px 20px;border-radius:2px;transition:background .25s}
 .nbtn:hover{background:var(--clay-dk)}
+
+/* HERO */
 .hero{background:var(--bone);display:grid;grid-template-columns:1fr 360px;min-height:92vh;align-items:center}
 .hcopy{padding:52px 52px 52px 24px}
 .eyebrow{display:flex;align-items:center;gap:8px;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:20px}
@@ -45,15 +47,21 @@ h1 em{font-style:italic;color:var(--clay)}
 .floatcard{position:absolute;z-index:2;bottom:36px;left:-24px;background:var(--cream);border:1px solid var(--i10);padding:16px 22px;box-shadow:0 6px 28px rgba(26,20,16,.1)}
 .floatcard .n{font-family:var(--s);font-size:2.2rem;font-weight:300;line-height:1}
 .floatcard .l{font-size:.65rem;color:var(--i60);margin-top:2px}
+
+/* TRUST */
 .trust{background:var(--cream);border-bottom:1px solid var(--i10);padding:16px 0}
 .trow{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
 .ti{font-size:.75rem;color:var(--i60);display:flex;align-items:center;gap:7px}
 .ti b{color:var(--clay)}
+
+/* SECTIONS */
 .sec{padding:80px 0}
 .kicker{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .kicker::before{content:'';width:16px;height:1px;background:var(--clay)}
 h2{font-family:var(--s);font-size:clamp(1.8rem,3vw,2.7rem);font-weight:300;line-height:1.15;color:var(--ink)}
 h2 em{font-style:italic;color:var(--clay)}
+
+/* PROBLEM */
 .prob-intro{font-size:1.05rem;font-weight:300;color:var(--i60);line-height:1.8;max-width:580px;margin:20px 0 44px}
 .prob-intro b{color:var(--ink);font-weight:500}
 .prob-list{display:flex;flex-direction:column;border:1px solid var(--i10)}
@@ -66,6 +74,8 @@ h2 em{font-style:italic;color:var(--clay)}
 .prob-pivot{margin-top:40px;padding:28px 32px;background:var(--bone);border-left:3px solid var(--clay)}
 .prob-pivot p{font-family:var(--s);font-size:1.25rem;font-weight:300;font-style:italic;line-height:1.6}
 .prob-pivot p em{color:var(--clay);font-style:normal}
+
+/* PROGRAMME */
 .prog-wrap{display:grid;grid-template-columns:1fr 320px;gap:60px;align-items:start;margin-top:44px}
 .prog-list{display:flex;flex-direction:column}
 .prow{display:grid;grid-template-columns:32px 1fr;gap:0 16px;padding:22px 0;border-bottom:1px solid var(--i10)}
@@ -85,10 +95,40 @@ h2 em{font-style:italic;color:var(--clay)}
 .btnbuy{display:flex;align-items:center;justify-content:center;gap:7px;background:var(--terra);color:#fff;width:100%;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:15px;border-radius:2px;border:none;font-family:var(--b);cursor:pointer;transition:background .25s;text-decoration:none}
 .btnbuy:hover{background:var(--clay-dk)}
 .guar{text-align:center;margin-top:10px;font-size:.67rem;color:var(--i30)}
+
+/* STATS */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--i10);border:1px solid var(--i10);margin-top:44px}
 .sc{background:var(--bone);padding:24px 16px;text-align:center}
 .scn{font-family:var(--s);font-size:2rem;font-weight:300;color:var(--clay)}
 .scl{font-size:.68rem;color:var(--i60);margin-top:4px;line-height:1.35}
+
+/* MÉTHODE — progression calorique */
+.phases-intro{font-size:.95rem;font-weight:300;color:var(--i60);line-height:1.75;max-width:560px;margin:16px 0 44px}
+.phaselist{border:1px solid var(--i10)}
+.phrow{display:grid;grid-template-columns:80px 1fr;border-bottom:1px solid var(--i10)}
+.phrow:last-child{border-bottom:none}
+.phn{display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--i10);padding:24px 12px;text-align:center;gap:4px}
+.phn-label{font-size:.55rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--i30)}
+.phn-kcal{font-family:var(--s);font-size:1.4rem;font-weight:300;color:var(--clay);line-height:1}
+.phb{padding:24px 32px}
+.phl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--i30);margin-bottom:4px}
+.pht{font-family:var(--s);font-size:1.3rem;font-weight:300;margin-bottom:6px}
+.phd{font-size:.81rem;font-weight:300;color:var(--i60);line-height:1.68;max-width:480px}
+.phase-why{margin-top:28px;padding:20px 24px;background:rgba(184,123,82,.06);border:1px solid rgba(184,123,82,.15);display:flex;align-items:flex-start;gap:14px}
+.phase-why-icon{font-size:1rem;flex-shrink:0;margin-top:2px}
+.phase-why p{font-size:.8rem;font-weight:300;color:var(--i60);line-height:1.65}
+.phase-why p b{color:var(--ink);font-weight:500}
+
+/* RECETTES */
+.recettes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.recette-card{background:var(--bone);border:1px solid var(--i10);padding:26px 22px}
+.recette-emoji{font-size:1.6rem;margin-bottom:14px}
+.recette-card h3{font-family:var(--s);font-size:1.1rem;font-weight:400;margin-bottom:8px}
+.recette-card p{font-size:.8rem;font-weight:300;color:var(--i60);line-height:1.6}
+.recette-tag{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--clay)}
+.recette-tag::before{content:'';width:12px;height:1px;background:var(--clay)}
+
+/* MESSAGES */
 .msec{background:var(--ink);padding:80px 0}
 .msec .kicker{color:var(--clay)}
 .msec .kicker::before{background:var(--clay)}
@@ -100,14 +140,8 @@ h2 em{font-style:italic;color:var(--clay)}
 .mt{font-size:.87rem;color:rgba(244,239,229,.78);line-height:1.68;font-weight:300}
 .mv{display:flex;align-items:center;gap:5px;margin-top:12px;font-size:.64rem;color:rgba(244,239,229,.22)}
 .mv::before{content:'✓';color:var(--clay)}
-.phaselist{margin-top:44px;border:1px solid var(--i10)}
-.phrow{display:grid;grid-template-columns:60px 1fr;border-bottom:1px solid var(--i10)}
-.phrow:last-child{border-bottom:none}
-.phn{display:flex;align-items:center;justify-content:center;font-family:var(--s);font-size:1.3rem;font-weight:300;color:var(--clay);border-right:1px solid var(--i10);padding:24px 12px}
-.phb{padding:24px 32px}
-.phl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--i30);margin-bottom:4px}
-.pht{font-family:var(--s);font-size:1.3rem;font-weight:300;margin-bottom:6px}
-.phd{font-size:.81rem;font-weight:300;color:var(--i60);line-height:1.68;max-width:480px}
+
+/* TEMOIGNAGES */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
 .temo{background:var(--cream);border:1px solid var(--i10);padding:26px 22px;transition:transform .3s}
 .temo:hover{transform:translateY(-4px)}
@@ -117,6 +151,8 @@ h2 em{font-style:italic;color:var(--clay)}
 .av{width:34px;height:34px;border-radius:50%;background:#E8DFD0;border:1px solid var(--i10);display:flex;align-items:center;justify-content:center;font-family:var(--s);font-size:.9rem;color:var(--clay);flex-shrink:0}
 .an{font-size:.78rem;font-weight:500}
 .ar{font-size:.68rem;color:var(--clay);margin-top:1px}
+
+/* FAQ */
 .flist{margin-top:44px;border-top:1px solid var(--i10)}
 .fi{border-bottom:1px solid var(--i10)}
 .fq{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 0;background:none;border:none;cursor:pointer;font-family:var(--s);font-size:1rem;font-weight:300;color:var(--ink);text-align:left;gap:16px;transition:color .2s}
@@ -125,6 +161,8 @@ h2 em{font-style:italic;color:var(--clay)}
 .fi.open .fico{background:var(--ink);color:#FAF7F0;border-color:var(--ink)}
 .fb{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .fbi{padding-bottom:18px;font-size:.84rem;font-weight:300;color:var(--i60);line-height:1.72}
+
+/* FINAL */
 .final{background:var(--ink);padding:96px 0;text-align:center}
 .final .kicker{justify-content:center;color:var(--clay)}
 .final .kicker::before{background:var(--clay)}
@@ -136,12 +174,21 @@ h2 em{font-style:italic;color:var(--clay)}
 .btnfinal:hover{background:var(--clay-dk);transform:translateY(-2px)}
 .fnote{margin-top:16px;font-size:.68rem;color:rgba(244,239,229,.22)}
 .fnote b{color:rgba(244,239,229,.42)}
+
+footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fl{font-family:var(--s);font-size:.9rem;color:rgba(244,239,229,.3)}
+.fl i{font-style:italic;color:var(--clay)}
+.fc{font-size:.67rem;color:rgba(244,239,229,.18)}
+
+/* TOAST */
 .toast{position:fixed;bottom:24px;left:24px;z-index:200;background:var(--cream);border:1px solid var(--i10);border-left:3px solid var(--clay);padding:16px 20px;max-width:300px;box-shadow:0 10px 36px rgba(26,20,16,.1);transform:translateX(calc(-100% - 40px));transition:transform .45s cubic-bezier(.4,0,.2,1);display:flex;gap:12px;align-items:flex-start}
 .toast.on{transform:none}
 .toast-dot{width:7px;height:7px;border-radius:50%;background:var(--clay);margin-top:5px;flex-shrink:0}
 .toast-b{font-size:.78rem;color:var(--i60);line-height:1.45}
 .toast-b b{color:var(--ink);font-weight:500}
 .toast-t{font-size:.68rem;color:var(--i30);margin-top:2px}
+
+/* EXIT */
 .exit-bg{position:fixed;inset:0;background:rgba(26,20,16,.7);z-index:300;display:none;align-items:center;justify-content:center;padding:24px}
 .exit-bg.on{display:flex}
 .exit-box{background:var(--cream);max-width:400px;width:100%;padding:48px 40px;text-align:center;position:relative}
@@ -149,12 +196,10 @@ h2 em{font-style:italic;color:var(--clay)}
 .exit-box .kicker{justify-content:center}
 .exit-box h2{font-size:1.7rem;margin-bottom:10px}
 .exit-box p{font-size:.85rem;font-weight:300;color:var(--i60);line-height:1.7;margin-bottom:26px}
-footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.fl{font-family:var(--s);font-size:.9rem;color:rgba(244,239,229,.3)}
-.fl i{font-style:italic;color:var(--clay)}
-.fc{font-size:.67rem;color:rgba(244,239,229,.18)}
+
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal.in{opacity:1;transform:none}
+
 @media(max-width:800px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hcopy{padding:44px 24px}
@@ -167,11 +212,12 @@ footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-betwee
   .sc{border:1px solid var(--i10)}
   .mgrid{grid-template-columns:1fr}
   .tgrid{grid-template-columns:1fr}
+  .recettes-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
   .trow{gap:16px;flex-direction:column;align-items:center}
   .phrow{grid-template-columns:1fr}
-  .phn{border-right:none;border-bottom:1px solid var(--i10);justify-content:flex-start;padding:18px 24px 12px}
+  .phn{border-right:none;border-bottom:1px solid var(--i10);flex-direction:row;justify-content:flex-start;padding:16px 24px;gap:12px}
   .phb{padding:18px 24px 28px}
 }
 </style>
@@ -187,11 +233,12 @@ footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-betwee
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hcopy">
-    <div class="eyebrow">Pour les femmes qui ont tout essayé</div>
-    <h1>Vous n'avez pas<br>manqué de volonté.<br>Vous aviez la <em>mauvaise méthode.</em></h1>
-    <p class="hero-lead">La Méthode K n'est pas un régime de plus. C'est un programme de <b>49 jours</b> qui rééduque votre métabolisme avec des repas simples, préparés en <b>15 minutes</b> — sans compter, sans peser, sans vous affamer.</p>
+    <div class="eyebrow">Pour toi qui as tout essayé</div>
+    <h1>Tu n'as pas<br>manqué de volonté.<br>Tu avais la <em>mauvaise méthode.</em></h1>
+    <p class="hero-lead">La Méthode K n'est pas un régime de plus. C'est un programme nutritionnel de <b>7 semaines</b> qui rééduque ton métabolisme progressivement — sans t'affamer, sans peser tes aliments, sans effet yoyo.</p>
     <div class="hero-proof-line">+537 femmes transformées · Résultats dès la 1re semaine</div>
     <a href="calculateur.html" class="btnp">
       Calculer mon potentiel gratuitement
@@ -203,11 +250,12 @@ footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-betwee
     <img src="AVANTAPRES.JPG" alt="Transformation Méthode K">
     <div class="floatcard">
       <div class="n">-8,2 kg</div>
-      <div class="l">en moyenne en 49 jours</div>
+      <div class="l">en moyenne en 7 semaines</div>
     </div>
   </div>
 </section>
 
+<!-- TRUST -->
 <div class="trust">
   <div class="trow">
     <div class="ti"><b>★ 4,8/5</b> satisfaction</div>
@@ -217,53 +265,57 @@ footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-betwee
   </div>
 </div>
 
+<!-- PROBLÈME -->
 <section class="sec reveal" style="background:var(--bone)">
   <div class="w">
-    <div class="kicker">Vous vous reconnaissez ?</div>
-    <h2>Le problème n'est<br>pas <em>vous.</em></h2>
-    <p class="prob-intro">Vous avez essayé. Plusieurs fois. Des régimes qui promettent beaucoup, qui demandent encore plus, et qui finissent tous pareil. <b>Pas parce que vous manquez de volonté</b> — mais parce que ces méthodes ne sont pas conçues pour s'intégrer dans une vraie vie.</p>
+    <div class="kicker">Tu te reconnais ?</div>
+    <h2>Le problème,<br>c'est pas <em>toi.</em></h2>
+    <p class="prob-intro">Tu as essayé. Plusieurs fois. Des régimes qui promettent beaucoup, qui demandent encore plus, et qui finissent tous pareil. <b>Pas parce que tu manques de volonté</b> — mais parce que ces méthodes ne sont pas faites pour ta vraie vie.</p>
     <div class="prob-list">
       <div class="prob-row">
         <div class="prob-icon">⏱</div>
-        <div class="prob-txt"><strong>Vous n'avez pas le temps</strong><span>Entre le travail, la famille, les imprévus — passer une heure à cuisiner un repas "diète", c'est le premier truc qui saute. Et après, c'est le régime entier qui saute.</span></div>
+        <div class="prob-txt"><strong>Tu n'as pas le temps</strong><span>Entre le boulot, la famille, les imprévus — passer une heure à cuisiner un plat "diète", c'est le premier truc qui saute. Et après, c'est tout le régime qui saute.</span></div>
       </div>
       <div class="prob-row">
         <div class="prob-icon">😵</div>
-        <div class="prob-txt"><strong>Trop d'informations contradictoires</strong><span>Glucides oui, glucides non, jeûne intermittent, calories en déficit, index glycémique... Vous ne savez plus quoi croire, alors vous ne faites plus rien.</span></div>
+        <div class="prob-txt"><strong>Trop d'informations contradictoires</strong><span>Glucides oui, glucides non, jeûne intermittent, calories en déficit, index glycémique... Tu ne sais plus quoi croire. Alors tu ne fais plus rien.</span></div>
       </div>
       <div class="prob-row">
         <div class="prob-icon">↩</div>
-        <div class="prob-txt"><strong>Vous reprenez à chaque fois</strong><span>Vous perdez 5 kg, vous en reprenez 7. Votre corps s'est adapté, votre métabolisme ralentit, et la frustration s'accumule à chaque cycle.</span></div>
+        <div class="prob-txt"><strong>Tu reprends à chaque fois</strong><span>Tu perds 5 kg, tu en reprends 7. Ton corps s'adapte, ton métabolisme ralentit, la frustration s'accumule. Et tu recommences.</span></div>
       </div>
     </div>
     <div class="prob-pivot">
-      <p>La solution n'est pas de vous priver davantage. C'est de <em>changer ce que vous mangez</em>, pas combien vous mangez.</p>
+      <p>La solution n'est pas de te priver encore plus. C'est de <em>nourrir ton corps intelligemment</em> pour qu'il apprenne à brûler.</p>
     </div>
   </div>
 </section>
 
+<!-- PROGRAMME + PRIX -->
 <section class="sec reveal" id="prog" style="background:var(--cream)">
   <div class="w">
     <div class="kicker">Ce qui est inclus</div>
     <h2>Un programme complet.<br><em>Rien à inventer.</em></h2>
     <div class="prog-wrap">
       <div class="prog-list">
-        <div class="prow"><div class="pn">01</div><div><h3>49 jours de menus complets</h3><p>Petit-déjeuner, déjeuner, dîner. Tout est déjà pensé pour vous. Vous ouvrez le programme, vous cuisinez, c'est tout.</p></div></div>
-        <div class="prow"><div class="pn">02</div><div><h3>Recettes prêtes en 15 minutes</h3><p>Avec des ingrédients de supermarché. Pas de pesée, pas de calcul. Vos proches mangent la même chose — vous ne cuisinez pas "à part".</p></div></div>
-        <div class="prow"><div class="pn">03</div><div><h3>33 options de petits-déjeuners</h3><p>Parce que manger la même chose chaque matin est la première raison d'abandon. Ici, vous choisissez selon votre humeur.</p></div></div>
-        <div class="prow"><div class="pn">04</div><div><h3>Liste de courses hebdomadaire</h3><p>Prête chaque semaine. Vous entrez dans le supermarché avec votre liste, vous ne réfléchissez pas.</p></div></div>
-        <div class="prow"><div class="pn">05</div><div><h3>Bilan métabolique personnalisé</h3><p>Un quiz de 2 minutes qui calcule votre potentiel de perte selon votre profil exact. Gratuit, immédiat.</p></div></div>
+        <div class="prow"><div class="pn">01</div><div><h3>49 jours de menus quotidiens complets</h3><p>Petit-déjeuner, déjeuner, collation, dîner — tout est planifié jour par jour. Tu ouvres, tu cuisines, c'est tout. Aucune improvisation.</p></div></div>
+        <div class="prow"><div class="pn">02</div><div><h3>Recettes express en 15 minutes</h3><p>Bowlcakes, pancakes protéinés, egg muffins — des vrais plats gourmands avec des ingrédients courants. Pas de pesée, pas de calcul. Ta famille mange la même chose.</p></div></div>
+        <div class="prow"><div class="pn">03</div><div><h3>Liste de courses hebdomadaire prête</h3><p>Organisée par catégorie (protéines, glucides, légumes, matières grasses). Tu entres dans le supermarché, tu ne réfléchis pas.</p></div></div>
+        <div class="prow"><div class="pn">04</div><div><h3>Calculateurs nutritionnels personnalisés</h3><p>Tes besoins caloriques et protéiques calculés selon ton profil exact. Le programme s'adapte à toi, pas l'inverse.</p></div></div>
+        <div class="prow"><div class="pn">05</div><div><h3>Guide portions + guide meal prep</h3><p>La méthode de la main pour doser sans peser. Et un plan de préparation en 2h le dimanche pour toute la semaine.</p></div></div>
+        <div class="prow"><div class="pn">06</div><div><h3>Accès à vie · Mises à jour incluses</h3><p>Un paiement unique. Tu gardes tout, pour toujours. Aucun abonnement, aucune surprise.</p></div></div>
       </div>
       <div class="pricebox">
         <div class="ptag">Prix de lancement</div>
         <div class="pwas">147,00 €</div>
         <div class="pnow">29<span style="font-size:1.7rem;vertical-align:baseline">,99€</span></div>
-        <div class="ponce">Paiement unique · Accès à vie</div>
+        <div class="ponce">Paiement unique · Accès illimité à vie</div>
         <ul class="plist">
           <li>49 jours de menus planifiés</li>
-          <li>Recettes en 15 min, ingrédients courants</li>
-          <li>33 options petit-déjeuner</li>
-          <li>Liste de courses automatisée</li>
+          <li>Recettes express (bowlcakes, pancakes, egg muffins)</li>
+          <li>Liste de courses hebdo prête</li>
+          <li>Calculateurs nutritionnels personnalisés</li>
+          <li>Guide portions + meal prep</li>
           <li>Bilan métabolique offert</li>
         </ul>
         <a href="calculateur.html" class="btnbuy">
@@ -276,18 +328,20 @@ footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-betwee
   </div>
 </section>
 
+<!-- STATS -->
 <section class="sec reveal" style="background:var(--bone)">
   <div class="w">
     <div class="kicker">Résultats réels</div>
     <h2>Ce que ça change,<br><em>concrètement.</em></h2>
     <div class="stats">
-      <div class="sc"><div class="scn">-8,2 kg</div><div class="scl">perdus en moyenne<br>en 49 jours</div></div>
+      <div class="sc"><div class="scn">-8,2 kg</div><div class="scl">perdus en moyenne<br>en 7 semaines</div></div>
       <div class="sc"><div class="scn">94%</div><div class="scl">des clientes recommandent<br>la Méthode K</div></div>
       <div class="sc"><div class="scn">15 min</div><div class="scl">de préparation<br>par repas, maximum</div></div>
     </div>
   </div>
 </section>
 
+<!-- MESSAGES CLIENTS -->
 <section class="msec reveal">
   <div class="w">
     <div class="kicker">Témoignages</div>
@@ -302,50 +356,118 @@ footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-betwee
   </div>
 </section>
 
+<!-- MÉTHODE — progression calorique expliquée -->
 <section class="sec reveal" style="background:var(--cream)">
   <div class="w">
-    <div class="kicker">Comment ça fonctionne</div>
-    <h2>3 phases.<br><em>Une logique simple.</em></h2>
+    <div class="kicker">Pourquoi ça fonctionne</div>
+    <h2>La progression calorique :<br><em>le secret anti-yoyo.</em></h2>
+    <p class="phases-intro">Tous les régimes t'affament. Ton corps panique, stocke, puis reprend dès que tu remanges normalement. La Méthode K fait l'inverse : elle augmente progressivement tes apports pour rééduquer ton métabolisme sans jamais le stresser.</p>
     <div class="phaselist">
-      <div class="phrow"><div class="phn">I</div><div class="phb"><div class="phl">Jours 1–17 · Activation</div><div class="pht">Votre corps apprend à brûler</div><p class="phd">On change la nature de ce que vous mangez — pas la quantité. Votre métabolisme commence à mobiliser les graisses stockées. Vous n'avez pas faim. La perte démarre dès la première semaine.</p></div></div>
-      <div class="phrow"><div class="phn">II</div><div class="phb"><div class="phl">Jours 18–35 · Transition</div><div class="pht">Votre énergie revient</div><p class="phd">La perte se stabilise, votre corps se recalibre. Vous dormez mieux, les inflammations diminuent, vous vous sentez différente dans vos vêtements avant même que la balance bouge beaucoup.</p></div></div>
-      <div class="phrow"><div class="phn">III</div><div class="phb"><div class="phl">Jours 36–49 · Liberté</div><div class="pht">Votre nouveau poids s'ancre</div><p class="phd">On fixe les acquis. Votre métabolisme est rééduqué — il ne veut plus revenir en arrière. Vous avez une autonomie alimentaire réelle. Fini les régimes.</p></div></div>
+      <div class="phrow">
+        <div class="phn">
+          <div class="phn-label">Semaine 1</div>
+          <div class="phn-kcal">1 300<span style="font-size:.8rem"> kcal</span></div>
+        </div>
+        <div class="phb">
+          <div class="phl">Phase de démarrage · Jours 1–7</div>
+          <div class="pht">Ton corps apprend à brûler</div>
+          <p class="phd">On démarre avec un apport calibré qui met ton métabolisme en mode combustion sans le priver. Tu n'as pas faim — les menus sont conçus pour être rassasiants malgré le déficit. La perte démarre dès la première semaine.</p>
+        </div>
+      </div>
+      <div class="phrow">
+        <div class="phn">
+          <div class="phn-label">Semaine 2</div>
+          <div class="phn-kcal">1 400<span style="font-size:.8rem"> kcal</span></div>
+        </div>
+        <div class="phb">
+          <div class="phl">Phase de transition · Jours 8–14</div>
+          <div class="pht">Ton énergie revient</div>
+          <p class="phd">On augmente les apports. Ton corps reçoit le signal qu'il n'est pas en danger — il continue à brûler au lieu de stocker. Tu dors mieux, les inflammations diminuent, tu te sens différente dans tes vêtements.</p>
+        </div>
+      </div>
+      <div class="phrow">
+        <div class="phn">
+          <div class="phn-label">Semaines 3–7</div>
+          <div class="phn-kcal">1 500<span style="font-size:.8rem"> kcal</span></div>
+        </div>
+        <div class="phb">
+          <div class="phl">Phase de consolidation · Jours 15–49</div>
+          <div class="pht">Ton nouveau poids s'ancre</div>
+          <p class="phd">Le niveau optimal est atteint. Ton métabolisme est rééduqué — il brûle efficacement à ce niveau. On consolide les acquis et on ancre ton nouveau poids. Quand le programme se termine, ton corps ne veut plus revenir en arrière.</p>
+        </div>
+      </div>
+    </div>
+    <div class="phase-why">
+      <div class="phase-why-icon">💡</div>
+      <p>C'est cette <b>progression en 3 paliers</b> qui explique l'absence d'effet yoyo. En montant les calories progressivement, on évite le ralentissement métabolique qui cause la reprise de poids sur tous les autres régimes.</p>
     </div>
   </div>
 </section>
 
+<!-- RECETTES -->
 <section class="sec reveal" style="background:var(--bone)">
+  <div class="w">
+    <div class="kicker">Les recettes du programme</div>
+    <h2>Gourmand.<br><em>Rapide. Efficace.</em></h2>
+    <div class="recettes-grid">
+      <div class="recette-card">
+        <div class="recette-emoji">🥣</div>
+        <h3>Bowlcakes</h3>
+        <p>Le petit-déjeuner phare du programme. Riche en protéines, rassasiant, prêt en 5 minutes au micro-ondes. Déclinable à l'infini selon tes envies.</p>
+        <div class="recette-tag">Petit-déjeuner star</div>
+      </div>
+      <div class="recette-card">
+        <div class="recette-emoji">🥞</div>
+        <h3>Pancakes protéinés</h3>
+        <p>Une recette express pour ne jamais sacrifier le plaisir. Moelleux, gourmands, et parfaitement équilibrés pour tenir jusqu'au déjeuner sans coup de barre.</p>
+        <div class="recette-tag">Recette express</div>
+      </div>
+      <div class="recette-card">
+        <div class="recette-emoji">🧁</div>
+        <h3>Egg Muffins express</h3>
+        <p>Préparés le dimanche en 20 minutes, ils tiennent 4 jours au frigo. Le snack parfait pour éviter les fringales sans ouvrir le placard à gâteaux.</p>
+        <div class="recette-tag">Meal prep facile</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="sec reveal" style="background:var(--cream)">
   <div class="w">
     <div class="kicker">Elles l'ont fait</div>
     <h2>Elles en <em>parlent.</em></h2>
     <div class="tgrid">
-      <div class="temo"><div class="stars">★★★★★</div><p class="tq">« J'avais essayé Weight Watchers, le régime IG, le jeûne. Rien n'avait tenu plus de 3 semaines. Là, j'en suis à 7 semaines et je n'ai aucune envie d'arrêter. »</p><div class="ta"><div class="av">S</div><div><div class="an">Sophie, 42 ans</div><div class="ar">-8 kg en 49 jours</div></div></div></div>
-      <div class="temo"><div class="stars">★★★★★</div><p class="tq">« Ce qui m'a convaincu c'est que ma femme n'avait pas à cuisiner séparément pour moi. On mange tous pareil. Et j'ai perdu 11 kg. »</p><div class="ta"><div class="av">M</div><div><div class="an">Marc, 38 ans</div><div class="ar">-11 kg en 49 jours</div></div></div></div>
-      <div class="temo"><div class="stars">★★★★★</div><p class="tq">« Je ne comptais pas les calories, je ne pesais rien. Je suivais juste les menus. Et ça a marché là où 3 ans de restrictions n'avaient rien donné. »</p><div class="ta"><div class="av">L</div><div><div class="an">Laura, 29 ans</div><div class="ar">-6 kg en 49 jours</div></div></div></div>
+      <div class="temo"><div class="stars">★★★★★</div><p class="tq">« J'avais essayé Weight Watchers, le régime IG, le jeûne. Rien n'avait tenu plus de 3 semaines. Là, j'en suis à 7 semaines et je n'ai aucune envie d'arrêter. »</p><div class="ta"><div class="av">S</div><div><div class="an">Sophie, 42 ans</div><div class="ar">-8 kg en 7 semaines</div></div></div></div>
+      <div class="temo"><div class="stars">★★★★★</div><p class="tq">« Ce qui m'a convaincu c'est que ma femme n'avait pas à cuisiner séparément pour moi. On mange tous pareil à la maison. Et j'ai perdu 11 kg. »</p><div class="ta"><div class="av">M</div><div><div class="an">Marc, 38 ans</div><div class="ar">-11 kg en 7 semaines</div></div></div></div>
+      <div class="temo"><div class="stars">★★★★★</div><p class="tq">« Je ne comptais pas les calories, je ne pesais rien. Je suivais juste les menus. Et ça a marché là où 3 ans de restrictions n'avaient rien donné. »</p><div class="ta"><div class="av">L</div><div><div class="an">Laura, 29 ans</div><div class="ar">-6 kg en 7 semaines</div></div></div></div>
     </div>
   </div>
 </section>
 
-<section class="sec reveal" style="background:var(--cream)">
+<!-- FAQ -->
+<section class="sec reveal" style="background:var(--bone)">
   <div class="wsm">
     <div class="kicker">Questions</div>
-    <h2>Ce que vous<br><em>voulez savoir</em></h2>
+    <h2>Ce que tu<br><em>veux savoir</em></h2>
     <div class="flist">
-      <div class="fi"><button class="fq">Est-ce que je vais avoir faim ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Non. Le programme ne repose pas sur la restriction calorique mais sur la qualité des aliments. Vos repas sont complets, équilibrés, rassasiants. La plupart de nos clientes sont surprises de manger autant.</div></div></div>
-      <div class="fi"><button class="fq">Je n'ai vraiment pas le temps — est-ce fait pour moi ?<span class="fico">+</span></button><div class="fb"><div class="fbi">C'est exactement pour vous. Chaque recette est conçue pour être prête en 15 minutes avec des ingrédients courants. La liste de courses est déjà faite. Vous n'avez rien à planifier.</div></div></div>
-      <div class="fi"><button class="fq">J'ai déjà tout essayé. Pourquoi ça marcherait cette fois ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Parce que la Méthode K ne vous demande pas plus de volonté — elle change la nature de ce que vous mangez. Votre métabolisme n'est pas cassé. Il a juste besoin d'être rééduqué correctement.</div></div></div>
-      <div class="fi"><button class="fq">Combien de kilos puis-je perdre ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Entre 6 et 11 kg en 49 jours selon les profils. Faites le bilan métabolique gratuit pour une estimation personnalisée selon votre âge, votre poids et votre niveau d'activité.</div></div></div>
-      <div class="fi"><button class="fq">Y a-t-il un abonnement ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Non. 29,99 € une seule fois. Vous gardez tout à vie, avec les mises à jour incluses. Aucune surprise, aucun prélèvement.</div></div></div>
-      <div class="fi"><button class="fq">Et si ça ne fonctionne pas pour moi ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Vous êtes protégée par une garantie satisfaite ou remboursée de 30 jours, sans condition. Vous suivez le programme, vous ne voyez rien — on vous rembourse intégralement. Pas de question posée.</div></div></div>
+      <div class="fi"><button class="fq">Est-ce que je vais avoir faim ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Non. Le programme est construit sur la qualité et l'équilibre des macros, pas la restriction brutale. Les repas sont complets avec protéines, glucides à IG bas et bonnes graisses — ils calent vraiment. La plupart des clientes sont surprises de manger autant.</div></div></div>
+      <div class="fi"><button class="fq">Je n'ai vraiment pas le temps — est-ce fait pour moi ?<span class="fico">+</span></button><div class="fb"><div class="fbi">C'est exactement pour toi. Les recettes (bowlcakes, egg muffins, pancakes protéinés) sont prêtes en 5 à 15 minutes. La liste de courses est déjà faite chaque semaine. Et le guide meal prep te permet de préparer en 2h le dimanche pour toute la semaine.</div></div></div>
+      <div class="fi"><button class="fq">Pourquoi les calories augmentent au fil des semaines ?<span class="fico">+</span></button><div class="fb"><div class="fbi">C'est le mécanisme central anti-yoyo. On démarre à 1300 kcal la semaine 1, puis 1400 en semaine 2, puis 1500 à partir de la semaine 3. Cette progression évite que ton métabolisme ralentisse et stocke — c'est ce qui cause la reprise de poids sur tous les autres régimes.</div></div></div>
+      <div class="fi"><button class="fq">J'ai déjà tout essayé. Pourquoi ça marcherait cette fois ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Parce que la Méthode K ne te demande pas plus de volonté — elle change la stratégie. La progression calorique progressive rééduque ton métabolisme au lieu de le stresser. Ton corps n'est pas cassé. Il a juste appris à se protéger contre les régimes trop restrictifs.</div></div></div>
+      <div class="fi"><button class="fq">Faut-il peser les aliments ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Non. Le programme inclut la méthode de la main — ta paume pour les protéines, ton poing pour les glucides, ton pouce pour les graisses. Une référence universelle qui fonctionne partout, sans balance, sans application.</div></div></div>
+      <div class="fi"><button class="fq">Y a-t-il un abonnement ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Non. 29,99 € une seule fois. Tu gardes tout à vie, avec les mises à jour incluses. Aucune surprise, aucun prélèvement.</div></div></div>
+      <div class="fi"><button class="fq">Et si ça ne fonctionne pas pour moi ?<span class="fico">+</span></button><div class="fb"><div class="fbi">Garantie satisfaite ou remboursée 30 jours, sans condition. Tu suis le programme, tu ne vois rien — on te rembourse intégralement. Pas de question posée.</div></div></div>
     </div>
   </div>
 </section>
 
+<!-- FINAL CTA -->
 <section class="final reveal">
   <div class="wsm">
     <div class="kicker">C'est le moment</div>
-    <h2>La prochaine version<br>de vous <em>commence ici.</em></h2>
-    <p class="fsub">Pas un régime de plus. Un programme conçu pour fonctionner dans votre vraie vie — en 15 minutes par repas, sans frustration, sans effet yoyo.</p>
+    <h2>La prochaine version<br>de toi <em>commence ici.</em></h2>
+    <p class="fsub">7 semaines. Une progression intelligente. Des recettes qui rentrent dans ta vraie vie. Sans frustration. Sans effet yoyo.</p>
     <div class="fwas">Prix habituel : 147,00 €</div>
     <div class="fprice">29<span style="font-size:1.7rem">,99€</span></div>
     <a href="calculateur.html" class="btnfinal">
@@ -370,8 +492,8 @@ footer{background:#0E0C09;padding:24px;display:flex;justify-content:space-betwee
   <div class="exit-box">
     <button class="exit-close" onclick="document.getElementById('exit').classList.remove('on')">✕</button>
     <div class="kicker">Avant de partir</div>
-    <h2>Votre bilan vous attend.</h2>
-    <p>2 minutes pour découvrir combien vous pouvez perdre en 3 mois. Gratuit, sans engagement.</p>
+    <h2>Ton bilan t'attend.</h2>
+    <p>2 minutes pour découvrir combien tu peux perdre en 7 semaines. Gratuit, sans engagement.</p>
     <a href="calculateur.html" class="btnbuy">Voir mon potentiel</a>
     <div class="guar" style="margin-top:12px">Il reste 23 places au tarif de lancement</div>
   </div>
