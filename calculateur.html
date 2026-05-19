@@ -1,486 +1,457 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculez Votre Potentiel | La Méthode K</title>
-    <meta name="description" content="Calculez votre potentiel de transformation avec La Méthode K. Découvrez combien vous pouvez perdre en 3 mois.">
-    <meta property="og:title" content="Calculez Votre Potentiel | La Méthode K">
-    <meta property="og:description" content="Calculez votre potentiel de transformation avec La Méthode K. Découvrez combien vous pouvez perdre en 3 mois.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kcoaching02.github.io/CLAUDEMETA/calculateur.html">
-    <meta property="og:image" content="https://kcoaching02.github.io/CLAUDEMETA/AVANTAPRES.JPG">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ton bilan métabolique — La Méthode K</title>
+<meta name="description" content="Calcule ton potentiel de transformation en 2 minutes. Programme personnalisé selon ton profil exact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#F4EFE5;--cream:#FAF7F0;--sand:#E8DFD0;--clay:#B87B52;--clay-dk:#8F5C35;--terra:#C04F2A;--ink:#1A1410;--i60:rgba(26,20,16,.6);--i30:rgba(26,20,16,.3);--i10:rgba(26,20,16,.08);--s:'Cormorant Garamond',Georgia,serif;--b:'Figtree',system-ui,sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--b);background:var(--bone);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:inherit;text-decoration:none}
 
-    <style>
-        :root {
-            --primary-green: #2d5a27;
-            --accent-green: #4a7c44;
-            --light-green: #a8c9a3;
-            --text-dark: #2d3436;
-            --text-medium: #636e72;
-            --bg-light: #f8f9f4;
-            --white: #ffffff;
-            --success-green: #6fc276;
-            --orange: #ff6b35;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--bg-light) 0%, #f0f4e8 100%);
-            color: var(--text-medium);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:80;background:rgba(250,247,240,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--i10)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:720px;margin:0 auto}
+.logo{font-family:var(--s);font-size:1.2rem;font-weight:300}
+.logo i{font-style:italic;color:var(--clay)}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--i60);transition:color .2s}
+.nav-back:hover{color:var(--clay)}
+.nav-back svg{flex-shrink:0}
 
-        /* Nav */
-        .nav {
-            position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px); z-index: 100; padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-        }
-        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 800; font-size: 1.3em; color: var(--primary-green); text-decoration: none; }
-        .nav-logo span { color: var(--accent-green); }
-        .nav-back { color: var(--text-medium); text-decoration: none; font-size: 0.9em; font-weight: 500; display: flex; align-items: center; gap: 6px; }
-        .nav-back:hover { color: var(--primary-green); }
+/* PROGRESS */
+.progress-wrap{max-width:560px;margin:88px auto 0;padding:0 24px}
+.progress-track{height:3px;background:var(--sand);border-radius:2px;overflow:hidden;margin-bottom:10px}
+.progress-fill{height:100%;background:var(--clay);border-radius:2px;transition:width .5s ease}
+.progress-label{font-size:.68rem;color:var(--i30);letter-spacing:.06em;text-align:right}
 
-        /* Progress bar */
-        .progress-container { max-width: 550px; margin: 100px auto 0; padding: 0 20px; }
-        .progress-bar { height: 6px; background: #e0e4e0; border-radius: 3px; overflow: hidden; margin-bottom: 30px; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-green), var(--success-green)); border-radius: 3px; transition: width 0.5s ease; }
+/* CARD */
+.card{background:var(--cream);border:1px solid var(--i10);max-width:560px;width:calc(100% - 48px);margin:20px auto 60px;padding:44px 44px 36px}
 
-        /* Quiz container */
-        .quiz-container {
-            background: var(--white); padding: 40px 45px; border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08); max-width: 550px; width: 100%;
-            margin: 0 auto 40px; animation: fadeInUp 0.4s ease-out;
-        }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+/* STEPS */
+.step{display:none}
+.step.active{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-        .step { display: none; animation: slideIn 0.4s ease-out; }
-        .step.active { display: block; }
+.step-num{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);display:flex;align-items:center;gap:7px;margin-bottom:14px}
+.step-num::before{content:'';width:14px;height:1px;background:var(--clay)}
+.step h2{font-family:var(--s);font-size:2rem;font-weight:300;line-height:1.2;color:var(--ink);margin-bottom:8px}
+.step h2 em{font-style:italic;color:var(--clay)}
+.step-hint{font-size:.82rem;font-weight:300;color:var(--i60);margin-bottom:28px;line-height:1.6}
 
-        .step-label { font-size: 0.85em; color: var(--accent-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-        .step h2 { color: var(--text-dark); font-size: 1.6em; font-weight: 800; margin-bottom: 8px; }
-        .step p.hint { color: var(--text-medium); font-size: 0.95em; margin-bottom: 25px; }
+/* GENDER */
+.gender-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.gender-card{position:relative}
+.gender-card input{position:absolute;opacity:0;width:0;height:0}
+.gender-card label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px 20px;background:var(--bone);border:1px solid var(--i10);cursor:pointer;transition:all .25s}
+.gender-card label .gicon{font-size:2rem;line-height:1}
+.gender-card label .gtxt{font-size:.85rem;font-weight:500;color:var(--ink)}
+.gender-card input:checked + label{background:var(--cream);border-color:var(--clay);box-shadow:inset 0 0 0 1px var(--clay)}
+.gender-card label:hover{border-color:var(--clay)}
 
-        /* Gender cards */
-        .gender-group { display: flex; gap: 15px; margin-top: 10px; }
-        .gender-group div { flex: 1; }
-        input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
-        .gender-label {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: var(--bg-light); color: var(--text-medium); padding: 30px 20px;
-            border-radius: 16px; text-align: center; cursor: pointer; transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        .gender-label:hover { background: #e8ede6; transform: translateY(-3px); }
-        .gender-label .icon { font-size: 3em; margin-bottom: 10px; }
-        .gender-label .text { font-weight: 700; font-size: 1em; }
-        input[type="radio"]#homme:checked + .gender-label { background: linear-gradient(135deg, #6ba3d4, #5a8fc4); color: white; border-color: #5a8fc4; box-shadow: 0 6px 20px rgba(107,163,212,0.3); }
-        input[type="radio"]#femme:checked + .gender-label { background: linear-gradient(135deg, #f3a6c5, #e88ba7); color: white; border-color: #e88ba7; box-shadow: 0 6px 20px rgba(243,166,197,0.3); }
+/* INPUT */
+.input-wrap{position:relative;margin-bottom:8px}
+.input-wrap input{width:100%;padding:16px 56px 16px 20px;border:1px solid var(--sand);background:var(--bone);font-family:var(--b);font-size:1.3rem;font-weight:500;color:var(--ink);transition:border .25s;outline:none}
+.input-wrap input:focus{border-color:var(--clay)}
+.input-wrap input::placeholder{color:var(--i30);font-weight:300}
+.input-unit{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:.8rem;font-weight:500;color:var(--i30)}
+.field-error{font-size:.75rem;color:var(--terra);margin-bottom:16px;display:none}
+.field-error.show{display:block}
 
-        /* Inputs */
-        .input-group { position: relative; margin-top: 10px; }
-        .input-group input {
-            width: 100%; padding: 18px 20px; padding-right: 60px; border: 2px solid #e0e4e0;
-            border-radius: 14px; font-size: 1.2em; color: var(--text-dark); transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif; font-weight: 600;
-        }
-        .input-group input:focus { outline: none; border-color: var(--accent-green); box-shadow: 0 0 0 3px rgba(74,124,68,0.15); }
-        .input-unit { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--text-medium); font-weight: 600; font-size: 1em; }
+/* OPTIONS */
+.options{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt label{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--bone);border:1px solid var(--i10);cursor:pointer;transition:all .25s}
+.opt label:hover{border-color:var(--clay)}
+.opt input:checked + label{background:var(--cream);border-color:var(--clay);box-shadow:inset 0 0 0 1px var(--clay)}
+.opt-icon{font-size:1.3rem;flex-shrink:0;width:32px;text-align:center}
+.opt-title{font-size:.88rem;font-weight:500;color:var(--ink);display:block;margin-bottom:2px}
+.opt-desc{font-size:.75rem;font-weight:300;color:var(--i60);display:block}
+.opt-check{margin-left:auto;width:18px;height:18px;border:1px solid var(--sand);border-radius:50%;flex-shrink:0;transition:all .25s;display:flex;align-items:center;justify-content:center}
+.opt input:checked + label .opt-check{background:var(--clay);border-color:var(--clay)}
+.opt input:checked + label .opt-check::after{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#fff}
 
-        /* Activity options */
-        .activity-options { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-        .activity-option {
-            display: flex; align-items: center; gap: 14px; padding: 16px 18px;
-            background: var(--bg-light); border-radius: 14px; cursor: pointer;
-            border: 2px solid transparent; transition: all 0.3s;
-        }
-        .activity-option:hover { background: #e8ede6; transform: translateX(4px); }
-        .activity-option.selected { background: white; border-color: var(--accent-green); box-shadow: 0 4px 15px rgba(74,124,68,0.15); }
-        .activity-option .activity-icon { font-size: 1.6em; width: 40px; text-align: center; }
-        .activity-option .activity-text { font-weight: 600; color: var(--text-dark); font-size: 0.9em; }
-        .activity-option .activity-desc { font-size: 0.8em; color: var(--text-medium); font-weight: 400; }
-        input[type="radio"].activity-radio { position: absolute; opacity: 0; width: 0; height: 0; }
+/* BUTTONS */
+.btn-next{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--terra);color:#fff;font-family:var(--b);font-size:.78rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:16px;border:none;cursor:pointer;transition:background .25s;margin-top:8px}
+.btn-next:hover{background:var(--clay-dk)}
+.btn-back{display:flex;align-items:center;gap:6px;background:none;border:none;font-family:var(--b);font-size:.75rem;color:var(--i30);cursor:pointer;margin-top:14px;padding:0;transition:color .2s}
+.btn-back:hover{color:var(--i60)}
 
-        /* Buttons */
-        .btn-next, .btn-submit {
-            width: 100%; padding: 18px; border: none; border-radius: 14px;
-            font-size: 1.1em; font-weight: 700; cursor: pointer; transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif; display: flex; align-items: center;
-            justify-content: center; gap: 10px; margin-top: 25px;
-        }
-        .btn-next { background: linear-gradient(135deg, var(--accent-green), var(--primary-green)); color: white; box-shadow: 0 6px 20px rgba(74,124,68,0.25); }
-        .btn-next:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74,124,68,0.35); }
-        .btn-submit { background: linear-gradient(135deg, var(--orange), #ff8c42); color: white; box-shadow: 0 6px 20px rgba(255,107,53,0.3); font-size: 1.2em; }
-        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,107,53,0.4); }
-        .btn-back { background: none; border: none; color: var(--text-medium); cursor: pointer; font-size: 0.9em; font-family: 'Montserrat', sans-serif; margin-top: 15px; display: flex; align-items: center; gap: 6px; }
-        .btn-back:hover { color: var(--text-dark); }
+/* SUBMIT */
+.btn-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--clay);color:#fff;font-family:var(--b);font-size:.82rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:18px;border:none;cursor:pointer;transition:background .25s,transform .2s;margin-top:8px}
+.btn-submit:hover{background:var(--clay-dk);transform:translateY(-2px)}
 
-        .error-msg { color: #e74c3c; font-size: 0.85em; font-weight: 500; margin-top: 8px; display: none; }
+/* LOADING */
+.loading{position:fixed;inset:0;background:var(--bone);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;pointer-events:none;transition:opacity .4s}
+.loading.on{opacity:1;pointer-events:all}
+.loading-ring{width:52px;height:52px;border:2px solid var(--sand);border-top-color:var(--clay);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:28px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-title{font-family:var(--s);font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:8px}
+.loading-sub{font-size:.8rem;font-weight:300;color:var(--i60);margin-bottom:32px}
+.loading-steps{display:flex;flex-direction:column;gap:10px}
+.lstep{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--i30);opacity:0;transition:opacity .4s}
+.lstep.show{opacity:1;color:var(--i60)}
+.lstep-dot{width:16px;height:16px;border-radius:50%;border:1px solid var(--sand);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .4s}
+.lstep.show .lstep-dot{background:var(--clay);border-color:var(--clay)}
+.lstep.show .lstep-dot::after{content:'';display:block;width:5px;height:5px;border-radius:50%;background:#fff}
 
-        /* Loading */
-        .loading-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(248,249,244,0.98), rgba(240,244,232,0.98));
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.4s ease;
-        }
-        .loading-overlay.active { opacity: 1; visibility: visible; }
-        .spinner { border: 6px solid rgba(74,124,68,0.15); border-top: 6px solid var(--accent-green); border-radius: 50%; width: 70px; height: 70px; animation: spin 1s linear infinite; margin-bottom: 25px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .loading-message { font-size: 1.3em; color: var(--text-dark); font-weight: 700; margin-bottom: 8px; }
-        .loading-submessage { color: var(--text-medium); font-size: 0.95em; }
-        .loading-steps { margin-top: 25px; display: flex; flex-direction: column; gap: 10px; }
-        .loading-step { display: flex; align-items: center; gap: 10px; color: var(--text-medium); font-size: 0.9em; opacity: 0; animation: fadeInUp 0.4s ease forwards; }
-        .loading-step i { color: var(--success-green); }
+/* NOTE */
+.step-note{margin-top:20px;padding:14px 18px;background:var(--bone);border-left:2px solid var(--clay);font-size:.78rem;font-weight:300;color:var(--i60);line-height:1.6}
+.step-note b{color:var(--ink);font-weight:500}
 
-        /* Motivational messages */
-        .step-motivation {
-            background: var(--bg-light); padding: 12px 16px; border-radius: 12px;
-            font-size: 0.85em; color: var(--accent-green); font-weight: 600;
-            margin-top: 16px; display: flex; align-items: center; gap: 8px;
-            border: 1px solid #e0e8d8;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .quiz-container { padding: 30px 22px; margin: 0 15px 40px; }
-            .progress-container { padding: 0 15px; margin-top: 90px; }
-            .step h2 { font-size: 1.35em; }
-        }
-    </style>
+@media(max-width:560px){
+  .card{padding:32px 24px 28px;width:calc(100% - 32px)}
+  .step h2{font-size:1.6rem}
+  .nav-row{padding:14px 20px}
+  .progress-wrap{padding:0 16px}
+}
+</style>
 </head>
 <body>
 
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">La Méthode <span>K</span></a>
-            <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Retour</a>
-        </div>
-    </nav>
+<nav>
+  <div class="nav-row">
+    <div class="logo">La Méthode <i>K</i></div>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 7H3M6 4L3 7l3 3"/></svg>
+      Retour
+    </a>
+  </div>
+</nav>
 
-    <div class="progress-container">
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill" style="width: 14.3%"></div>
-        </div>
+<div class="progress-wrap">
+  <div class="progress-track"><div class="progress-fill" id="prog" style="width:14.3%"></div></div>
+  <div class="progress-label" id="prog-label">Étape 1 sur 7</div>
+</div>
+
+<div class="card">
+
+  <!-- STEP 1 — Genre -->
+  <div class="step active" data-step="1">
+    <div class="step-num">Étape 1 sur 7</div>
+    <h2>Tu es <em>plutôt…</em></h2>
+    <p class="step-hint">Ton métabolisme de base diffère selon le sexe — c'est la base de tout calcul précis.</p>
+    <div class="gender-row">
+      <div class="gender-card">
+        <input type="radio" id="femme" name="gender" value="female" checked>
+        <label for="femme"><span class="gicon">♀</span><span class="gtxt">Femme</span></label>
+      </div>
+      <div class="gender-card">
+        <input type="radio" id="homme" name="gender" value="male">
+        <label for="homme"><span class="gicon">♂</span><span class="gtxt">Homme</span></label>
+      </div>
     </div>
+    <button class="btn-next" onclick="go(2)">
+      Continuer
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+    </button>
+  </div>
 
-    <div class="quiz-container">
-        <!-- Step 1: Gender -->
-        <div class="step active" data-step="1">
-            <div class="step-label">Étape 1 sur 7</div>
-            <h2>Quel est votre sexe ?</h2>
-            <p class="hint">Cela nous permet d'adapter les calculs a votre metabolisme.</p>
-            <div class="gender-group">
-                <div>
-                    <input type="radio" id="homme" name="gender" value="male" checked>
-                    <label for="homme" class="gender-label">
-                        <span class="icon"><i class="fas fa-male"></i></span>
-                        <span class="text">Homme</span>
-                    </label>
-                </div>
-                <div>
-                    <input type="radio" id="femme" name="gender" value="female">
-                    <label for="femme" class="gender-label">
-                        <span class="icon"><i class="fas fa-female"></i></span>
-                        <span class="text">Femme</span>
-                    </label>
-                </div>
-            </div>
-            <button class="btn-next" onclick="nextStep(2)">Continuer <i class="fas fa-arrow-right"></i></button>
-        </div>
-
-        <!-- Step 2: Age -->
-        <div class="step" data-step="2">
-            <div class="step-label">Étape 2 sur 7</div>
-            <h2>Quel age avez-vous ?</h2>
-            <p class="hint">Votre metabolisme evolue avec l'age, c'est important pour le calcul.</p>
-            <div class="input-group">
-                <input type="number" id="age" min="15" max="100" placeholder="35" inputmode="numeric">
-                <span class="input-unit">ans</span>
-            </div>
-            <div class="error-msg" id="age-error">Veuillez entrer un age entre 15 et 100 ans.</div>
-            <button class="btn-next" onclick="validateAndNext('age', 3)">Continuer <i class="fas fa-arrow-right"></i></button>
-            <button class="btn-back" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Retour</button>
-            <div class="step-motivation"><i class="fas fa-chart-line"></i> Votre métabolisme est unique, ces données sont essentielles.</div>
-        </div>
-
-        <!-- Step 3: Weight -->
-        <div class="step" data-step="3">
-            <div class="step-label">Étape 3 sur 7</div>
-            <h2>Quel est votre poids actuel ?</h2>
-            <p class="hint">Votre poids de depart est essentiel pour estimer vos resultats.</p>
-            <div class="input-group">
-                <input type="number" id="weight" min="30" max="300" step="0.1" placeholder="75" inputmode="decimal">
-                <span class="input-unit">kg</span>
-            </div>
-            <div class="error-msg" id="weight-error">Veuillez entrer un poids entre 30 et 300 kg.</div>
-            <button class="btn-next" onclick="validateAndNext('weight', 4)">Continuer <i class="fas fa-arrow-right"></i></button>
-            <button class="btn-back" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Retour</button>
-            <div class="step-motivation"><i class="fas fa-lock"></i> Vos données restent 100% confidentielles.</div>
-        </div>
-
-        <!-- Step 4: Height -->
-        <div class="step" data-step="4">
-            <div class="step-label">Étape 4 sur 7</div>
-            <h2>Quelle est votre taille ?</h2>
-            <p class="hint">Combinee a votre poids, elle permet de calculer votre IMC.</p>
-            <div class="input-group">
-                <input type="number" id="height" min="120" max="250" placeholder="170" inputmode="numeric">
-                <span class="input-unit">cm</span>
-            </div>
-            <div class="error-msg" id="height-error">Veuillez entrer une taille entre 120 et 250 cm.</div>
-            <button class="btn-next" onclick="validateAndNext('height', 5)">Continuer <i class="fas fa-arrow-right"></i></button>
-            <button class="btn-back" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Retour</button>
-            <div class="step-motivation"><i class="fas fa-bullseye"></i> Plus que quelques étapes pour votre programme personnalisé !</div>
-        </div>
-
-        <!-- Step 5: Activity -->
-        <div class="step" data-step="5">
-            <div class="step-label">Étape 5 sur 7</div>
-            <h2>Quel est votre niveau d'activite ?</h2>
-            <p class="hint">Selectionnez ce qui correspond le mieux a votre quotidien.</p>
-            <div class="activity-options">
-                <label class="activity-option selected" onclick="selectActivity(this, '1.2')">
-                    <input type="radio" class="activity-radio" name="activity" value="1.2" checked>
-                    <div class="activity-icon">🛋️</div>
-                    <div>
-                        <div class="activity-text">Sedentaire</div>
-                        <div class="activity-desc">Moins de 5000 pas/jour</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectActivity(this, '1.375')">
-                    <input type="radio" class="activity-radio" name="activity" value="1.375">
-                    <div class="activity-icon">🚶</div>
-                    <div>
-                        <div class="activity-text">Faiblement actif(ve)</div>
-                        <div class="activity-desc">5000 - 7499 pas/jour</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectActivity(this, '1.55')">
-                    <input type="radio" class="activity-radio" name="activity" value="1.55">
-                    <div class="activity-icon">🏃‍♀️</div>
-                    <div>
-                        <div class="activity-text">Moderement actif(ve)</div>
-                        <div class="activity-desc">7500 - 12499 pas/jour</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectActivity(this, '1.725')">
-                    <input type="radio" class="activity-radio" name="activity" value="1.725">
-                    <div class="activity-icon">🏋️</div>
-                    <div>
-                        <div class="activity-text">Actif(ve)</div>
-                        <div class="activity-desc">Plus de 12500 pas/jour</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectActivity(this, '1.9')">
-                    <input type="radio" class="activity-radio" name="activity" value="1.9">
-                    <div class="activity-icon">🤸</div>
-                    <div>
-                        <div class="activity-text">Tres actif(ve)</div>
-                        <div class="activity-desc">Travail physique intense</div>
-                    </div>
-                </label>
-            </div>
-            <button class="btn-next" onclick="nextStep(6)">Continuer <i class="fas fa-arrow-right"></i></button>
-            <button class="btn-back" onclick="prevStep(4)"><i class="fas fa-arrow-left"></i> Retour</button>
-        </div>
-
-        <!-- Step 6: Objective -->
-        <div class="step" data-step="6">
-            <div class="step-label">Étape 6 sur 7</div>
-            <h2>Quel est votre objectif principal ?</h2>
-            <p class="hint">Cela nous aide à personnaliser votre programme.</p>
-            <div class="activity-options">
-                <label class="activity-option selected" onclick="selectObjective(this, 'health')">
-                    <input type="radio" class="activity-radio" name="objective" value="health" checked>
-                    <div class="activity-icon">💪</div>
-                    <div>
-                        <div class="activity-text">Me sentir mieux dans mon corps</div>
-                        <div class="activity-desc">Santé, énergie, bien-être au quotidien</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectObjective(this, 'event')">
-                    <input type="radio" class="activity-radio" name="objective" value="event">
-                    <div class="activity-icon">👗</div>
-                    <div>
-                        <div class="activity-text">Un événement approche</div>
-                        <div class="activity-desc">Mariage, vacances, occasion spéciale</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectObjective(this, 'confidence')">
-                    <input type="radio" class="activity-radio" name="objective" value="confidence">
-                    <div class="activity-icon">🪞</div>
-                    <div>
-                        <div class="activity-text">Retrouver confiance en moi</div>
-                        <div class="activity-desc">Me sentir bien dans mes vêtements</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectObjective(this, 'longterm')">
-                    <input type="radio" class="activity-radio" name="objective" value="longterm">
-                    <div class="activity-icon">🎯</div>
-                    <div>
-                        <div class="activity-text">Perdre du poids durablement</div>
-                        <div class="activity-desc">En finir avec l'effet yoyo</div>
-                    </div>
-                </label>
-            </div>
-            <button class="btn-next" onclick="nextStep(7)">Continuer <i class="fas fa-arrow-right"></i></button>
-            <button class="btn-back" onclick="prevStep(5)"><i class="fas fa-arrow-left"></i> Retour</button>
-        </div>
-
-        <!-- Step 7: Timeline -->
-        <div class="step" data-step="7">
-            <div class="step-label">Étape 7 sur 7</div>
-            <h2>Quand voulez-vous voir des résultats ?</h2>
-            <p class="hint">La Méthode K s'adapte à votre rythme.</p>
-            <div class="activity-options">
-                <label class="activity-option selected" onclick="selectTimeline(this, 'asap')">
-                    <input type="radio" class="activity-radio" name="timeline" value="asap" checked>
-                    <div class="activity-icon">⚡</div>
-                    <div>
-                        <div class="activity-text">Le plus vite possible</div>
-                        <div class="activity-desc">Je suis motivé(e) à 100%</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectTimeline(this, '1month')">
-                    <input type="radio" class="activity-radio" name="timeline" value="1month">
-                    <div class="activity-icon">📅</div>
-                    <div>
-                        <div class="activity-text">D'ici 1 mois</div>
-                        <div class="activity-desc">J'ai un objectif précis en tête</div>
-                    </div>
-                </label>
-                <label class="activity-option" onclick="selectTimeline(this, '3months')">
-                    <input type="radio" class="activity-radio" name="timeline" value="3months">
-                    <div class="activity-icon">🗓️</div>
-                    <div>
-                        <div class="activity-text">D'ici 3 mois</div>
-                        <div class="activity-desc">Je préfère un rythme progressif</div>
-                    </div>
-                </label>
-            </div>
-            <button class="btn-submit" onclick="submitQuiz()"><i class="fas fa-bolt"></i> Voir mes résultats personnalisés</button>
-            <button class="btn-back" onclick="prevStep(6)"><i class="fas fa-arrow-left"></i> Retour</button>
-        </div>
+  <!-- STEP 2 — Âge -->
+  <div class="step" data-step="2">
+    <div class="step-num">Étape 2 sur 7</div>
+    <h2>Tu as quel <em>âge ?</em></h2>
+    <p class="step-hint">Le métabolisme évolue avec les années — ça change les calculs de façon significative.</p>
+    <div class="input-wrap">
+      <input type="number" id="age" min="15" max="80" placeholder="35" inputmode="numeric">
+      <span class="input-unit">ans</span>
     </div>
+    <div class="field-error" id="age-err">Entre 15 et 80 ans s'il te plaît.</div>
+    <div class="step-note"><b>Pourquoi ?</b> Après 35 ans, le métabolisme ralentit d'environ 1% par an. Le programme ajuste les paliers caloriques en conséquence.</div>
+    <button class="btn-next" onclick="validate('age',15,80,3)" style="margin-top:20px">
+      Continuer
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+    </button>
+    <button class="btn-back" onclick="go(1)">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H2M5 3L2 6l3 3"/></svg>
+      Retour
+    </button>
+  </div>
 
-    <div id="loadingOverlay" class="loading-overlay">
-        <div class="spinner"></div>
-        <p class="loading-message">Analyse de votre profil...</p>
-        <p class="loading-submessage">Calcul de vos resultats personnalises</p>
-        <div class="loading-steps">
-            <div class="loading-step" style="animation-delay: 0.5s"><i class="fas fa-check-circle"></i> Metabolisme de base calcule</div>
-            <div class="loading-step" style="animation-delay: 1.2s"><i class="fas fa-check-circle"></i> Profil analyse</div>
-            <div class="loading-step" style="animation-delay: 1.9s"><i class="fas fa-check-circle"></i> Programme personnalise pret</div>
-        </div>
+  <!-- STEP 3 — Poids -->
+  <div class="step" data-step="3">
+    <div class="step-num">Étape 3 sur 7</div>
+    <h2>Ton poids <em>aujourd'hui ?</em></h2>
+    <p class="step-hint">Ton point de départ. C'est à partir de là qu'on calcule ta perte potentielle sur 7 semaines.</p>
+    <div class="input-wrap">
+      <input type="number" id="weight" min="40" max="250" step="0.1" placeholder="72" inputmode="decimal">
+      <span class="input-unit">kg</span>
     </div>
+    <div class="field-error" id="weight-err">Entre 40 et 250 kg s'il te plaît.</div>
+    <div class="step-note"><b>Confidentiel.</b> Ces données ne sont jamais partagées. Elles servent uniquement à calculer ton bilan.</div>
+    <button class="btn-next" onclick="validate('weight',40,250,4)" style="margin-top:20px">
+      Continuer
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+    </button>
+    <button class="btn-back" onclick="go(2)">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H2M5 3L2 6l3 3"/></svg>
+      Retour
+    </button>
+  </div>
 
-    <script>
-        let currentStep = 1;
-        const totalSteps = 7;
+  <!-- STEP 4 — Taille -->
+  <div class="step" data-step="4">
+    <div class="step-num">Étape 4 sur 7</div>
+    <h2>Ta <em>taille ?</em></h2>
+    <p class="step-hint">Combinée à ton poids, elle permet de calculer ton IMC et tes besoins énergétiques réels.</p>
+    <div class="input-wrap">
+      <input type="number" id="height" min="140" max="220" placeholder="165" inputmode="numeric">
+      <span class="input-unit">cm</span>
+    </div>
+    <div class="field-error" id="height-err">Entre 140 et 220 cm s'il te plaît.</div>
+    <button class="btn-next" onclick="validate('height',140,220,5)" style="margin-top:20px">
+      Continuer
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+    </button>
+    <button class="btn-back" onclick="go(3)">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H2M5 3L2 6l3 3"/></svg>
+      Retour
+    </button>
+  </div>
 
-        function updateProgress(step) {
-            document.getElementById('progressFill').style.width = (step / totalSteps * 100) + '%';
-        }
+  <!-- STEP 5 — Activité -->
+  <div class="step" data-step="5">
+    <div class="step-num">Étape 5 sur 7</div>
+    <h2>Ton niveau <em>d'activité ?</em></h2>
+    <p class="step-hint">Sois honnête — c'est ce qui permet de calibrer correctement tes apports caloriques.</p>
+    <div class="options">
+      <div class="opt">
+        <input type="radio" id="a1" name="activity" value="1.2" checked>
+        <label for="a1">
+          <span class="opt-icon">🛋️</span>
+          <span><span class="opt-title">Sédentaire</span><span class="opt-desc">Bureau, peu de marche, pas de sport</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="a2" name="activity" value="1.375">
+        <label for="a2">
+          <span class="opt-icon">🚶</span>
+          <span><span class="opt-title">Légèrement actif(ve)</span><span class="opt-desc">Quelques promenades, sport 1-2x/semaine</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="a3" name="activity" value="1.55">
+        <label for="a3">
+          <span class="opt-icon">🏃‍♀️</span>
+          <span><span class="opt-title">Modérément actif(ve)</span><span class="opt-desc">Sport 3-4x/semaine, bonne marche quotidienne</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="a4" name="activity" value="1.725">
+        <label for="a4">
+          <span class="opt-icon">🏋️</span>
+          <span><span class="opt-title">Très actif(ve)</span><span class="opt-desc">Sport intense 5-6x/semaine ou travail physique</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+    </div>
+    <button class="btn-next" onclick="go(6)">
+      Continuer
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+    </button>
+    <button class="btn-back" onclick="go(4)">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H2M5 3L2 6l3 3"/></svg>
+      Retour
+    </button>
+  </div>
 
-        function showStep(step) {
-            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-            document.querySelector('[data-step="' + step + '"]').classList.add('active');
-            currentStep = step;
-            updateProgress(step);
-        }
+  <!-- STEP 6 — Objectif -->
+  <div class="step" data-step="6">
+    <div class="step-num">Étape 6 sur 7</div>
+    <h2>Ton objectif <em>principal ?</em></h2>
+    <p class="step-hint">Ça influence le message de ton bilan — pas les calculs, qui restent identiques.</p>
+    <div class="options">
+      <div class="opt">
+        <input type="radio" id="o1" name="objective" value="confidence" checked>
+        <label for="o1">
+          <span class="opt-icon">🪞</span>
+          <span><span class="opt-title">Me sentir bien dans mon corps</span><span class="opt-desc">Énergie, légèreté, confiance retrouvée</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="o2" name="objective" value="yoyo">
+        <label for="o2">
+          <span class="opt-icon">🔄</span>
+          <span><span class="opt-title">En finir avec l'effet yoyo</span><span class="opt-desc">J'ai déjà tout essayé, je veux que ça dure</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="o3" name="objective" value="event">
+        <label for="o3">
+          <span class="opt-icon">📅</span>
+          <span><span class="opt-title">Un événement approche</span><span class="opt-desc">Mariage, vacances, occasion spéciale</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="o4" name="objective" value="health">
+        <label for="o4">
+          <span class="opt-icon">💪</span>
+          <span><span class="opt-title">Santé et vitalité sur le long terme</span><span class="opt-desc">Changer mes habitudes durablement</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+    </div>
+    <button class="btn-next" onclick="go(7)">
+      Continuer
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+    </button>
+    <button class="btn-back" onclick="go(5)">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H2M5 3L2 6l3 3"/></svg>
+      Retour
+    </button>
+  </div>
 
-        function nextStep(step) {
-            showStep(step);
-        }
+  <!-- STEP 7 — Frein -->
+  <div class="step" data-step="7">
+    <div class="step-num">Étape 7 sur 7</div>
+    <h2>Ce qui t'a <em>freiné</em> jusqu'ici ?</h2>
+    <p class="step-hint">Dernière question — et la plus importante pour personnaliser ton bilan.</p>
+    <div class="options">
+      <div class="opt">
+        <input type="radio" id="f1" name="frein" value="time" checked>
+        <label for="f1">
+          <span class="opt-icon">⏱</span>
+          <span><span class="opt-title">Le manque de temps</span><span class="opt-desc">Pas le temps de cuisiner des trucs compliqués</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="f2" name="frein" value="hunger">
+        <label for="f2">
+          <span class="opt-icon">😤</span>
+          <span><span class="opt-title">La faim et la frustration</span><span class="opt-desc">Je craque toujours au bout de quelques semaines</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="f3" name="frein" value="info">
+        <label for="f3">
+          <span class="opt-icon">😵</span>
+          <span><span class="opt-title">Trop d'infos contradictoires</span><span class="opt-desc">Je ne sais plus quoi manger</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+      <div class="opt">
+        <input type="radio" id="f4" name="frein" value="yoyo">
+        <label for="f4">
+          <span class="opt-icon">↩</span>
+          <span><span class="opt-title">Je reprends toujours le poids perdu</span><span class="opt-desc">L'effet yoyo me décourage</span></span>
+          <span class="opt-check"></span>
+        </label>
+      </div>
+    </div>
+    <button class="btn-submit" onclick="submit()">
+      Voir mon bilan personnalisé
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l3.5 3.5L8 10"/></svg>
+    </button>
+    <button class="btn-back" onclick="go(6)">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H2M5 3L2 6l3 3"/></svg>
+      Retour
+    </button>
+  </div>
 
-        function prevStep(step) {
-            showStep(step);
-        }
+</div>
 
-        function validateAndNext(field, nextStepNum) {
-            const input = document.getElementById(field);
-            const error = document.getElementById(field + '-error');
-            const val = parseFloat(input.value);
-            const min = parseFloat(input.min);
-            const max = parseFloat(input.max);
+<!-- LOADING -->
+<div class="loading" id="loading">
+  <div class="loading-ring"></div>
+  <div class="loading-title">Analyse de ton profil…</div>
+  <div class="loading-sub">Calcul de tes résultats personnalisés</div>
+  <div class="loading-steps">
+    <div class="lstep" id="ls1"><span class="lstep-dot"></span> Métabolisme de base calculé</div>
+    <div class="lstep" id="ls2"><span class="lstep-dot"></span> Potentiel de perte estimé</div>
+    <div class="lstep" id="ls3"><span class="lstep-dot"></span> Programme personnalisé prêt</div>
+  </div>
+</div>
 
-            if (isNaN(val) || val < min || val > max) {
-                error.style.display = 'block';
-                input.style.borderColor = '#e74c3c';
-                return;
-            }
-            error.style.display = 'none';
-            input.style.borderColor = '#e0e4e0';
-            showStep(nextStepNum);
-        }
+<script>
+let step = 1;
+const total = 7;
 
-        function selectActivity(el, value) {
-            document.querySelectorAll('[data-step="5"] .activity-option').forEach(o => o.classList.remove('selected'));
-            el.classList.add('selected');
-            el.querySelector('input').checked = true;
-        }
+function go(n) {
+  document.querySelector('.step.active').classList.remove('active');
+  document.querySelector('[data-step="'+n+'"]').classList.add('active');
+  step = n;
+  document.getElementById('prog').style.width = (n/total*100)+'%';
+  document.getElementById('prog-label').textContent = 'Étape '+n+' sur '+total;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-        function selectObjective(el, value) {
-            document.querySelectorAll('[data-step="6"] .activity-option').forEach(o => o.classList.remove('selected'));
-            el.classList.add('selected');
-            el.querySelector('input').checked = true;
-        }
+function validate(id, min, max, next) {
+  const el = document.getElementById(id);
+  const err = document.getElementById(id+'-err');
+  const v = parseFloat(el.value);
+  if (isNaN(v) || v < min || v > max) {
+    err.classList.add('show');
+    el.style.borderColor = 'var(--terra)';
+    return;
+  }
+  err.classList.remove('show');
+  el.style.borderColor = '';
+  go(next);
+}
 
-        function selectTimeline(el, value) {
-            document.querySelectorAll('[data-step="7"] .activity-option').forEach(o => o.classList.remove('selected'));
-            el.classList.add('selected');
-            el.querySelector('input').checked = true;
-        }
+function submit() {
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const age = parseInt(document.getElementById('age').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  const height = parseFloat(document.getElementById('height').value);
+  const activity = parseFloat(document.querySelector('input[name="activity"]:checked').value);
+  const objective = document.querySelector('input[name="objective"]:checked').value;
+  const frein = document.querySelector('input[name="frein"]:checked').value;
 
-        function submitQuiz() {
-            const gender = document.querySelector('input[name="gender"]:checked').value;
-            const age = parseInt(document.getElementById('age').value);
-            const weight = parseFloat(document.getElementById('weight').value);
-            const height = parseFloat(document.getElementById('height').value);
-            const activityFactor = parseFloat(document.querySelector('input[name="activity"]:checked').value);
+  if ([age,weight,height].some(isNaN)) {
+    go(2); return;
+  }
 
-            if (isNaN(age) || isNaN(weight) || isNaN(height) || age < 15 || age > 100 || weight < 30 || weight > 300 || height < 120 || height > 250) {
-                window.location.href = '#';
-                return;
-            }
+  // Mifflin-St Jeor
+  let bmr = gender === 'male'
+    ? (10*weight)+(6.25*height)-(5*age)+5
+    : (10*weight)+(6.25*height)-(5*age)-161;
+  const tdee = Math.round(bmr * activity);
+  bmr = Math.round(bmr);
 
-            let bmr;
-            if (gender === 'male') {
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-            } else {
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
-            }
-            const tdee = bmr * activityFactor;
+  // Perte potentielle : déficit moyen de 350 kcal/j sur 49 jours
+  const deficitKcal = 350 * 49;
+  const lossKg = Math.min((deficitKcal / 7700).toFixed(1), 12);
+  const imc = (weight / ((height/100)**2)).toFixed(1);
 
-            const overlay = document.getElementById('loadingOverlay');
-            overlay.classList.add('active');
+  const loading = document.getElementById('loading');
+  loading.classList.add('on');
 
-            setTimeout(() => {
-                window.location.href = 'resultats.html?bmr=' + bmr.toFixed(0) + '&tdee=' + tdee.toFixed(0) + '&weight=' + weight + '&height=' + height;
-            }, 2800);
-        }
+  setTimeout(()=>document.getElementById('ls1').classList.add('show'), 600);
+  setTimeout(()=>document.getElementById('ls2').classList.add('show'), 1300);
+  setTimeout(()=>document.getElementById('ls3').classList.add('show'), 2000);
 
-        // Allow Enter key to advance steps
-        document.querySelectorAll('.input-group input').forEach(input => {
-            input.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const step = this.closest('.step');
-                    step.querySelector('.btn-next').click();
-                }
-            });
-        });
-    </script>
+  setTimeout(()=>{
+    const p = new URLSearchParams({
+      bmr, tdee, weight, height, age, gender, activity, objective, frein, imc, loss: lossKg
+    });
+    window.location.href = 'resultats.html?' + p.toString();
+  }, 2800);
+}
 
+// Enter key support
+document.querySelectorAll('input[type="number"]').forEach(inp=>{
+  inp.addEventListener('keydown', e=>{
+    if(e.key==='Enter'){
+      e.preventDefault();
+      inp.closest('.step').querySelector('.btn-next').click();
+    }
+  });
+});
+</script>
 </body>
 </html>
